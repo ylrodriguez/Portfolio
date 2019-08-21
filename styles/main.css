@@ -8,6 +8,7 @@ body{
     text-align: center;
     color: #fff;
     font-family: 'Raleway', sans-serif;
+    font-size: 14px
 }
 
 section{
@@ -18,8 +19,13 @@ a{
     text-decoration: none;
     color: #fff;
 }
+
+h1{
+    margin: 0;
+}
+
 .highlight{
-    font-weight: 700;
+    font-weight: bold;
     color: #56b5ee;
 }
 
@@ -30,14 +36,50 @@ a{
     flex-direction: column;
 }
 
-.home{
-    background-color: #1e313c;
-    height: calc(50vh + 60px);
-    box-sizing: border-box;
+.flex.row{
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 25px;
 }
-.home .text{
+
+.home-container{
+    background-image:  linear-gradient(
+        rgba(26,63,86, 0.6), 
+        rgba(26,63,86, 0.6)
+      ),
+      url("../img/background.jpg");
+    background-size: cover;
+    background-position: 30% 100%; 
+    height: calc(100vh + 60px);
+    box-sizing: border-box;
+    
+}
+
+/* 
+.home-container::after{
+    background-color: #1e313c;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+} */
+
+.home-container .text{
     font-size: 18pt;
     margin-bottom: 25px;
+}
+
+.container{
+    width: 100%;
+    margin-top: 18px;
+    padding: 10px 10px;
+    box-sizing: border-box;
 }
 
 .button{
@@ -45,10 +87,15 @@ a{
     padding: 12px 35px;
     border: 2px solid white;
     cursor: pointer;
+    transition: all 1s;
 }
 
+.button:hover{
+    background-color: #56b5ee;
+    border: 2px solid #1a3f56;
+}
 
-nav{
+nav{ 
     bottom: 0;
     left: 0;
     background-color: #1a3f56;
@@ -64,7 +111,7 @@ nav{
     text-align: left;
     position: absolute;
     top: 60px;
-    background: #639cbf;
+    background: #0d151a;
     transition: max-height 0.8s ease-in-out;
     max-height: 0;
 }
@@ -72,6 +119,15 @@ nav{
 nav .wrap-link > div {
     margin: 10px 20px;
     text-transform: uppercase;
+    
+}
+
+.link a {
+    transition: color 0.5s;
+}
+
+.link a:hover {
+    color: #56b5ee;
 }
 
 nav i{
@@ -88,8 +144,112 @@ nav i{
     max-height: 100px;
 }
 
+.title{
+    font-size: 25pt;
+    color: #1a1c1d;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.title-bar{
+    width: 70px;
+    height: 3px;
+    background: #1a1c1d;
+    margin-bottom: 5%;
+}
+
+.element{
+    color: #000;
+    padding: 0 5px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 123px;
+}
+
+.text-element{
+    margin-top: 15px;
+}
+
+.diamond-wrapper{
+    height: 100px;
+    width:  100px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.diamond {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.diamond::before{
+    display: inline-block;
+    height: calc(100% * 0.71);
+    width: calc(100% * 0.71);
+    content:"";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #56b5ee;
+}
+
+
+.diamond i{
+    position: absolute;
+    font-size: 20pt;
+    z-index: 1;
+    color: #FFF;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.hexagon{
+    width: 250px;
+    height: 187px;
+    background: #000;
+    transform: rotate(120deg);
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.hexagon-inner{
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    transform: rotate(-60deg);
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.hexagon-inner-in{
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/me.jpg");
+    background-size: 75%;
+    background-position: center;
+    transform: rotate(-60deg);
+    visibility: visible;
+}
+
+ 
 @media(min-width: 600px){
-    .home .text{
+    body{
+        font-size: 16px;
+    }
+    
+    .home-container{
+        background-position: center; 
+    }
+    
+    .home-container .text{
         font-size: 26pt;
     }
 
@@ -98,6 +258,7 @@ nav i{
         overflow: visible;
         position: static;
         background: inherit;
+        max-height: initial;
     }
 
     nav .wrap-link > div {
@@ -106,5 +267,31 @@ nav i{
 
     nav i{
         visibility: hidden;
+    }
+
+    .element{
+        max-width: 150px;
+    }
+
+    .diamond-wrapper{
+        height: 130px;
+        width:  130px;
+    }
+
+    .diamond i{
+        font-size: 30pt;
+    }
+}
+
+@media(min-width: 960px){
+    .element{
+        max-width: 180px;
+    }
+    .diamond-wrapper{
+        height: 170px;
+        width:  170px;
+    }
+    .diamond i{
+        font-size: 35pt;
     }
 }
