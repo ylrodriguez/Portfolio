@@ -58,7 +58,7 @@ h1{
     background-size: cover;
     background-position: auto;
     background-repeat: no-repeat;
-    height: calc(90vh + 60px);
+    height: calc(92vh + 60px);
     box-sizing: border-box;
     
 }
@@ -83,7 +83,7 @@ h1{
     transition: all 1s;
 }
 
-.button:hover{
+.button:active{
     background-color: #56b5ee;
     border: 2px solid #1a3f56;
 }
@@ -131,7 +131,7 @@ nav .wrap-link > div {
     transition: color 0.5s;
 }
 
-.link a:hover {
+.link a:active {
     color: #56b5ee;
 }
 
@@ -244,6 +244,17 @@ nav i{
     visibility: visible;
 }
 
+/*Equipos que soportan hover.*/
+@media (hover: hover) {
+    .button:hover{
+    background-color: #56b5ee;
+    border: 2px solid #1a3f56;
+    }
+
+    .link a:hover {
+        color: #56b5ee;
+    }
+}
  
 @media(min-width: 600px){
     body{
