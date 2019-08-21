@@ -119,7 +119,14 @@ nav{
 nav .wrap-link > div {
     margin: 10px 20px;
     text-transform: uppercase;
-    
+}
+
+.fixed{
+    top: 0;
+    left: 0;
+    position: fixed;
+    animation-duration: 0.8s;
+    animation-name: navSlideDown;
 }
 
 .link a {
@@ -293,5 +300,16 @@ nav i{
     }
     .diamond i{
         font-size: 35pt;
+    }
+}
+
+@keyframes navSlideDown{
+    0%{
+        height:0;
+        overflow: hidden; 
+    }
+    100%{
+        height: 60px;
+        overflow:visible;
     }
 }
