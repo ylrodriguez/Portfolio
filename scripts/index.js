@@ -2,6 +2,7 @@ const ABOUTMESECTION = document.querySelector('#about-me');
 const HOMESECTION = document.querySelector('#home');
 const BUTTONSEEMORE = document.querySelector('.see-more');
 const NAVELEMENT = document.getElementsByTagName("nav")[0];
+const WRAPLINKELEMENT = document.getElementsByClassName("wrap-link")[0];
 var navElementHasFixedClass = false;
 
 
@@ -17,6 +18,7 @@ BUTTONSEEMORE.addEventListener("click", () => {
 })
 
 window.onscroll = (e) => {
+    WRAPLINKELEMENT.classList.remove("visible");
     // Se recoge la posición top del botón y
      //se le suma la altura total del boton y 100 de margen adicional
     //var contentHeight = BUTTONSEEMORE.offsetTop + BUTTONSEEMORE.offsetHeight + 100;
