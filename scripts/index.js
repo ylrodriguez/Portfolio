@@ -1,14 +1,22 @@
 const HOMESECTION = document.querySelector('#home');
 const BUTTONSEEMORE = document.querySelector('#see-more');
 const NAVELEMENT = document.getElementsByTagName("nav")[0];
+const WRAPLINKELEMENT = document.getElementsByClassName("wrap-link")[0];
+const NAVANCHORS = document.querySelectorAll(".link a");
 
 const ABOUTMESECTION = document.querySelector('#about-me');
 
-const WRAPLINKELEMENT = document.getElementsByClassName("wrap-link")[0];
+const PROJECTSSECTION = document.querySelector('#projects');
+
+const CONTACTSSECTION = document.querySelector('#contact');
+
 
 var navElementHasFixedClass = false;
 var aboutMeTitleAnimated = false;
 var aboutMeHexagonAnimated = false;
+var projectsTitleAnimated = false;
+
+var positionActiveNavAnchor;
 
 
 document.getElementsByClassName("fa-bars")[0].addEventListener("click", () => {
@@ -28,15 +36,25 @@ window.onscroll = (e) => {
 
     addOrRemoveFixedNav(yOffSet, HOMESECTION.offsetHeight);
 
+    changeActiveLinkInNav(yOffSet);
+
     if(!aboutMeTitleAnimated){
         if((BUTTONSEEMORE.offsetTop + BUTTONSEEMORE.offsetHeight) <= yOffSet){
             animateTitleOfASection("#about-me");
+            aboutMeTitleAnimated = true;
         }
     }
-
     if(!aboutMeHexagonAnimated){
         if((BUTTONSEEMORE.offsetTop + BUTTONSEEMORE.offsetHeight + 100) <= yOffSet){
             animateAboutMeElementHexagon();
+        }
+    }
+    if(!projectsTitleAnimated){
+        //Se añade un margen de 400 para que inicie la animación antes de llegar a la sección
+        var condition = (PROJECTSSECTION.offsetTop - 400);
+        if(condition <= yOffSet){
+            animateTitleOfASection("#projects");
+            projectsTitleAnimated = true;
         }
     }
 }
@@ -59,14 +77,41 @@ function animateTitleOfASection(section){
     title.classList.add("slide-to-left");
     titleBar.style = "animation-delay: 0.5s"
     titleBar.classList.add("slide-to-left");
-
-    aboutMeTitleAnimated = true;
 }
 
 function animateAboutMeElementHexagon(){
     var elementHexagon = document.querySelector("#about-me .element.hex");
     elementHexagon.classList.add("show");
     aboutMeHexagonAnimated = true;
+}
+
+function changeActiveLinkInNav(yOffSet){
+    if(yOffSet < ABOUTMESECTION.offsetTop - 50){
+        removeAllActive();
+        NAVANCHORS[0].classList.add("active");
+    }
+    else{
+        if(yOffSet < PROJECTSSECTION.offsetTop - 50){
+            removeAllActive();
+            NAVANCHORS[1].classList.add("active");
+        }
+        else{
+            if(yOffSet < CONTACTSSECTION.offsetTop - 350){
+                removeAllActive();
+                NAVANCHORS[2].classList.add("active");
+            }
+            else{
+                removeAllActive();
+                NAVANCHORS[3].classList.add("active");
+            }
+        }
+    }
+}
+
+function removeAllActive(){
+    NAVANCHORS.forEach( (element) => {
+        element.classList.remove("active");
+    })
 }
 
 document.querySelector('#cv').addEventListener("click", () => {

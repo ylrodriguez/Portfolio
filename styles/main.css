@@ -44,6 +44,10 @@ section{
     position: relative;
 }
 
+section:nth-of-type(2n + 2){
+    background-color: whitesmoke;
+}
+
 a{
     text-decoration: none;
     color: #fff;
@@ -94,7 +98,6 @@ h1{
 
 .container{
     width: 100%;
-    margin-top: 18px;
     padding: 10px 10px;
     box-sizing: border-box;
     position: relative;
@@ -182,6 +185,11 @@ nav i{
     position: absolute;
     right: 0;
     cursor: pointer;
+}
+
+.active{
+    color: #56b5ee; 
+    text-decoration: underline
 }
 
 .visible{
