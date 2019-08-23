@@ -213,6 +213,12 @@ window.onscroll = (e) => {
         //Se añade un margen de 400 para que inicie la animación antes de llegar a la sección
         // var condition = (CONTACTSSECTION.offsetTop - 300);
         var condition = (CONTACTSSECTION.offsetTop - 400);
+        //El siguiente if es usado porque no está la sección project. Cuando se ponga se quitará
+        if ((condition - 200) <= yOffSet) {
+            var buttonCV = document.querySelector('#cv');
+            buttonCV.style = "animation-delay: 0.5s; animation-timing-function: ease-in-out;";
+            buttonCV.classList.add("slide-to-left");
+        }
         if (condition <= yOffSet) {
             animateTitleOfASection("#contact", "left");
 
@@ -225,9 +231,9 @@ window.onscroll = (e) => {
             var squareAll = document.querySelectorAll(".square.link");
             var delayTime = 1;
 
-            squareAll.forEach( (element) => {
+            squareAll.forEach((element) => {
                 element.classList.add("flip-element");
-                element.style = "animation-delay: "+delayTime+"s";
+                element.style = "animation-delay: " + delayTime + "s";
                 delayTime += 0.5;
             })
 
