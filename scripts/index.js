@@ -15,6 +15,7 @@ var navElementHasFixedClass = false;
 var aboutMeTitleAnimated = false;
 var aboutMeHexagonAnimated = false;
 var projectsTitleAnimated = false;
+var contactTitleAnimated = false;
 
 var positionActiveNavAnchor;
 
@@ -40,21 +41,50 @@ window.onscroll = (e) => {
 
     if(!aboutMeTitleAnimated){
         if((BUTTONSEEMORE.offsetTop + BUTTONSEEMORE.offsetHeight) <= yOffSet){
-            animateTitleOfASection("#about-me");
+            animateTitleOfASection("#about-me","left");
             aboutMeTitleAnimated = true;
         }
     }
     if(!aboutMeHexagonAnimated){
         if((BUTTONSEEMORE.offsetTop + BUTTONSEEMORE.offsetHeight + 100) <= yOffSet){
             animateAboutMeElementHexagon();
+            var animateElementDiamondList = document.querySelectorAll(".diamond-list .element");
+            var delayTime = 1;
+            
+            animateElementDiamondList.forEach( (element) => {
+                element.children[0].classList.add("flip-element");
+                element.children[0].style = "animation-delay: "+delayTime+"s"
+                delayTime += 0.5;
+            })
+
+            animateElementDiamondList.forEach( (element) => {
+                element.children[1].style = "animation-delay: "+delayTime+"s"
+                element.children[1].classList.add("slide-to-bottom");
+                delayTime += 0.5;
+            })
+
         }
     }
     if(!projectsTitleAnimated){
         //Se añade un margen de 400 para que inicie la animación antes de llegar a la sección
         var condition = (PROJECTSSECTION.offsetTop - 400);
+        if((condition-200) <= yOffSet){
+            var buttonCV = document.querySelector('#cv');
+            buttonCV.style = "animation-delay: 0.5s; animation-timing-function: ease-in-out;";
+            buttonCV.classList.add("slide-to-left");
+        }
+
         if(condition <= yOffSet){
-            animateTitleOfASection("#projects");
+            animateTitleOfASection("#projects","right");
             projectsTitleAnimated = true;
+        }
+    }
+    if(!contactTitleAnimated){
+        //Se añade un margen de 400 para que inicie la animación antes de llegar a la sección
+        var condition = (CONTACTSSECTION.offsetTop - 400);
+        if(condition <= yOffSet){
+            animateTitleOfASection("#contact","left");
+            contactTitleAnimated = true;
         }
     }
 }
@@ -70,13 +100,13 @@ function addOrRemoveFixedNav(yOffSet, contentHeight){
     }
 }
 
-function animateTitleOfASection(section){
+function animateTitleOfASection(section,direction){
     var title = document.querySelector(section+" .title");
     var titleBar = document.querySelector(section+" .title-bar");
 
-    title.classList.add("slide-to-left");
+    title.classList.add("slide-to-"+direction);
     titleBar.style = "animation-delay: 0.5s"
-    titleBar.classList.add("slide-to-left");
+    titleBar.classList.add("slide-to-"+direction);
 }
 
 function animateAboutMeElementHexagon(){
@@ -86,12 +116,12 @@ function animateAboutMeElementHexagon(){
 }
 
 function changeActiveLinkInNav(yOffSet){
-    if(yOffSet < ABOUTMESECTION.offsetTop - 50){
+    if(yOffSet < ABOUTMESECTION.offsetTop - 300){
         removeAllActive();
         NAVANCHORS[0].classList.add("active");
     }
     else{
-        if(yOffSet < PROJECTSSECTION.offsetTop - 50){
+        if(yOffSet < PROJECTSSECTION.offsetTop - 300){
             removeAllActive();
             NAVANCHORS[1].classList.add("active");
         }

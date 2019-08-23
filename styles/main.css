@@ -1,35 +1,6 @@
 /*
 https://www.color-hex.com/color-palette/79118
 */
-@keyframes slideDown{
-    0%{
-        height:0;
-        overflow: hidden; 
-    }
-    100%{
-        overflow:visible;
-    }
-}
-
-@keyframes rotateRightAndLeft{
-    25%{
-        transform: rotate(3deg);
-    }
-    50%{
-        transform: rotate(-3deg);
-    }
-}
-
-@keyframes slideToLeft{
-    0%{
-        opacity: 0;
-        right: 40%;
-    }
-    100%{
-        opacity: 1;
-        right: 0;
-    }
-}
 
 body{
     margin: 0; 
@@ -37,7 +8,7 @@ body{
     text-align: center;
     color: #fff;
     font-family: 'Raleway', sans-serif;
-    font-size: 14px
+    font-size: 15px
 }
 
 section{
@@ -46,6 +17,18 @@ section{
 
 section:nth-of-type(2n + 2){
     background-color: whitesmoke;
+}
+
+#contact{
+    background-color: #1a1c1d;
+   
+}
+#contact div{
+    color: white;
+}
+
+#contact .title-bar{
+    background: white;
 }
 
 a{
@@ -108,6 +91,11 @@ h1{
     padding: 12px 35px;
     cursor: pointer;
     transition: all 1s;
+    position: relative;
+}
+
+#cv{
+    opacity: 0;
 }
 
 .transparent{
@@ -141,6 +129,7 @@ nav{
 }
 
 .gapnav{
+    position: relative;
     height: 60px;
     width: 100%;
 }
@@ -194,8 +183,7 @@ nav i{
 
 .visible{
     height: initial;
-    overflow: visible;
-    max-height: 100px;
+    max-height: 130px;
 }
 
 .title{
@@ -218,11 +206,32 @@ nav i{
 
 .slide-to-left{
     animation-name: slideToLeft;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+}
+
+.slide-to-right{
+    animation-name: slideToRight;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+}
+
+.slide-to-bottom{
+    animation-name: slideToBottom;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
+.flip-element{
+    animation: flipElement 2.5s ease both;
+}
+
+.diamond-list{
+    position: relative;
+}
+
 .element{
+    
     color: #000;
     padding: 0 5px;
     margin: 10px 0;
@@ -231,6 +240,7 @@ nav i{
     justify-content: center;
     flex-direction: column;
     max-width: 123px;
+    position: relative;
 }
 
 .element.hex{
@@ -239,17 +249,25 @@ nav i{
 }
 
 .element.hex.show{
+    transition: opacity 1.5s,
+                transform 0.8s ease-out;
     opacity: 1;
-    transition: opacity 1s,
-                transform 0.5s ease-out;
-    animation-duration: 1.5s;
+    animation-duration: 2s;
     animation-name: rotateRightAndLeft;
     animation-delay: 0.5s;
 }
 
 .text-element{
     margin-top: 15px;
+    position: relative;
+    opacity: 0;
 }
+
+.element.hex .text-element{
+    opacity: 1;
+}
+
+
 
 .diamond-wrapper{
     height: 100px;
@@ -310,12 +328,87 @@ nav i{
 .hexagon-inner-in{
     width: 100%;
     height: 100%;
-    background-image: url("../img/me.jpg");
+    background-image: url("../img/img1.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
     transform: rotate(-60deg);
     visibility: visible;
+}
+
+@keyframes slideDown{
+    0%{
+        height:0;
+        overflow: hidden; 
+    }
+    100%{
+        height:60px;
+        overflow:visible;
+    }
+}
+
+@keyframes rotateRightAndLeft{
+    25%{
+        transform: rotate(5deg);
+    }
+    50%{
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes slideToLeft{
+    0%{
+        opacity: 0;
+        right: 50%;
+    }
+    100%{
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@keyframes slideToRight{
+    0%{
+        opacity: 0;
+        left: 50%;
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes slideToBottom{
+    0%{
+        opacity: 0;
+        bottom: 150px;
+    }
+    100%{
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+@keyframes flipElement{
+  0% {
+    transform: rotateY(90deg);
+    animation-timing-function: ease-in;
+    opacity: 0; 
+    }
+  40% {
+    transform: rotateY(-40deg);
+    animation-timing-function: ease-in; 
+}
+  60% {
+    transform: rotateY(20deg);
+    opacity: 1; 
+}
+  80% {
+    transform:  rotateY(5deg); 
+}
+  100% {
+    opacity: 1; 
+    } 
 }
 
 /*Equipos que soportan hover.*/
