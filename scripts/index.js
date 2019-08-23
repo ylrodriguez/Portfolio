@@ -211,7 +211,8 @@ window.onscroll = (e) => {
     // }
     if (!contactTitleAnimated) {
         //Se añade un margen de 400 para que inicie la animación antes de llegar a la sección
-        var condition = (CONTACTSSECTION.offsetTop - 300);
+        // var condition = (CONTACTSSECTION.offsetTop - 300);
+        var condition = (CONTACTSSECTION.offsetTop - 400);
         if (condition <= yOffSet) {
             animateTitleOfASection("#contact", "left");
 
