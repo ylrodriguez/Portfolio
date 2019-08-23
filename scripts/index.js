@@ -39,98 +39,98 @@ window.onscroll = (e) => {
 
     changeActiveLinkInNav(yOffSet);
 
-    if(!aboutMeTitleAnimated){
-        if((BUTTONSEEMORE.offsetTop + BUTTONSEEMORE.offsetHeight) <= yOffSet){
-            animateTitleOfASection("#about-me","left");
+    if (!aboutMeTitleAnimated) {
+        if ((BUTTONSEEMORE.offsetTop + BUTTONSEEMORE.offsetHeight) <= yOffSet) {
+            animateTitleOfASection("#about-me", "left");
             aboutMeTitleAnimated = true;
         }
     }
-    if(!aboutMeHexagonAnimated){
-        if((BUTTONSEEMORE.offsetTop + BUTTONSEEMORE.offsetHeight + 100) <= yOffSet){
+    if (!aboutMeHexagonAnimated) {
+        if ((BUTTONSEEMORE.offsetTop + BUTTONSEEMORE.offsetHeight + 100) <= yOffSet) {
             animateAboutMeElementHexagon();
             var animateElementDiamondList = document.querySelectorAll(".diamond-list .element");
             var delayTime = 1;
-            
-            animateElementDiamondList.forEach( (element) => {
+
+            animateElementDiamondList.forEach((element) => {
                 element.children[0].classList.add("flip-element");
-                element.children[0].style = "animation-delay: "+delayTime+"s"
+                element.children[0].style = "animation-delay: " + delayTime + "s"
                 delayTime += 0.5;
             })
 
-            animateElementDiamondList.forEach( (element) => {
-                element.children[1].style = "animation-delay: "+delayTime+"s"
+            animateElementDiamondList.forEach((element) => {
+                element.children[1].style = "animation-delay: " + delayTime + "s"
                 element.children[1].classList.add("slide-to-bottom");
                 delayTime += 0.5;
             })
 
         }
     }
-    if(!projectsTitleAnimated){
+    if (!projectsTitleAnimated) {
         //Se añade un margen de 400 para que inicie la animación antes de llegar a la sección
         var condition = (PROJECTSSECTION.offsetTop - 400);
-        if((condition-200) <= yOffSet){
+        if ((condition - 200) <= yOffSet) {
             var buttonCV = document.querySelector('#cv');
             buttonCV.style = "animation-delay: 0.5s; animation-timing-function: ease-in-out;";
             buttonCV.classList.add("slide-to-left");
         }
 
-        if(condition <= yOffSet){
-            animateTitleOfASection("#projects","right");
+        if (condition <= yOffSet) {
+            animateTitleOfASection("#projects", "right");
             projectsTitleAnimated = true;
         }
     }
-    if(!contactTitleAnimated){
+    if (!contactTitleAnimated) {
         //Se añade un margen de 400 para que inicie la animación antes de llegar a la sección
         var condition = (CONTACTSSECTION.offsetTop - 400);
-        if(condition <= yOffSet){
-            animateTitleOfASection("#contact","left");
+        if (condition <= yOffSet) {
+            animateTitleOfASection("#contact", "left");
             contactTitleAnimated = true;
         }
     }
 }
 
-function addOrRemoveFixedNav(yOffSet, contentHeight){
-    if(yOffSet >= contentHeight && !navElementHasFixedClass){
+function addOrRemoveFixedNav(yOffSet, contentHeight) {
+    if (yOffSet >= contentHeight && !navElementHasFixedClass) {
         NAVELEMENT.classList.add("fixed");
         navElementHasFixedClass = true;
     }
-    else if(yOffSet < (contentHeight-60) && navElementHasFixedClass){
+    else if (yOffSet < (contentHeight - 60) && navElementHasFixedClass) {
         NAVELEMENT.classList.remove("fixed");
         navElementHasFixedClass = false;
     }
 }
 
-function animateTitleOfASection(section,direction){
-    var title = document.querySelector(section+" .title");
-    var titleBar = document.querySelector(section+" .title-bar");
+function animateTitleOfASection(section, direction) {
+    var title = document.querySelector(section + " .title");
+    var titleBar = document.querySelector(section + " .title-bar");
 
-    title.classList.add("slide-to-"+direction);
+    title.classList.add("slide-to-" + direction);
     titleBar.style = "animation-delay: 0.5s"
-    titleBar.classList.add("slide-to-"+direction);
+    titleBar.classList.add("slide-to-" + direction);
 }
 
-function animateAboutMeElementHexagon(){
+function animateAboutMeElementHexagon() {
     var elementHexagon = document.querySelector("#about-me .element.hex");
     elementHexagon.classList.add("show");
     aboutMeHexagonAnimated = true;
 }
 
-function changeActiveLinkInNav(yOffSet){
-    if(yOffSet < ABOUTMESECTION.offsetTop - 300){
+function changeActiveLinkInNav(yOffSet) {
+    if (yOffSet < ABOUTMESECTION.offsetTop - 300) {
         removeAllActive();
         NAVANCHORS[0].classList.add("active");
     }
-    else{
-        if(yOffSet < PROJECTSSECTION.offsetTop - 300){
+    else {
+        if (yOffSet < PROJECTSSECTION.offsetTop - 300) {
             removeAllActive();
             NAVANCHORS[1].classList.add("active");
         }
-        else{
-            if(yOffSet < CONTACTSSECTION.offsetTop - 350){
+        else {
+            if (yOffSet < CONTACTSSECTION.offsetTop - 350) {
                 removeAllActive();
                 NAVANCHORS[2].classList.add("active");
             }
-            else{
+            else {
                 removeAllActive();
                 NAVANCHORS[3].classList.add("active");
             }
@@ -138,13 +138,40 @@ function changeActiveLinkInNav(yOffSet){
     }
 }
 
-function removeAllActive(){
-    NAVANCHORS.forEach( (element) => {
+function removeAllActive() {
+    NAVANCHORS.forEach((element) => {
         element.classList.remove("active");
     })
 }
 
 document.querySelector('#cv').addEventListener("click", () => {
     var urlCV = "https://1drv.ms/b/s!AlaKRn08I0M_gvgnoeXaLTesRnOzKQ?e=Dh5LhX";
-    window.open(urlCV,"_blank ");
+    window.open(urlCV, "_blank ");
+});
+
+
+document.querySelector('.email-button').addEventListener("mouseover", () => {
+    var textoTooltip = document.querySelector('.email-wrapper .tooltiptext');
+    var emailWrapper = document.querySelector('.email-wrapper');
+    textoTooltip.innerHTML = "Copiar correo";
+    textoTooltip.classList.remove("flip-element");
+    emailWrapper.classList.remove("minimize-and-expand");
+});
+
+document.querySelector('.email-button').addEventListener("click", () => {
+    var textArea = document.createElement("textarea");
+    var textoTooltip = document.querySelector('.email-wrapper .tooltiptext');
+    var emailWrapper = document.querySelector('.email-wrapper');
+
+    textArea.value = "ylrodriguez024@gmail.com";
+    textArea.style = "font-size: 1px; display: block; width: 10px; height: 5px;"
+    emailWrapper.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    document.execCommand('copy');
+    emailWrapper.removeChild(textArea);
+
+    textoTooltip.innerHTML = "Copiado";
+    textoTooltip.classList.add("flip-element");
+    emailWrapper.classList.add("minimize-and-expand");
 });

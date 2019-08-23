@@ -2,6 +2,107 @@
 https://www.color-hex.com/color-palette/79118
 */
 
+@keyframes slideDown{
+    0%{
+        height:0;
+        overflow: hidden; 
+    }
+    100%{
+        height:60px;
+        overflow:visible;
+    }
+}
+
+@keyframes rotateRightAndLeft{
+    25%{
+        transform: rotate(5deg);
+    }
+    50%{
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes slideToLeft{
+    0%{
+        opacity: 0;
+        right: 50%;
+    }
+    100%{
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@keyframes slideToRight{
+    0%{
+        opacity: 0;
+        left: 50%;
+    }
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+}
+
+@keyframes slideToBottom{
+    0%{
+        opacity: 0;
+        bottom: 150px;
+    }
+    100%{
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+@keyframes minimizeAndExpand{
+    0%{
+        transform: scale(1);
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+
+    20%{
+        opacity: 1;
+        transform: scale(0.1);
+    }
+
+    40%{
+        transform: scale(0.6);
+    }
+
+    60%{
+        transform: scale(0.2);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes flipElement{
+  0% {
+    visibility: visible;
+    transform: rotateY(90deg);
+    animation-timing-function: ease-in;
+    opacity: 0; 
+    }
+  40% {
+    transform: rotateY(-40deg);
+    animation-timing-function: ease-in; 
+}
+  60% {
+    transform: rotateY(20deg);
+    opacity: 1; 
+}
+  80% {
+    transform:  rotateY(5deg); 
+}
+  100% {
+    opacity: 1; 
+    } 
+}
+
 body{
     margin: 0; 
     padding: 0;
@@ -20,7 +121,7 @@ section:nth-of-type(2n + 2){
 }
 
 #contact{
-    background-color: #1a1c1d;
+    background-color: #34454f;
    
 }
 #contact div{
@@ -226,6 +327,10 @@ nav i{
     animation: flipElement 2.5s ease both;
 }
 
+.minimize-and-expand{
+    animation: minimizeAndExpand 1.5s ease forwards;
+}
+
 .diamond-list{
     position: relative;
 }
@@ -336,92 +441,101 @@ nav i{
     visibility: visible;
 }
 
-@keyframes slideDown{
-    0%{
-        height:0;
-        overflow: hidden; 
-    }
-    100%{
-        height:60px;
-        overflow:visible;
-    }
+.email-wrapper{
+    margin: 15px 0px; 
+    width: 100%; 
+    position:relative;
+    display: inline-block;
+    margin-top: 50px;
 }
 
-@keyframes rotateRightAndLeft{
-    25%{
-        transform: rotate(5deg);
-    }
-    50%{
-        transform: rotate(-5deg);
-    }
+.email-wrapper .tooltiptext{
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+  
+    /* Posición del tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 200%;
+    left: 50%;
+    margin-left: -60px;
+  
+    /* Fade tooltip */
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
-@keyframes slideToLeft{
-    0%{
-        opacity: 0;
-        right: 50%;
-    }
-    100%{
-        opacity: 1;
-        right: 0;
-    }
+.email-wrapper .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 15%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+.email{
+    padding: 10px 12px;
+    transition: all 1s;
+    display: inline;
 }
 
-@keyframes slideToRight{
-    0%{
-        opacity: 0;
-        left: 50%;
-    }
-    100%{
-        opacity: 1;
-        left: 0;
-    }
+.email-button{
+    padding: 10px 15px;
+    transition: all 1s;
+    display: inline;
+    cursor: pointer;
+    background-color: #8e989d;
 }
 
-@keyframes slideToBottom{
-    0%{
-        opacity: 0;
-        bottom: 150px;
-    }
-    100%{
-        opacity: 1;
-        bottom: 0;
-    }
+.email.transparent:active{
+    background-color: initial;
+    border: 2px solid white;
 }
 
-@keyframes flipElement{
-  0% {
-    transform: rotateY(90deg);
-    animation-timing-function: ease-in;
-    opacity: 0; 
-    }
-  40% {
-    transform: rotateY(-40deg);
-    animation-timing-function: ease-in; 
+.email-button.transparent:active{
+    background-color: #56b5ee;
+    border: 2px solid white;
 }
-  60% {
-    transform: rotateY(20deg);
-    opacity: 1; 
-}
-  80% {
-    transform:  rotateY(5deg); 
-}
-  100% {
-    opacity: 1; 
-    } 
+
+.copied{
+    opacity: 0;   
+    visibility: hidden;
 }
 
 /*Equipos que soportan hover.*/
 @media (hover: hover) {
     .transparent:hover{
-    background-color: #56b5ee;
-    border: 2px solid #1a3f56;
+        background-color: #56b5ee;
+        border: 2px solid #1a3f56;
     }
+
+    .email.transparent:hover{
+        background-color: initial;
+        border: 2px solid white;
+    }
+
+    .email-button.transparent:hover{
+        background-color: #56b5ee;
+        border: 2px solid white;
+    }
+
+    .email-button:hover + .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
 
     .solid:hover{
         background-color: #639cbf;
         border: 2px solid #456d85;
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 
     .link a:hover {
@@ -432,7 +546,7 @@ nav i{
         transform: scale(1.1);
     }
 }
- 
+
 @media(min-width: 600px){
     body{
         font-size: 16px;
@@ -506,3 +620,8 @@ nav i{
     }
 }
 
+@media(max-width: 310px){
+    .email-button{
+        display:none;
+    }
+}
