@@ -77,6 +77,7 @@ https://www.color-hex.com/color-palette/79118
 
     100%{
         transform: scale(1);
+        opacity: 1;
     }
 }
 
@@ -101,6 +102,23 @@ https://www.color-hex.com/color-palette/79118
   100% {
     opacity: 1; 
     } 
+}
+
+@keyframes slideToBottomSquare{
+    0%{
+        bottom: 0;
+    }
+    50%{
+        bottom: 50px;
+        opacity: 0;
+    }
+    55%{
+        top: 50px;  
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
 }
 
 body{
@@ -185,6 +203,10 @@ h1{
     padding: 10px 10px;
     box-sizing: border-box;
     position: relative;
+}
+
+.flex.center{
+    justify-content: center;
 }
 
 .button{
@@ -447,6 +469,7 @@ nav i{
     position:relative;
     display: inline-block;
     margin-top: 50px;
+    opacity: 0;
 }
 
 .email-wrapper .tooltiptext{
@@ -505,10 +528,55 @@ nav i{
     border: 2px solid white;
 }
 
-.copied{
-    opacity: 0;   
-    visibility: hidden;
+#up-button{
+    padding: 10px 15px;
+    transition: all 1s;
+    display: inline;
+    cursor: pointer;
+    background-color: #56b5ee;
+    font-size: 20pt;
 }
+
+.divided::before{
+    content:"";
+    width: 100%;
+    height: 50%;
+    bottom:0;
+    left: 0;
+    position: absolute;
+    background-color: #1a2227;
+}
+
+.square{
+    padding: 10px 15px;
+    margin: 0 15px;
+    transition: all 0.5s;
+    display: inline;
+    cursor: pointer;
+    background-color: #29373f;
+    font-size: 20pt;
+    overflow: hidden;
+}
+
+.square.link{
+    position: relative;
+    opacity: 0;
+}
+
+.square i {
+    position: relative;
+}
+
+.copy{
+    font-size: 0.6;
+}
+
+#text-goodbye{
+    position: relative;
+    opacity: 0;
+    animation-delay: 0.5s;
+}
+
 
 /*Equipos que soportan hover.*/
 @media (hover: hover) {
@@ -544,6 +612,23 @@ nav i{
 
     .element.hex:hover{
         transform: scale(1.1);
+    }
+
+    .diamond-list .diamond:hover{
+        animation-name: rotateRightAndLeft;
+        animation-duration:  0.2s;
+        animation-timing-function:  ease;
+        animation-iteration-count: 3;
+        animation-fill-mode: forwards;
+    }
+
+    .square:hover i{
+        animation-name: slideToBottomSquare;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+    .square:hover {
+        background-color: #639cbf;
     }
 }
 
@@ -587,6 +672,10 @@ nav i{
         max-width: 150px;
     }
 
+    .element.hex{
+        max-width: 375px;
+    }
+
     .diamond-wrapper{
         height: 130px;
         width:  130px;
@@ -620,6 +709,7 @@ nav i{
     }
 }
 
+/*Pantallas extra pequeñas.*/
 @media(max-width: 310px){
     .email-button{
         display:none;
