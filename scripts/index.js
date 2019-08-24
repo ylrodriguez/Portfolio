@@ -217,7 +217,7 @@ window.onscroll = (e) => {
         if ((condition - 200) <= yOffSet) {
             var buttonCV = document.querySelector('#cv');
             buttonCV.style = "animation-delay: 0.5s; animation-timing-function: ease-in-out;";
-            buttonCV.classList.add("slide-to-left");
+            buttonCV.classList.add("slide-to-right");
         }
         if (condition <= yOffSet) {
             animateTitleOfASection("#contact", "left");
