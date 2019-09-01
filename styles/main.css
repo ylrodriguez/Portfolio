@@ -420,6 +420,10 @@ nav i{
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
     background: #56b5ee;
+    
+    -webkit-border-radius: 8%;
+    -moz-border-radius: 8%;
+    border-radius: 8%;
 }
 
 
@@ -441,6 +445,10 @@ nav i{
     transform: rotate(120deg);
     overflow: hidden;
     visibility: hidden;
+    -webkit-border-radius: 38%;
+    -moz-border-radius: 38%;
+    border-radius: 38%;
+    
 }
 
 .hexagon-inner{
@@ -450,6 +458,10 @@ nav i{
     transform: rotate(-60deg);
     overflow: hidden;
     visibility: hidden;
+    -webkit-border-radius: 38%;
+    -moz-border-radius: 38%;
+    border-radius: 38%;
+    
 }
 
 .hexagon-inner-in{
@@ -461,6 +473,9 @@ nav i{
     background-position: center;
     transform: rotate(-60deg);
     visibility: visible;
+    -webkit-border-radius: 38%;
+    -moz-border-radius: 38%;
+    border-radius: 38%;
 }
 
 .email-wrapper{
