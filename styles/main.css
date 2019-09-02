@@ -144,6 +144,25 @@ body{
     font-size: 16px
 }
 
+.overlay{
+  position: fixed;
+  background: #78838a;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: opacity .35s, visibility .35s, height .35s;
+}
+
+.overlay.open{
+    opacity: 0.8;
+    visibility: visible;
+    height: 120%;
+}
+
 section{
     position: relative;
 }
@@ -202,7 +221,7 @@ h1{
     background-size: cover;
     background-position: auto;
     background-repeat: no-repeat;
-    height: calc(92vh + 60px);
+    height: calc(95vh + 60px);
     box-sizing: border-box;
     
 }

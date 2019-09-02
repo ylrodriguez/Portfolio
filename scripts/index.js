@@ -12,7 +12,7 @@ const DIAMONDLIST = document.querySelector(".diamond-list");
 
 const CONTACTSSECTION = document.querySelector('#contact');
 
-const URL = "https://ylrodriguez.github.io/Portfolio/"
+const URL = "https://ylrodriguez.github.io/Portfolio/";
 
 
 var navElementHasFixedClass = false;
@@ -24,42 +24,56 @@ var aboutMeCvButtonAnimated = false;
 var contactTitleAnimated = false;
 var contactSocialNetworksAnimated = false;
 
-var positionActiveNavAnchor;
-
+var isMobile;
 var skills = [];
 
 
 $('document').ready(function () {
+    //Check if user's using phone.
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        isMobile = true;
+    }
+
     getSkills()
         .then(() => {
             loadWaypoints();
         })
         .catch(() => {
-            console.log("Error Loading.")
+            console.log("Error Loading.");
             loadWaypoints();
         })
 
     addEventListeners();
 });
 
+
 function addEventListeners() {
-    //Add listener to links located on the nav
+    // Listener Media Query
+    var media = window.matchMedia("(max-width: 599px)");
+    checkMediaQueryForSmallDevices(media);
+    media.addListener(checkMediaQueryForSmallDevices);
+
+    //Listener to links located on the nav
     for (let link of NAVLINKS) {
         link.addEventListener("click", () => {
             let attr = link.getAttribute("go");
             let section = document.getElementById(attr);
-
+            
+            WRAPLINKELEMENT.classList.remove("visible");
+            document.querySelector(".overlay").classList.remove("open");
             section.scrollIntoView({
                 behavior: "smooth"
             });
             section.focus();
         })
     }
-
+    //Listener to hamburguer element
     document.getElementsByClassName("fa-bars")[0].addEventListener("click", () => {
-        document.getElementsByClassName("wrap-link")[0].classList.toggle("visible")
+        document.getElementsByClassName("wrap-link")[0].classList.toggle("visible");
+        document.querySelector(".overlay").classList.toggle("open");
     });
 
+    //Listener button see more
     BUTTONSEEMORE.addEventListener("click", () => {
         ABOUTMESECTION.scrollIntoView({
             behavior: "smooth"
@@ -67,23 +81,43 @@ function addEventListeners() {
         ABOUTMESECTION.focus();
     })
 
+    //Listener up button
     document.querySelector('#up-button').addEventListener("click", () => {
         HOMESECTION.scrollIntoView({
             behavior: "smooth"
         });
         HOMESECTION.focus();
     })
+
+    //Listener overlay
+    document.querySelector(".overlay").addEventListener("click" , () => {
+        document.querySelector(".overlay").classList.remove("open");
+        WRAPLINKELEMENT.classList.remove("visible");
+    })
 }
+
+function checkMediaQueryForSmallDevices(media) {
+    if (media.matches) { // If media query matches
+        NAVELEMENT.classList.add("fixed");
+        isMobile = true;
+        navElementHasFixedClass = true;
+    }
+    else{
+        NAVELEMENT.classList.remove("fixed");
+        isMobile = false;
+        navElementHasFixedClass = false;
+    }
+  }
 
 function getSkills() {
     return fetch(URL + "data/skills.json")
         .then(res => res.json())
         .then(data => {
-            skills = data.skills
+            skills = data.skills;
             printSkills();
         })
         .catch(() => {
-            console.log("Error retrieving skills.json")
+            console.log("Error retrieving skills.json");
         })
 }
 
@@ -96,23 +130,22 @@ function printSkills() {
         let progressTag = document.createElement("div");
         let progressPercentage = document.createElement("div");
 
-        progressBg.classList.add("progress-bg")
-        progressBar.classList.add("progress-bar", "flex", "fill-width")
-        progressPercentage.classList.add("progress-percentage")
-        progressTag.classList.add("progress-tag", "flex")
+        progressBg.classList.add("progress-bg");
+        progressBar.classList.add("progress-bar", "flex", "fill-width");
+        progressPercentage.classList.add("progress-percentage");
+        progressTag.classList.add("progress-tag", "flex");
 
-        progressTag.innerHTML = skillItem.skillName
-        progressPercentage.innerHTML = skillItem.progress + "%"
+        progressTag.innerHTML = skillItem.skillName;
+        progressPercentage.innerHTML = skillItem.progress + "%";
         progressBar.style = `
             width: ${skillItem.progress}%; 
             animation-delay: ${timeDelay}s;`
         timeDelay += 0.3;
 
-        progressBar.appendChild(progressTag)
-        progressBar.appendChild(progressPercentage)
-        progressBg.appendChild(progressBar)
-        PROGRESSLIST.appendChild(progressBg)
-
+        progressBar.appendChild(progressTag);
+        progressBar.appendChild(progressPercentage);
+        progressBg.appendChild(progressBar);
+        PROGRESSLIST.appendChild(progressBg);
     }
 }
 
@@ -132,7 +165,7 @@ function animateTitleOfASection(section, direction) {
     var titleBar = document.querySelector(section + " .title-bar");
 
     title.classList.add("slide-to-" + direction);
-    titleBar.style = "animation-delay: 0.5s"
+    titleBar.style = "animation-delay: 0.5s";
     titleBar.classList.add("slide-to-" + direction);
 }
 
@@ -142,7 +175,7 @@ function animateAboutMeElementHexagon() {
 }
 
 function animateAboutMeProgressList() {
-    PROGRESSLIST.classList.add("slide-to-left")
+    PROGRESSLIST.classList.add("slide-to-left");
 }
 
 function animateAboutMeDiamondList() {
@@ -151,12 +184,12 @@ function animateAboutMeDiamondList() {
 
     animateElementDiamondList.forEach((element) => {
         element.children[0].classList.add("flip-element");
-        element.children[0].style = "animation-delay: " + delayTime + "s"
+        element.children[0].style = "animation-delay: " + delayTime + "s";
         delayTime += 0.5;
     })
 
     animateElementDiamondList.forEach((element) => {
-        element.children[1].style = "animation-delay: " + delayTime + "s"
+        element.children[1].style = "animation-delay: " + delayTime + "s";
         element.children[1].classList.add("slide-to-bottom");
         delayTime += 0.5;
     })
@@ -214,7 +247,7 @@ document.querySelector('.email-button').addEventListener("click", () => {
     var emailWrapper = document.querySelector('.email-wrapper');
 
     textArea.value = "ylrodriguez024@gmail.com";
-    textArea.style = "font-size: 1px; display: block; width: 10px; height: 5px;"
+    textArea.style = "font-size: 1px; display: block; width: 10px; height: 5px;";
     emailWrapper.appendChild(textArea);
     textArea.focus();
     textArea.select();
@@ -242,10 +275,12 @@ document.querySelector('#link-mail').addEventListener("click", () => {
 });
 
 window.onscroll = (e) => {
-    WRAPLINKELEMENT.classList.remove("visible");
     var yOffSet = window.pageYOffset;
 
-    addOrRemoveFixedNav(yOffSet, HOMESECTION.offsetHeight);
+    if(!isMobile){
+        addOrRemoveFixedNav(yOffSet, HOMESECTION.offsetHeight);
+    }
+
     changeActiveLinkInNav((yOffSet + 100));
 
 }
@@ -264,7 +299,7 @@ function loadWaypoints() {
                 aboutMeTitleAnimated = true;
             }
         }
-    })
+    });
 
     let waypointAboutMeHexagon = new Waypoint({
         element: BUTTONSEEMORE,
@@ -276,7 +311,7 @@ function loadWaypoints() {
             }
         },
         offset: -200
-    })
+    });
 
     let waypointAboutMeDiamondList = new Waypoint({
         element: DIAMONDLIST,
@@ -287,7 +322,7 @@ function loadWaypoints() {
             }
         },
         offset: "80%"
-    })
+    });
 
     let waypointAboutMeCvButton = new Waypoint({
         element: document.querySelector('#cv'),
@@ -301,7 +336,7 @@ function loadWaypoints() {
             }
         },
         offset: "80%"
-    })
+    });
 
     let waypointContactTitle = new Waypoint({
         element: CONTACTSSECTION,
@@ -313,7 +348,7 @@ function loadWaypoints() {
             }
         },
         offset: "60%"
-    })
+    });
 
     let waypointContactSocialNetworks = new Waypoint({
         element: document.getElementById("link-wrapper"),
@@ -339,5 +374,5 @@ function loadWaypoints() {
             }
         },
         offset: "bottom-in-view"
-    })
+    });
 }
