@@ -5,6 +5,7 @@ const WRAPLINKELEMENT = document.getElementsByClassName("wrap-link")[0];
 const NAVANCHORS = document.querySelectorAll(".link a");
 
 const ABOUTMESECTION = document.querySelector('#about-me');
+const PROGRESSLIST = document.querySelector('.progress-list');
 
 // const PROJECTSSECTION = document.querySelector('#projects');
 
@@ -14,6 +15,7 @@ const CONTACTSSECTION = document.querySelector('#contact');
 var navElementHasFixedClass = false;
 var aboutMeTitleAnimated = false;
 var aboutMeHexagonAnimated = false;
+var aboutMeDiamondListAnimated = false;
 // var projectsTitleAnimated = false;
 var contactTitleAnimated = false;
 
@@ -61,6 +63,65 @@ function animateTitleOfASection(section, direction) {
 function animateAboutMeElementHexagon() {
     var elementHexagon = document.querySelector("#about-me .element.hex");
     elementHexagon.classList.add("show");
+}
+
+function animateProgressList() {
+    getSkills();
+    PROGRESSLIST.classList.add("slide-to-left")
+}
+
+function getSkills() {
+    fetch("../data.json")
+        .then(res => res.json())
+        .then(data => {
+            printSkills(data.skills)
+        })
+}
+
+function printSkills(skills) {
+    var timeDelay = 0.3;
+    for (let skillItem of skills) {
+
+        let progressBg = document.createElement("div");
+        let progressBar = document.createElement("div");
+        let progressTag = document.createElement("div");
+        let progressPercentage = document.createElement("div");
+
+        progressBg.classList.add("progress-bg")
+        progressBar.classList.add("progress-bar", "flex", "fill-width")
+        progressPercentage.classList.add("progress-percentage")
+        progressTag.classList.add("progress-tag", "flex")
+
+        progressTag.innerHTML = skillItem.skillName
+        progressPercentage.innerHTML = skillItem.progress + "%"
+        progressBar.style = `
+            width: ${skillItem.progress}%; 
+            animation-delay: ${timeDelay}s;`
+        timeDelay += 0.3;
+
+        progressBar.appendChild(progressTag)
+        progressBar.appendChild(progressPercentage)
+        progressBg.appendChild(progressBar)
+        PROGRESSLIST.appendChild(progressBg)
+
+    }
+}
+
+function animateDiamondList() {
+    var animateElementDiamondList = document.querySelectorAll(".diamond-list .element");
+    var delayTime = 1;
+
+    animateElementDiamondList.forEach((element) => {
+        element.children[0].classList.add("flip-element");
+        element.children[0].style = "animation-delay: " + delayTime + "s"
+        delayTime += 0.5;
+    })
+
+    animateElementDiamondList.forEach((element) => {
+        element.children[1].style = "animation-delay: " + delayTime + "s"
+        element.children[1].classList.add("slide-to-bottom");
+        delayTime += 0.5;
+    })
 }
 
 // Esta función incluye proyectos.
@@ -111,6 +172,8 @@ function removeAllActive() {
     })
 }
 
+
+
 document.querySelector('#cv').addEventListener("click", () => {
     var url = "https://1drv.ms/b/s!AlaKRn08I0M_gvgnoeXaLTesRnOzKQ?e=Dh5LhX";
     window.open(url, "_blank ");
@@ -160,6 +223,7 @@ document.querySelector('#link-mail').addEventListener("click", () => {
 });
 
 
+
 window.onscroll = (e) => {
     WRAPLINKELEMENT.classList.remove("visible");
     var yOffSet = window.pageYOffset;
@@ -170,30 +234,26 @@ window.onscroll = (e) => {
 
     if (!aboutMeTitleAnimated) {
         if ((BUTTONSEEMORE.offsetTop + BUTTONSEEMORE.offsetHeight) <= yOffSet) {
-            animateTitleOfASection("#about-me", "left");
+            animateTitleOfASection("#about-me", "right");
             aboutMeTitleAnimated = true;
         }
     }
     if (!aboutMeHexagonAnimated) {
         if ((BUTTONSEEMORE.offsetTop + BUTTONSEEMORE.offsetHeight + 100) <= yOffSet) {
             animateAboutMeElementHexagon();
-            var animateElementDiamondList = document.querySelectorAll(".diamond-list .element");
-            var delayTime = 1;
-
-            animateElementDiamondList.forEach((element) => {
-                element.children[0].classList.add("flip-element");
-                element.children[0].style = "animation-delay: " + delayTime + "s"
-                delayTime += 0.5;
-            })
-
-            animateElementDiamondList.forEach((element) => {
-                element.children[1].style = "animation-delay: " + delayTime + "s"
-                element.children[1].classList.add("slide-to-bottom");
-                delayTime += 0.5;
-            })
-
+            animateProgressList();
             aboutMeHexagonAnimated = true;
         }
+    }
+
+    if (!aboutMeDiamondListAnimated) {
+        console.log("yOffset: "+yOffSet)
+        console.log("otro: "+(PROGRESSLIST.offsetTop + PROGRESSLIST.offsetHeight + 150))
+        if ((PROGRESSLIST.offsetTop + PROGRESSLIST.offsetHeight + 100) <= yOffSet && PROGRESSLIST.offsetHeight != 0) {
+            animateDiamondList();
+            aboutMeDiamondListAnimated = true;
+        }
+
     }
     // if (!projectsTitleAnimated) {
     //     //Se añade un margen de 400 para que inicie la animación antes de llegar a la sección
@@ -201,11 +261,11 @@ window.onscroll = (e) => {
     //     if ((condition - 200) <= yOffSet) {
     //         var buttonCV = document.querySelector('#cv');
     //         buttonCV.style = "animation-delay: 0.5s; animation-timing-function: ease-in-out;";
-    //         buttonCV.classList.add("slide-to-left");
+    //         buttonCV.classList.add("slide-to-right");
     //     }
 
     //     if (condition <= yOffSet) {
-    //         animateTitleOfASection("#projects", "right");
+    //         animateTitleOfASection("#projects", "left");
     //         projectsTitleAnimated = true;
     //     }
     // }
@@ -217,13 +277,13 @@ window.onscroll = (e) => {
         if ((condition - 200) <= yOffSet) {
             var buttonCV = document.querySelector('#cv');
             buttonCV.style = "animation-delay: 0.5s; animation-timing-function: ease-in-out;";
-            buttonCV.classList.add("slide-to-right");
+            buttonCV.classList.add("slide-to-left");
         }
         if (condition <= yOffSet) {
-            animateTitleOfASection("#contact", "left");
+            animateTitleOfASection("#contact", "right");
 
             var paragraphContact = document.querySelector("#text-goodbye");
-            paragraphContact.classList.add("slide-to-right");
+            paragraphContact.classList.add("slide-to-left");
 
             var emailWrapper = document.querySelector(".email-wrapper");
             emailWrapper.classList.add("slide-to-bottom");

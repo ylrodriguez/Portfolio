@@ -25,22 +25,22 @@ https://www.color-hex.com/color-palette/79118
 @keyframes slideToLeft{
     0%{
         opacity: 0;
-        right: 50%;
+        left: 50%;
     }
     100%{
         opacity: 1;
-        right: 0;
+        left: 0;
     }
 }
 
 @keyframes slideToRight{
     0%{
         opacity: 0;
-        left: 50%;
+        right: 50%;
     }
     100%{
         opacity: 1;
-        left: 0;
+        right: 0;
     }
 }
 
@@ -117,6 +117,18 @@ https://www.color-hex.com/color-palette/79118
     }
     100%{
         top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fillWidth{
+    0%{
+        width: 0%;
+    }
+    20%{
+        opacity: 1;
+    }
+    100%{
         opacity: 1;
     }
 }
@@ -345,8 +357,17 @@ nav i{
     animation-fill-mode: forwards;
 }
 
+.fill-width{
+    animation-name: fillWidth;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+
 .flip-element{
     animation: flipElement 2.5s ease both;
+    animation-fill-mode: forwards;
 }
 
 .minimize-and-expand{
@@ -354,6 +375,10 @@ nav i{
 }
 
 .diamond-list{
+    position: relative;
+}
+
+.hex-skills{
     position: relative;
 }
 
@@ -368,6 +393,10 @@ nav i{
     flex-direction: column;
     max-width: 123px;
     position: relative;
+}
+
+.diamond-list .element .diamond-wrapper{
+    opacity: 0;
 }
 
 .element.hex{
@@ -395,6 +424,44 @@ nav i{
 }
 
 
+.progress-list{
+    opacity: 0;
+    position: relative;
+    width: 80vw;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.progress-bg {
+    width: 100%;
+    background-color:#dbdbdb; 
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    position: relative;
+    height: 30px;
+    background-color: #639cbf;
+    width: 0;
+    opacity: 0;
+}
+
+.progress-tag{
+    position: absolute;
+    width: 105px;
+    height: 30px;
+    background-color:#72a5c5;
+    font-weight: bold;
+    left: 0;
+    z-index: 1;
+}
+
+.progress-percentage{
+    position: absolute; 
+    right: 1%;
+    font-size: 14px;
+}
+
 
 .diamond-wrapper{
     height: 100px;
@@ -421,9 +488,9 @@ nav i{
     transform: translate(-50%, -50%) rotate(45deg);
     background: #56b5ee;
     
-    -webkit-border-radius: 8%;
-    -moz-border-radius: 8%;
-    border-radius: 8%;
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    border-radius: 5%;
 }
 
 
@@ -445,9 +512,9 @@ nav i{
     transform: rotate(120deg);
     overflow: hidden;
     visibility: hidden;
-    -webkit-border-radius: 38%;
-    -moz-border-radius: 38%;
-    border-radius: 38%;
+    -webkit-border-radius: 35%;
+    -moz-border-radius: 35%;
+    border-radius: 35%;
     
 }
 
@@ -458,9 +525,9 @@ nav i{
     transform: rotate(-60deg);
     overflow: hidden;
     visibility: hidden;
-    -webkit-border-radius: 38%;
-    -moz-border-radius: 38%;
-    border-radius: 38%;
+    -webkit-border-radius: 35%;
+    -moz-border-radius: 35%;
+    border-radius: 35%;
     
 }
 
@@ -473,9 +540,9 @@ nav i{
     background-position: center;
     transform: rotate(-60deg);
     visibility: visible;
-    -webkit-border-radius: 38%;
-    -moz-border-radius: 38%;
-    border-radius: 38%;
+    -webkit-border-radius: 35%;
+    -moz-border-radius: 35%;
+    border-radius: 35%;
 }
 
 .email-wrapper{
@@ -716,6 +783,17 @@ nav i{
     }
     .diamond i{
         font-size: 35pt;
+    }
+
+    .hex-skills{
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+    }
+
+    .progress-list{
+        width: 40%;
     }
 
     .hexagon{

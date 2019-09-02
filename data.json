@@ -1,0 +1,40 @@
+{
+    "skills":[
+        {
+            "skillName": "HTML5",
+            "progress": 80
+        },
+        {
+            "skillName": "CSS3",
+            "progress": 70
+        },
+        {
+            "skillName": "JavaScript",
+            "progress": 65
+        },
+        {
+            "skillName": "Bootstrap 4",
+            "progress": 60
+        },
+        {
+            "skillName": "Java",
+            "progress": 70
+        },
+        {
+            "skillName": "PHP",
+            "progress": 45
+        },
+        {
+            "skillName": "Laravel",
+            "progress": 55
+        },
+        {
+            "skillName": "Inglés",
+            "progress": 90
+        },
+        {
+            "skillName": "Alemán",
+            "progress": 45
+        }
+    ]
+}
