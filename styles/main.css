@@ -328,7 +328,7 @@ nav i{
 .title{
     position: relative;
     opacity: 0;
-    font-size: 2rem;
+    font-size: 2.3rem;
     color: #1a1c1d;
     text-transform: uppercase;
     font-weight: bold;
@@ -802,8 +802,27 @@ nav i{
     }
 }
 
-@media(min-width: 1600px){
-    
+@media(min-width: 2040px){
+  section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  section#home{
+    display: block;
+  }
+
+  .container{
+      max-width: 2040px;
+  }
+
+  .container.divided{
+      max-width: initial;
+  }
+  .container.divided + .container{
+    max-width: initial;
+}
 }
 /*Pantallas extra pequeñas.*/
 @media(max-width: 310px){
