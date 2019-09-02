@@ -6,6 +6,7 @@ const NAVANCHORS = document.querySelectorAll(".link a");
 
 const ABOUTMESECTION = document.querySelector('#about-me');
 const PROGRESSLIST = document.querySelector('.progress-list');
+const DIAMONDLIST = document.querySelector(".diamond-list");
 
 // const PROJECTSSECTION = document.querySelector('#projects');
 
@@ -19,10 +20,25 @@ var aboutMeTitleAnimated = false;
 var aboutMeHexagonAnimated = false;
 var aboutMeDiamondListAnimated = false;
 // var projectsTitleAnimated = false;
+var aboutMeCvButtonAnimated = false;
 var contactTitleAnimated = false;
+var contactSocialNetworksAnimated = false;
 
 var positionActiveNavAnchor;
 
+var skills = [];
+
+
+$('document').ready(function () {
+    getSkills()
+        .then(() => {
+            loadWaypoints();
+        })
+        .catch(() => {
+            console.log("Error Loading.")
+            loadWaypoints();
+        })
+});
 
 document.getElementsByClassName("fa-bars")[0].addEventListener("click", () => {
     document.getElementsByClassName("wrap-link")[0].classList.toggle("visible")
@@ -68,19 +84,22 @@ function animateAboutMeElementHexagon() {
 }
 
 function animateProgressList() {
-    getSkills();
     PROGRESSLIST.classList.add("slide-to-left")
 }
 
 function getSkills() {
-    fetch(URL+"data/skills.json")
+    return fetch(URL + "data/skills.json")
         .then(res => res.json())
         .then(data => {
-            printSkills(data.skills)
+            skills = data.skills
+            printSkills();
+        })
+        .catch(() => {
+            console.log("Error retrieving skills.json")
         })
 }
 
-function printSkills(skills) {
+function printSkills() {
     var timeDelay = 0.3;
     for (let skillItem of skills) {
 
@@ -231,74 +250,91 @@ window.onscroll = (e) => {
     var yOffSet = window.pageYOffset;
 
     addOrRemoveFixedNav(yOffSet, HOMESECTION.offsetHeight);
-
     changeActiveLinkInNav(yOffSet);
 
-    if (!aboutMeTitleAnimated) {
-        if ((BUTTONSEEMORE.offsetTop + BUTTONSEEMORE.offsetHeight) <= yOffSet) {
-            animateTitleOfASection("#about-me", "right");
-            aboutMeTitleAnimated = true;
+}
+
+function loadWaypoints() {
+    waypointAboutMeTitle = new Waypoint({
+        element: BUTTONSEEMORE,
+        handler: function (direction) {
+            if (direction === "down" && !aboutMeTitleAnimated) {
+                animateTitleOfASection("#about-me", "right");
+                aboutMeTitleAnimated = true;
+            }
         }
-    }
-    if (!aboutMeHexagonAnimated) {
-        if ((BUTTONSEEMORE.offsetTop + BUTTONSEEMORE.offsetHeight + 100) <= yOffSet) {
-            animateAboutMeElementHexagon();
-            animateProgressList();
-            aboutMeHexagonAnimated = true;
-        }
-    }
+    })
 
-    if (!aboutMeDiamondListAnimated) {
-        if ((PROGRESSLIST.offsetTop + PROGRESSLIST.offsetHeight + 100) <= yOffSet && PROGRESSLIST.offsetHeight != 0) {
-            animateDiamondList();
-            aboutMeDiamondListAnimated = true;
-        }
+    waypointAboutMeHexagon = new Waypoint({
+        element: BUTTONSEEMORE,
+        handler: function (direction) {
+            if (direction === "down" && !aboutMeHexagonAnimated) {
+                animateAboutMeElementHexagon();
+                animateProgressList();
+                aboutMeHexagonAnimated = true;
+            }
+        },
+        offset: -200
+    })
 
-    }
-    // if (!projectsTitleAnimated) {
-    //     //Se añade un margen de 400 para que inicie la animación antes de llegar a la sección
-    //     var condition = (PROJECTSSECTION.offsetTop - 400);
-    //     if ((condition - 200) <= yOffSet) {
-    //         var buttonCV = document.querySelector('#cv');
-    //         buttonCV.style = "animation-delay: 0.5s; animation-timing-function: ease-in-out;";
-    //         buttonCV.classList.add("slide-to-right");
-    //     }
+    waypointAboutMeDiamondList = new Waypoint({
+        element: DIAMONDLIST,
+        handler: function (direction) {
+            if (direction === "down" && !aboutMeDiamondListAnimated) {
+                animateDiamondList();
+                aboutMeDiamondListAnimated = true;
+            }
+        },
+        offset: "80%"
+    })
+    
+    waypointAboutMeCvButton = new Waypoint({
+        element: document.querySelector('#cv'),
+        handler: function (direction) {
+            if (direction === "down" && !aboutMeCvButtonAnimated) {
 
-    //     if (condition <= yOffSet) {
-    //         animateTitleOfASection("#projects", "left");
-    //         projectsTitleAnimated = true;
-    //     }
-    // }
-    if (!contactTitleAnimated) {
-        //Se añade un margen de 400 para que inicie la animación antes de llegar a la sección
-        // var condition = (CONTACTSSECTION.offsetTop - 300);
-        var condition = (CONTACTSSECTION.offsetTop - 400);
-        //El siguiente if es usado porque no está la sección project. Cuando se ponga se quitará
-        if ((condition - 200) <= yOffSet) {
-            var buttonCV = document.querySelector('#cv');
-            buttonCV.style = "animation-delay: 0.5s; animation-timing-function: ease-in-out;";
-            buttonCV.classList.add("slide-to-left");
-        }
-        if (condition <= yOffSet) {
-            animateTitleOfASection("#contact", "right");
+                var buttonCV = document.querySelector('#cv');
+                buttonCV.style = "animation-delay: 0.5s; animation-timing-function: ease-in-out;";
+                buttonCV.classList.add("slide-to-left");
+                aboutMeCvButtonAnimated = true;
+            }
+        },
+        offset: "80%"
+    })
 
-            var paragraphContact = document.querySelector("#text-goodbye");
-            paragraphContact.classList.add("slide-to-left");
+    waypointContactTitle = new Waypoint({
+        element: CONTACTSSECTION,
+        handler: function (direction) {
+            if (direction === "down" && !contactTitleAnimated) {
+                animateTitleOfASection("#contact", "right");
 
-            var emailWrapper = document.querySelector(".email-wrapper");
-            emailWrapper.classList.add("slide-to-bottom");
+                var paragraphContact = document.querySelector("#text-goodbye");
+                paragraphContact.classList.add("slide-to-left");
 
-            var squareAll = document.querySelectorAll(".square.link");
-            var delayTime = 1;
+                var emailWrapper = document.querySelector(".email-wrapper");
+                emailWrapper.classList.add("slide-to-bottom");
 
-            squareAll.forEach((element) => {
-                element.classList.add("flip-element");
-                element.style = "animation-delay: " + delayTime + "s";
-                delayTime += 0.5;
-            })
+                contactTitleAnimated = true;
+            }
+        },
+        offset: "60%"
+    })
 
+    waypointContactSocialNetworks = new Waypoint({
+        element: document.getElementById("link-wrapper"),
+        handler: function (direction) {
+            if (direction === "down" && !contactSocialNetworksAnimated) {
+                var squareAll = document.querySelectorAll(".square.link");
+                var delayTime = 0;
 
-            contactTitleAnimated = true;
-        }
-    }
+                squareAll.forEach((element) => {
+                    element.classList.add("flip-element");
+                    element.style = "animation-delay: " + delayTime + "s";
+                    delayTime += 0.5;
+                })
+                contactSocialNetworksAnimated = true;
+            }
+        },
+        offset: "bottom-in-view"
+    })
 }

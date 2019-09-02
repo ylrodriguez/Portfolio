@@ -361,7 +361,7 @@ nav i{
 
 .fill-width{
     animation-name: fillWidth;
-    animation-duration: 3s;
+    animation-duration: 3.5s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }
