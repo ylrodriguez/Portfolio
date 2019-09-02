@@ -249,8 +249,6 @@ window.onscroll = (e) => {
     }
 
     if (!aboutMeDiamondListAnimated) {
-        console.log("yOffset: "+yOffSet)
-        console.log("otro: "+(PROGRESSLIST.offsetTop + PROGRESSLIST.offsetHeight + 150))
         if ((PROGRESSLIST.offsetTop + PROGRESSLIST.offsetHeight + 100) <= yOffSet && PROGRESSLIST.offsetHeight != 0) {
             animateDiamondList();
             aboutMeDiamondListAnimated = true;

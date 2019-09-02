@@ -2,7 +2,7 @@
     "skills":[
         {
             "skillName": "HTML5",
-            "progress": 80
+            "progress": 85
         },
         {
             "skillName": "CSS3",
@@ -22,7 +22,7 @@
         },
         {
             "skillName": "PHP",
-            "progress": 45
+            "progress": 50
         },
         {
             "skillName": "Laravel",
@@ -34,7 +34,7 @@
         },
         {
             "skillName": "Alemán",
-            "progress": 45
+            "progress": 60
         }
     ]
 }

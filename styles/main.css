@@ -133,13 +133,15 @@ https://www.color-hex.com/color-palette/79118
     }
 }
 
+
+
 body{
     margin: 0; 
     padding: 0;
     text-align: center;
     color: #fff;
     font-family: 'Raleway', sans-serif;
-    font-size: 15px
+    font-size: 16px
 }
 
 section{
@@ -206,7 +208,7 @@ h1{
 }
 
 .home-container .text{
-    font-size: 18pt;
+    font-size: 1.5rem;
     margin-bottom: 25px;
 }
 
@@ -222,7 +224,7 @@ h1{
 }
 
 .button{
-    font-size: 14pt;
+    font-size: 1.25rem;
     padding: 12px 35px;
     cursor: pointer;
     transition: all 1s;
@@ -305,7 +307,7 @@ nav .wrap-link > div {
 
 nav i{
     margin-right: 5vw;
-    font-size: 35px;
+    font-size: 2.2rem;
     position: absolute;
     right: 0;
     cursor: pointer;
@@ -324,7 +326,7 @@ nav i{
 .title{
     position: relative;
     opacity: 0;
-    font-size: 25pt;
+    font-size: 2rem;
     color: #1a1c1d;
     text-transform: uppercase;
     font-weight: bold;
@@ -436,6 +438,8 @@ nav i{
     width: 100%;
     background-color:#dbdbdb; 
     margin-bottom: 20px;
+    
+    font-size: 0.9rem;
 }
 
 .progress-bar {
@@ -459,7 +463,6 @@ nav i{
 .progress-percentage{
     position: absolute; 
     right: 1%;
-    font-size: 14px;
 }
 
 
@@ -496,7 +499,7 @@ nav i{
 
 .diamond i{
     position: absolute;
-    font-size: 20pt;
+    font-size: 1.6rem;
     z-index: 1;
     color: #FFF;
     top: 50%;
@@ -616,7 +619,7 @@ nav i{
     display: inline;
     cursor: pointer;
     background-color: #56b5ee;
-    font-size: 20pt;
+    font-size: 1.6rem;
 }
 
 .divided::before{
@@ -636,7 +639,7 @@ nav i{
     display: inline;
     cursor: pointer;
     background-color: #29373f;
-    font-size: 20pt;
+    font-size: 1.6rem;
     overflow: hidden;
 }
 
@@ -650,7 +653,7 @@ nav i{
 }
 
 .copy{
-    font-size: 0.6;
+    font-size: 0.625rem;
 }
 
 #text-goodbye{
@@ -715,10 +718,6 @@ nav i{
 }
 
 @media(min-width: 600px){
-    body{
-        font-size: 16px;
-    }
-    
     .home-container{
         background-size: cover; 
         background-position: center; 
@@ -731,7 +730,7 @@ nav i{
     }
     
     .home-container .text{
-        font-size: 26pt;
+        font-size: 2.2rem;
     }
 
     .wrap-link{
@@ -764,7 +763,7 @@ nav i{
     }
 
     .diamond i{
-        font-size: 30pt;
+        font-size: 2.5rem;
     }
 
     .hexagon{
@@ -782,7 +781,7 @@ nav i{
         width:  170px;
     }
     .diamond i{
-        font-size: 35pt;
+        font-size: 3rem;
     }
 
     .hex-skills{
@@ -802,6 +801,9 @@ nav i{
     }
 }
 
+@media(min-width: 1600px){
+    
+}
 /*Pantallas extra pequeñas.*/
 @media(max-width: 310px){
     .email-button{
