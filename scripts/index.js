@@ -2,7 +2,7 @@ const HOMESECTION = document.querySelector('#home');
 const BUTTONSEEMORE = document.querySelector('#see-more');
 const NAVELEMENT = document.getElementsByTagName("nav")[0];
 const WRAPLINKELEMENT = document.getElementsByClassName("wrap-link")[0];
-const NAVANCHORS = document.querySelectorAll(".link a");
+const NAVLINKS = document.querySelectorAll("nav .link");
 
 const ABOUTMESECTION = document.querySelector('#about-me');
 const PROGRESSLIST = document.querySelector('.progress-list');
@@ -38,53 +38,41 @@ $('document').ready(function () {
             console.log("Error Loading.")
             loadWaypoints();
         })
+
+    addEventListeners();
 });
 
-document.getElementsByClassName("fa-bars")[0].addEventListener("click", () => {
-    document.getElementsByClassName("wrap-link")[0].classList.toggle("visible")
-});
+function addEventListeners() {
+    //Add listener to links located on the nav
+    for (let link of NAVLINKS) {
+        link.addEventListener("click", () => {
+            let attr = link.getAttribute("go");
+            let section = document.getElementById(attr);
 
-BUTTONSEEMORE.addEventListener("click", () => {
-    ABOUTMESECTION.scrollIntoView({
-        behavior: "smooth"
-    });
-    ABOUTMESECTION.focus();
-})
-
-document.querySelector('#up-button').addEventListener("click", () => {
-    HOMESECTION.scrollIntoView({
-        behavior: "smooth"
-    });
-    HOMESECTION.focus();
-})
-
-function addOrRemoveFixedNav(yOffSet, contentHeight) {
-    if (yOffSet >= contentHeight && !navElementHasFixedClass) {
-        NAVELEMENT.classList.add("fixed");
-        navElementHasFixedClass = true;
+            section.scrollIntoView({
+                behavior: "smooth"
+            });
+            section.focus();
+        })
     }
-    else if (yOffSet < (contentHeight - 60) && navElementHasFixedClass) {
-        NAVELEMENT.classList.remove("fixed");
-        navElementHasFixedClass = false;
-    }
-}
 
-function animateTitleOfASection(section, direction) {
-    var title = document.querySelector(section + " .title");
-    var titleBar = document.querySelector(section + " .title-bar");
+    document.getElementsByClassName("fa-bars")[0].addEventListener("click", () => {
+        document.getElementsByClassName("wrap-link")[0].classList.toggle("visible")
+    });
 
-    title.classList.add("slide-to-" + direction);
-    titleBar.style = "animation-delay: 0.5s"
-    titleBar.classList.add("slide-to-" + direction);
-}
+    BUTTONSEEMORE.addEventListener("click", () => {
+        ABOUTMESECTION.scrollIntoView({
+            behavior: "smooth"
+        });
+        ABOUTMESECTION.focus();
+    })
 
-function animateAboutMeElementHexagon() {
-    var elementHexagon = document.querySelector("#about-me .element.hex");
-    elementHexagon.classList.add("show");
-}
-
-function animateProgressList() {
-    PROGRESSLIST.classList.add("slide-to-left")
+    document.querySelector('#up-button').addEventListener("click", () => {
+        HOMESECTION.scrollIntoView({
+            behavior: "smooth"
+        });
+        HOMESECTION.focus();
+    })
 }
 
 function getSkills() {
@@ -128,9 +116,38 @@ function printSkills() {
     }
 }
 
-function animateDiamondList() {
+function addOrRemoveFixedNav(yOffSet, contentHeight) {
+    if (yOffSet >= contentHeight && !navElementHasFixedClass) {
+        NAVELEMENT.classList.add("fixed");
+        navElementHasFixedClass = true;
+    }
+    else if (yOffSet < (contentHeight - 60) && navElementHasFixedClass) {
+        NAVELEMENT.classList.remove("fixed");
+        navElementHasFixedClass = false;
+    }
+}
+
+function animateTitleOfASection(section, direction) {
+    var title = document.querySelector(section + " .title");
+    var titleBar = document.querySelector(section + " .title-bar");
+
+    title.classList.add("slide-to-" + direction);
+    titleBar.style = "animation-delay: 0.5s"
+    titleBar.classList.add("slide-to-" + direction);
+}
+
+function animateAboutMeElementHexagon() {
+    var elementHexagon = document.querySelector("#about-me .element.hex");
+    elementHexagon.classList.add("show");
+}
+
+function animateAboutMeProgressList() {
+    PROGRESSLIST.classList.add("slide-to-left")
+}
+
+function animateAboutMeDiamondList() {
     var animateElementDiamondList = document.querySelectorAll(".diamond-list .element");
-    var delayTime = 1;
+    var delayTime = 0.3;
 
     animateElementDiamondList.forEach((element) => {
         element.children[0].classList.add("flip-element");
@@ -145,61 +162,42 @@ function animateDiamondList() {
     })
 }
 
-// Esta función incluye proyectos.
-// function changeActiveLinkInNav(yOffSet) {
-//     if (yOffSet < ABOUTMESECTION.offsetTop - 300) {
-//         removeAllActive();
-//         NAVANCHORS[0].classList.add("active");
-//     }
-//     else {
-//         if (yOffSet < PROJECTSSECTION.offsetTop - 300) {
-//             removeAllActive();
-//             NAVANCHORS[1].classList.add("active");
-//         }
-//         else {
-//             if (yOffSet < CONTACTSSECTION.offsetTop - 350) {
-//                 removeAllActive();
-//                 NAVANCHORS[2].classList.add("active");
-//             }
-//             else {
-//                 removeAllActive();
-//                 NAVANCHORS[3].classList.add("active");
-//             }
-//         }
-//     }
-// }
+function animateContactBeggining() {
+    var paragraphContact = document.querySelector("#text-goodbye");
+    paragraphContact.classList.add("slide-to-left");
 
-//Esta función es temporal y no incluye proyectos
+    var emailWrapper = document.querySelector(".email-wrapper");
+    emailWrapper.classList.add("slide-to-bottom");
+}
+
 function changeActiveLinkInNav(yOffSet) {
-    if (yOffSet < ABOUTMESECTION.offsetTop - 300) {
+    // #Home
+    if (yOffSet > HOMESECTION.offsetTop) {
         removeAllActive();
-        NAVANCHORS[0].classList.add("active");
+        NAVLINKS[0].classList.add("active");
     }
-    else {
-        if (yOffSet < CONTACTSSECTION.offsetTop - 300) {
-            removeAllActive();
-            NAVANCHORS[1].classList.add("active");
-        }
-        else {
-            removeAllActive();
-            NAVANCHORS[2].classList.add("active");
-        }
+    // #About Me
+    if (yOffSet > ABOUTMESECTION.offsetTop) {
+        removeAllActive();
+        NAVLINKS[1].classList.add("active");
+    }
+    // #Contact
+    if (yOffSet > CONTACTSSECTION.offsetTop || (window.innerHeight + yOffSet - 100) === document.body.clientHeight) {
+        removeAllActive();
+        NAVLINKS[2].classList.add("active");
     }
 }
 
 function removeAllActive() {
-    NAVANCHORS.forEach((element) => {
+    NAVLINKS.forEach((element) => {
         element.classList.remove("active");
     })
 }
-
-
 
 document.querySelector('#cv').addEventListener("click", () => {
     var url = "https://1drv.ms/b/s!AlaKRn08I0M_gvgnoeXaLTesRnOzKQ?e=Dh5LhX";
     window.open(url, "_blank ");
 });
-
 
 document.querySelector('.email-button').addEventListener("mouseover", () => {
     var textoTooltip = document.querySelector('.email-wrapper .tooltiptext');
@@ -243,19 +241,22 @@ document.querySelector('#link-mail').addEventListener("click", () => {
     window.location.href = 'mailto:ylrodriguez024@gmail.com';
 });
 
-
-
 window.onscroll = (e) => {
     WRAPLINKELEMENT.classList.remove("visible");
     var yOffSet = window.pageYOffset;
 
     addOrRemoveFixedNav(yOffSet, HOMESECTION.offsetHeight);
-    changeActiveLinkInNav(yOffSet);
+    changeActiveLinkInNav((yOffSet + 100));
 
 }
 
 function loadWaypoints() {
-    waypointAboutMeTitle = new Waypoint({
+
+    /**
+     * Animations
+     */
+
+    let waypointAboutMeTitle = new Waypoint({
         element: BUTTONSEEMORE,
         handler: function (direction) {
             if (direction === "down" && !aboutMeTitleAnimated) {
@@ -265,30 +266,30 @@ function loadWaypoints() {
         }
     })
 
-    waypointAboutMeHexagon = new Waypoint({
+    let waypointAboutMeHexagon = new Waypoint({
         element: BUTTONSEEMORE,
         handler: function (direction) {
             if (direction === "down" && !aboutMeHexagonAnimated) {
                 animateAboutMeElementHexagon();
-                animateProgressList();
+                animateAboutMeProgressList();
                 aboutMeHexagonAnimated = true;
             }
         },
         offset: -200
     })
 
-    waypointAboutMeDiamondList = new Waypoint({
+    let waypointAboutMeDiamondList = new Waypoint({
         element: DIAMONDLIST,
         handler: function (direction) {
             if (direction === "down" && !aboutMeDiamondListAnimated) {
-                animateDiamondList();
+                animateAboutMeDiamondList();
                 aboutMeDiamondListAnimated = true;
             }
         },
         offset: "80%"
     })
-    
-    waypointAboutMeCvButton = new Waypoint({
+
+    let waypointAboutMeCvButton = new Waypoint({
         element: document.querySelector('#cv'),
         handler: function (direction) {
             if (direction === "down" && !aboutMeCvButtonAnimated) {
@@ -302,28 +303,30 @@ function loadWaypoints() {
         offset: "80%"
     })
 
-    waypointContactTitle = new Waypoint({
+    let waypointContactTitle = new Waypoint({
         element: CONTACTSSECTION,
         handler: function (direction) {
             if (direction === "down" && !contactTitleAnimated) {
                 animateTitleOfASection("#contact", "right");
-
-                var paragraphContact = document.querySelector("#text-goodbye");
-                paragraphContact.classList.add("slide-to-left");
-
-                var emailWrapper = document.querySelector(".email-wrapper");
-                emailWrapper.classList.add("slide-to-bottom");
-
+                animateContactBeggining();
                 contactTitleAnimated = true;
             }
         },
         offset: "60%"
     })
 
-    waypointContactSocialNetworks = new Waypoint({
+    let waypointContactSocialNetworks = new Waypoint({
         element: document.getElementById("link-wrapper"),
         handler: function (direction) {
             if (direction === "down" && !contactSocialNetworksAnimated) {
+
+                //En caso de que el viewport no tenga más scroll y no se haya animado anteriormente.
+                if (!contactTitleAnimated) {
+                    animateTitleOfASection("#contact", "right");
+                    animateContactBeggining();
+                    contactTitleAnimated = true;
+                }
+
                 var squareAll = document.querySelectorAll(".square.link");
                 var delayTime = 0;
 

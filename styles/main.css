@@ -229,6 +229,7 @@ h1{
     cursor: pointer;
     transition: all 1s;
     position: relative;
+    user-select:none;
 }
 
 #cv{
@@ -297,11 +298,12 @@ nav .wrap-link > div {
 
 }
 
-.link a {
+.wrap-link .link{
     transition: color 0.5s;
+    cursor: pointer;
 }
 
-.link a:active {
+.wrap-link .link:active {
     color: #56b5ee;
 }
 
@@ -361,11 +363,10 @@ nav i{
 
 .fill-width{
     animation-name: fillWidth;
-    animation-duration: 3.5s;
+    animation-duration: 4s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }
-
 
 .flip-element{
     animation: flipElement 2.5s ease both;
@@ -691,7 +692,7 @@ nav i{
         transform: scale(1.1);
     }
 
-    .link a:hover {
+    .wrap-link .link:hover {
         color: #56b5ee;
     }
 
