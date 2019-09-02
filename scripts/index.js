@@ -11,6 +11,8 @@ const PROGRESSLIST = document.querySelector('.progress-list');
 
 const CONTACTSSECTION = document.querySelector('#contact');
 
+const URL = "https://ylrodriguez.github.io/Portfolio/"
+
 
 var navElementHasFixedClass = false;
 var aboutMeTitleAnimated = false;
@@ -71,7 +73,7 @@ function animateProgressList() {
 }
 
 function getSkills() {
-    fetch("../data.json")
+    fetch(URL+"data/skills.json")
         .then(res => res.json())
         .then(data => {
             printSkills(data.skills)
