@@ -20,21 +20,23 @@
 <body>
     <section id="home">
         <div class="home-container flex">
-            <div class="text">
-                Hola, me llamo
-                <br>
-                <span class="highlight">Yojhan Rodríguez</span>.
-                <br>
-                Soy desarrollador web junior.
+            <div class="text" lg-key="short-description">
+                Hola, me llamo<br><span class="highlight">Yojhan Rodríguez</span>.<br>Soy desarrollador web junior.
             </div>
-            <div id="see-more" class="button transparent">
+            <div id="see-more" class="button transparent" lg-key="see-more">
                 Ver más
             </div>
+            
+            
             <nav class="flex">
+                <div class="lang-div">
+                    <span class="clickable active" id="span-es">ES</span>&nbsp&nbsp
+                    <span class="clickable" id="span-en">EN</span>
+                </div>
                 <div class="wrap-link">
-                    <div class="link" go="home">Home</div>
-                    <div class="link" go="about-me">Sobre mi</div>
-                    <div class="link" go="contact">Contacto</div>
+                    <div class="link" go="home" lg-key="home">Home</div>
+                    <div class="link" go="about-me" lg-key="about">Sobre mi</div>
+                    <div class="link" go="contact" lg-key="contact">Contacto</div>
                 </div>
                 <i class="fas fa-bars"></i>
             </nav>
@@ -43,7 +45,7 @@
     <section id="about-me">
         <div class="container flex">
             <div class="gapnav"></div>
-            <div class="title">Sobre mi</div>
+            <div class="title" lg-key="about">Sobre mi</div>
             <div class="title-bar"></div>
             <div class="flex hex-skills">
                 <div class="element hex">
@@ -54,7 +56,7 @@
                         </div>
                     </div>
                     <div class="text-element">
-                        <div>Soy una persona apasionada por la tecnología, el desarrollo web, la programación, los
+                        <div lg-key="description">Soy una persona apasionada por la tecnología, el desarrollo web, la programación, los
                             idiomas y los viajes, dispuesto a asumir nuevos retos y aprender cosas nuevas cada día.
                         </div>
                         <div>
@@ -70,8 +72,8 @@
                         <div class="diamond"><i class="fas fa-university"></i></div>
                     </div>
                     <div class="text-element">
-                        <h1>Educación</h1>
-                        <div>Ingeniero en Telemática, recién egresado, de la Universidad Distrital de Bogotá.
+                        <h1 lg-key="edu">Educación</h1>
+                        <div lg-key="edu-desc">Ingeniero en Telemática de la Universidad Distrital de Bogotá.
                             Adicionalmente, Tecnólogo en Sistematización de Datos de la misma institución.
                         </div>
                     </div>
@@ -82,8 +84,8 @@
                         <div class="diamond"><i class="fas fa-file-code"></i></div>
                     </div>
                     <div class="text-element">
-                        <h1>Herramientas</h1>
-                        <div>Mis habilidades abarcan tecnologías como HTML5, CSS, JavaScript, Bootstrap, Java, PHP
+                        <h1 lg-key="tools">Herramientas</h1>
+                        <div lg-key="tools-desc">Mis habilidades abarcan tecnologías como HTML5, CSS3, JavaScript, Bootstrap, Java, PHP
                             Laravel y
                             MySQL. Además, tengo gran interés en mejorar mis habilidades en Angular, React, entre
                             otros.
@@ -96,8 +98,8 @@
                         <div class="diamond"><i class="fas fa-book-open"></i></div>
                     </div>
                     <div class="text-element">
-                        <h1>Aprendizaje</h1>
-                        <div>Me considero una persona autodidacta y dedicada, que en poco tiempo puede mostrar el
+                        <h1 lg-key="learn">Aprendizaje</h1>
+                        <div lg-key="learn-desc">Me considero una persona autodidacta y dedicada, que en poco tiempo puede mostrar el
                             potencial necesario para manejar herramientas o tecnologías requeridas.
                         </div>
                     </div>
@@ -107,8 +109,8 @@
                         <div class="diamond"><i class="fas fa-language"></i></div>
                     </div>
                     <div class="text-element">
-                        <h1>Idiomas</h1>
-                        <div>Tengo un gran gusto hacia otras culturas, lo que me ha permitido, junto a experiencias
+                        <h1 lg-key="langu">Idiomas</h1>
+                        <div lg-key="langu-desc">Tengo un gran gusto hacia otras culturas, lo que me ha permitido, junto a experiencias
                             en
                             el exterior, tener un nivel fluido en inglés y moderado en alemán.
                         </div>
@@ -133,9 +135,9 @@
     <section id="contact">
         <div class="gapnav"></div>
         <div class="container flex">
-            <div class="title">Contacto</div>
+            <div class="title" lg-key="contact">Contacto</div>
             <div class="title-bar"></div>
-            <p id="text-goodbye">Si tienes alguna pregunta, no dudes en ponerte en contacto conmigo. <br>
+            <p id="text-goodbye" lg-key="text-goodbye">Si tienes alguna pregunta, no dudes en ponerte en contacto conmigo. <br>
                 A continuación, se encuentra mi correo electrónico y mis redes sociales:</p>
             <div class="flex row">
 
@@ -144,7 +146,7 @@
                     <div class="email-button transparent">
                         <i class="fas fa-copy"></i>
                     </div>
-                    <div class="tooltiptext">Copiar correo</div>
+                    <div class="tooltiptext" lg-key="tooltip-copy">Copiar correo</div>
                 </div>
             </div>
             <div class="flex row">
@@ -168,8 +170,10 @@
             </div>
         </div>
     </section>
-    <div class="overlay"></div>
+    <div class="overlay">
+    </div>
 
+    <script src="scripts/lang.js"></script>
     <script src="scripts/index.js"></script>
     <script src="https://kit.fontawesome.com/22442a13a7.js"></script>
 

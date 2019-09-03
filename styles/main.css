@@ -285,6 +285,16 @@ nav{
     z-index: 99;
 }
 
+.clickable{
+    cursor: pointer;
+}
+
+.lang-div{
+    margin-right: 5vw;
+    position: absolute;
+    right:0;
+}
+
 .gapnav{
     position: relative;
     height: 60px;
@@ -322,21 +332,29 @@ nav .wrap-link > div {
     cursor: pointer;
 }
 
-.wrap-link .link:active {
-    color: #56b5ee;
-}
 
 nav i{
-    margin-right: 5vw;
+    margin-left: 5vw;
     font-size: 2.2rem;
     position: absolute;
-    right: 0;
+    left: 0;
     cursor: pointer;
 }
 
 .active{
     color: #56b5ee; 
-    text-decoration: underline
+    text-decoration: underline;
+}
+
+span.active{
+    color: white; 
+    border-bottom: 1px solid white;
+    padding-bottom: 1px;
+    text-decoration: none;
+}
+
+span.clickable{
+    font-size: 0.9rem;
 }
 
 .visible{
@@ -599,7 +617,7 @@ nav i{
 }
 
 .email-wrapper .tooltiptext::after {
-    content: "";
+    content: initial;
     position: absolute;
     top: 100%;
     right: 15%;
@@ -685,6 +703,15 @@ nav i{
 
 /*Equipos que soportan hover.*/
 @media (hover: hover) {
+
+    .clickable:hover{
+        color: #56b5ee;
+    }
+
+    span.active:hover{
+        border-bottom: 1px solid #56b5ee;
+    }
+
     .transparent:hover{
         background-color: #56b5ee;
         border: 2px solid #1a3f56;

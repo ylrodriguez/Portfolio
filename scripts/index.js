@@ -26,6 +26,9 @@ var contactSocialNetworksAnimated = false;
 
 var isMobile;
 var skills = [];
+var currentLanguage = "es";
+var englishJson;
+var spanishJson;  
 
 
 $('document').ready(function () {
@@ -42,6 +45,14 @@ $('document').ready(function () {
             console.log("Error Loading.");
             loadWaypoints();
         })
+
+    $.getJSON('data/lang/en.json', (json) => {
+        englishJson = json;
+    });
+
+    $.getJSON('data/lang/es.json', (json) => {
+        spanishJson = json;
+    });
 
     addEventListeners();
 });
@@ -67,6 +78,21 @@ function addEventListeners() {
             section.focus();
         })
     }
+
+    //Listener Language Settings
+    document.getElementById("span-en").addEventListener( "click",() => {
+        currentLanguage = "en";
+        document.getElementById("span-en").classList.toggle("active");
+        document.getElementById("span-es").classList.toggle("active");
+        translateWebPage(englishJson);
+    })
+    document.getElementById("span-es").addEventListener( "click",() => {
+        currentLanguage = "es";
+        document.getElementById("span-en").classList.toggle("active");
+        document.getElementById("span-es").classList.toggle("active");
+        translateWebPage(spanishJson);
+    })
+
     //Listener to hamburguer element
     document.getElementsByClassName("fa-bars")[0].addEventListener("click", () => {
         document.getElementsByClassName("wrap-link")[0].classList.toggle("visible");
@@ -235,7 +261,7 @@ document.querySelector('#cv').addEventListener("click", () => {
 document.querySelector('.email-button').addEventListener("mouseover", () => {
     var textoTooltip = document.querySelector('.email-wrapper .tooltiptext');
     var emailWrapper = document.querySelector('.email-wrapper');
-    textoTooltip.innerHTML = "Copiar correo";
+    textoTooltip.innerHTML = currentLanguage === "es" ? spanishJson["tooltip-copy"] : englishJson["tooltip-copy"];
     textoTooltip.classList.remove("flip-element");
     emailWrapper.classList.remove("minimize-and-expand");
     emailWrapper.style = "opacity: 1";
@@ -254,7 +280,7 @@ document.querySelector('.email-button').addEventListener("click", () => {
     document.execCommand('copy');
     emailWrapper.removeChild(textArea);
 
-    textoTooltip.innerHTML = "Copiado";
+    textoTooltip.innerHTML = currentLanguage === "es" ? spanishJson["tooltip-copied"] : englishJson["tooltip-copied"];
     emailWrapper.classList.remove("slide-to-bottom");
     textoTooltip.classList.add("flip-element");
     emailWrapper.classList.add("minimize-and-expand");

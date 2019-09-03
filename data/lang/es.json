@@ -1,0 +1,19 @@
+{
+    "short-description" : "Hola, me llamo<br><span class='highlight'>Yojhan Rodríguez</span>.<br>Soy desarrollador web junior.",
+    "see-more": "Ver más",
+    "home": "Home",
+    "about": "Sobre mi",
+    "contact": "Contacto",
+    "description": "Soy una persona apasionada por la tecnología, el desarrollo web, la programación, los idiomas y los viajes, dispuesto a asumir nuevos retos y aprender cosas nuevas cada día.",
+    "edu": "Educación",
+    "edu-desc": "Ingeniero en Telemática de la Universidad Distrital de Bogotá. Adicionalmente, Tecnólogo en Sistematización de Datos de la misma institución.",
+    "tools": "Herramientas",
+    "tools-desc": "Mis habilidades abarcan tecnologías como HTML5, CSS3, JavaScript, Bootstrap, Java, PHP Laravel y MySQL. Además, tengo gran interés en mejorar mis habilidades en Angular, React, entre otros.",
+    "learn": "Aprendizaje",
+    "learn-desc": "Me considero una persona autodidacta y dedicada, que en poco tiempo puede mostrar el potencial necesario para manejar herramientas o tecnologías requeridas.",
+    "langu": "Idiomas ",
+    "langu-desc": "Tengo un gran gusto hacia otras culturas, lo que me ha permitido, junto a experiencias en el exterior, tener un nivel fluido en inglés y moderado en alemán.",
+    "text-goodbye": "Si tienes alguna pregunta, no dudes en ponerte en contacto conmigo.<br> A continuación, se encuentra mi correo electrónico y mis redes sociales:",
+    "tooltip-copy": "Copiar correo",
+    "tooltip-copied": "Copiado"
+}
