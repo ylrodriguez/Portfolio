@@ -30,11 +30,13 @@
         },
         {
             "skillName": "Inglés",
-            "progress": 90
+            "progress": 90,
+            "lg-key": "english"
         },
         {
             "skillName": "Alemán",
-            "progress": 60
+            "progress": 60,
+            "lg-key": "german"
         }
     ]
 }

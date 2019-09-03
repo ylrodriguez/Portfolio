@@ -12,7 +12,7 @@ const DIAMONDLIST = document.querySelector(".diamond-list");
 
 const CONTACTSSECTION = document.querySelector('#contact');
 
-const URL = "https://ylrodriguez.github.io/Portfolio/";
+const MYURL = "https://ylrodriguez.github.io/Portfolio/";
 
 
 var navElementHasFixedClass = false;
@@ -28,7 +28,7 @@ var isMobile;
 var skills = [];
 var currentLanguage = "es";
 var englishJson;
-var spanishJson;  
+var spanishJson;
 
 
 $('document').ready(function () {
@@ -37,21 +37,22 @@ $('document').ready(function () {
         isMobile = true;
     }
 
-    getSkills()
-        .then(() => {
-            loadWaypoints();
-        })
-        .catch(() => {
-            console.log("Error Loading.");
-            loadWaypoints();
-        })
-
+    //Get english object array
     $.getJSON('data/lang/en.json', (json) => {
         englishJson = json;
-    });
-
-    $.getJSON('data/lang/es.json', (json) => {
-        spanishJson = json;
+        //Get spanish object array
+        $.getJSON('data/lang/es.json', (json) => {
+            spanishJson = json;
+            //Simulate api call to get data.
+            getSkills()
+                .then(() => {
+                    loadWaypoints();
+                })
+                .catch(() => {
+                    console.log("Error Loading.");
+                    loadWaypoints();
+                })
+        });
     });
 
     addEventListeners();
@@ -69,7 +70,7 @@ function addEventListeners() {
         link.addEventListener("click", () => {
             let attr = link.getAttribute("go");
             let section = document.getElementById(attr);
-            
+
             WRAPLINKELEMENT.classList.remove("visible");
             document.querySelector(".overlay").classList.remove("open");
             section.scrollIntoView({
@@ -80,13 +81,13 @@ function addEventListeners() {
     }
 
     //Listener Language Settings
-    document.getElementById("span-en").addEventListener( "click",() => {
+    document.getElementById("span-en").addEventListener("click", () => {
         currentLanguage = "en";
         document.getElementById("span-en").classList.toggle("active");
         document.getElementById("span-es").classList.toggle("active");
         translateWebPage(englishJson);
     })
-    document.getElementById("span-es").addEventListener( "click",() => {
+    document.getElementById("span-es").addEventListener("click", () => {
         currentLanguage = "es";
         document.getElementById("span-en").classList.toggle("active");
         document.getElementById("span-es").classList.toggle("active");
@@ -116,7 +117,7 @@ function addEventListeners() {
     })
 
     //Listener overlay
-    document.querySelector(".overlay").addEventListener("click" , () => {
+    document.querySelector(".overlay").addEventListener("click", () => {
         document.querySelector(".overlay").classList.remove("open");
         WRAPLINKELEMENT.classList.remove("visible");
     })
@@ -128,15 +129,16 @@ function checkMediaQueryForSmallDevices(media) {
         isMobile = true;
         navElementHasFixedClass = true;
     }
-    else{
+    else {
         NAVELEMENT.classList.remove("fixed");
         isMobile = false;
         navElementHasFixedClass = false;
     }
-  }
+}
 
 function getSkills() {
-    return fetch(URL + "data/skills.json")
+    return fetch(MYURL + "data/skills.json")
+    // return fetch("data/skills.json")
         .then(res => res.json())
         .then(data => {
             skills = data.skills;
@@ -144,11 +146,12 @@ function getSkills() {
         })
         .catch(() => {
             console.log("Error retrieving skills.json");
+            console.log(MYURL + "data/skills.json");
         })
 }
 
 function printSkills() {
-    var timeDelay = 0.3;
+    var timeDelay = 0.5;
     for (let skillItem of skills) {
 
         let progressBg = document.createElement("div");
@@ -161,12 +164,24 @@ function printSkills() {
         progressPercentage.classList.add("progress-percentage");
         progressTag.classList.add("progress-tag", "flex");
 
-        progressTag.innerHTML = skillItem.skillName;
+        if ('lg-key' in skillItem) {
+            console.log('has');
+            console.log(skillItem["lg-key"]);
+            progressTag.setAttribute("lg-key", skillItem["lg-key"]);
+
+            progressTag.innerHTML = currentLanguage === "es"
+                ? spanishJson[skillItem["lg-key"]]
+                : englishJson[skillItem["lg-key"]];
+
+        } else {
+            progressTag.innerHTML = skillItem.skillName;
+        }
+
         progressPercentage.innerHTML = skillItem.progress + "%";
         progressBar.style = `
             width: ${skillItem.progress}%; 
             animation-delay: ${timeDelay}s;`
-        timeDelay += 0.3;
+        timeDelay += 0.5;
 
         progressBar.appendChild(progressTag);
         progressBar.appendChild(progressPercentage);
@@ -201,23 +216,24 @@ function animateAboutMeElementHexagon() {
 }
 
 function animateAboutMeProgressList() {
+    PROGRESSLIST.style = "animation-delay: 1s;"
     PROGRESSLIST.classList.add("slide-to-left");
 }
 
 function animateAboutMeDiamondList() {
     var animateElementDiamondList = document.querySelectorAll(".diamond-list .element");
-    var delayTime = 0.3;
+    var delayTime = 0.5;
 
     animateElementDiamondList.forEach((element) => {
         element.children[0].classList.add("flip-element");
         element.children[0].style = "animation-delay: " + delayTime + "s";
-        delayTime += 0.5;
+        delayTime += 0.2;
     })
 
     animateElementDiamondList.forEach((element) => {
         element.children[1].style = "animation-delay: " + delayTime + "s";
         element.children[1].classList.add("slide-to-bottom");
-        delayTime += 0.5;
+        delayTime += 0.2;
     })
 }
 
@@ -254,8 +270,8 @@ function removeAllActive() {
 }
 
 document.querySelector('#cv').addEventListener("click", () => {
-    var url = "https://1drv.ms/b/s!AlaKRn08I0M_gvgnoeXaLTesRnOzKQ?e=Dh5LhX";
-    window.open(url, "_blank ");
+    var tempurl = "https://1drv.ms/b/s!AlaKRn08I0M_gvgnoeXaLTesRnOzKQ?e=Dh5LhX";
+    window.open(tempurl, "_blank ");
 });
 
 document.querySelector('.email-button').addEventListener("mouseover", () => {
@@ -287,13 +303,13 @@ document.querySelector('.email-button').addEventListener("click", () => {
 });
 
 document.querySelector('#link-git').addEventListener("click", () => {
-    var url = "https://github.com/ylrtests";
-    window.open(url, "_blank ");
+    var tempurl = "https://github.com/ylrtests";
+    window.open(tempurl, "_blank ");
 });
 
 document.querySelector('#link-linkedin').addEventListener("click", () => {
-    var url = "https://www.linkedin.com/in/yojhan-leonardo-rodriguez-877680186/";
-    window.open(url, "_blank ");
+    var tempurl = "https://www.linkedin.com/in/yojhan-leonardo-rodriguez-877680186/";
+    window.open(tempurl, "_blank ");
 });
 
 document.querySelector('#link-mail').addEventListener("click", () => {
@@ -303,7 +319,7 @@ document.querySelector('#link-mail').addEventListener("click", () => {
 window.onscroll = (e) => {
     var yOffSet = window.pageYOffset;
 
-    if(!isMobile){
+    if (!isMobile) {
         addOrRemoveFixedNav(yOffSet, HOMESECTION.offsetHeight);
     }
 
