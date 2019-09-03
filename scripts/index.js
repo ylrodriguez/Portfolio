@@ -83,14 +83,14 @@ function addEventListeners() {
     //Listener Language Settings
     document.getElementById("span-en").addEventListener("click", () => {
         currentLanguage = "en";
-        document.getElementById("span-en").classList.toggle("active");
-        document.getElementById("span-es").classList.toggle("active");
+        document.getElementById("span-en").classList.add("active");
+        document.getElementById("span-es").classList.remove("active");
         translateWebPage(englishJson);
     })
     document.getElementById("span-es").addEventListener("click", () => {
         currentLanguage = "es";
-        document.getElementById("span-en").classList.toggle("active");
-        document.getElementById("span-es").classList.toggle("active");
+        document.getElementById("span-es").classList.add("active");
+        document.getElementById("span-en").classList.remove("active");
         translateWebPage(spanishJson);
     })
 
