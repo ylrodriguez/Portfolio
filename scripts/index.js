@@ -24,7 +24,7 @@ var aboutMeCvButtonAnimated = false;
 var contactTitleAnimated = false;
 var contactSocialNetworksAnimated = false;
 
-var isMobile;
+var isMobile = false;
 var skills = [];
 var currentLanguage = "es";
 var englishJson;
@@ -165,8 +165,6 @@ function printSkills() {
         progressTag.classList.add("progress-tag", "flex");
 
         if ('lg-key' in skillItem) {
-            console.log('has');
-            console.log(skillItem["lg-key"]);
             progressTag.setAttribute("lg-key", skillItem["lg-key"]);
 
             progressTag.innerHTML = currentLanguage === "es"
@@ -191,11 +189,11 @@ function printSkills() {
 }
 
 function addOrRemoveFixedNav(yOffSet, contentHeight) {
-    if (yOffSet >= contentHeight && !navElementHasFixedClass) {
+    if ( yOffSet >= contentHeight && !navElementHasFixedClass) {
         NAVELEMENT.classList.add("fixed");
         navElementHasFixedClass = true;
     }
-    else if (yOffSet < (contentHeight - 60) && navElementHasFixedClass) {
+    else if (yOffSet< (contentHeight - 60) && navElementHasFixedClass) {
         NAVELEMENT.classList.remove("fixed");
         navElementHasFixedClass = false;
     }
@@ -320,7 +318,7 @@ window.onscroll = (e) => {
     var yOffSet = window.pageYOffset;
 
     if (!isMobile) {
-        addOrRemoveFixedNav(yOffSet, HOMESECTION.offsetHeight);
+        addOrRemoveFixedNav(Math.ceil(yOffSet), HOMESECTION.offsetHeight);
     }
 
     changeActiveLinkInNav((yOffSet + 100));
