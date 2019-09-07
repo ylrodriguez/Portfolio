@@ -1,3 +1,4 @@
+
 const HOMESECTION = document.querySelector('#home');
 const BUTTONSEEMORE = document.querySelector('#see-more');
 const NAVELEMENT = document.getElementsByTagName("nav")[0];
@@ -138,7 +139,7 @@ function checkMediaQueryForSmallDevices(media) {
 
 function getSkills() {
     return fetch(MYURL + "data/skills.json")
-    // return fetch("data/skills.json")
+        // return fetch("data/skills.json")
         .then(res => res.json())
         .then(data => {
             skills = data.skills;
@@ -151,7 +152,6 @@ function getSkills() {
 }
 
 function printSkills() {
-    var timeDelay = 0.5;
     for (let skillItem of skills) {
 
         let progressBg = document.createElement("div");
@@ -160,7 +160,7 @@ function printSkills() {
         let progressPercentage = document.createElement("div");
 
         progressBg.classList.add("progress-bg");
-        progressBar.classList.add("progress-bar", "flex", "fill-width");
+        progressBar.classList.add("progress-bar", "flex");
         progressPercentage.classList.add("progress-percentage");
         progressTag.classList.add("progress-tag", "flex");
 
@@ -175,12 +175,6 @@ function printSkills() {
             progressTag.innerHTML = skillItem.skillName;
         }
 
-        progressPercentage.innerHTML = skillItem.progress + "%";
-        progressBar.style = `
-            width: ${skillItem.progress}%; 
-            animation-delay: ${timeDelay}s;`
-        timeDelay += 0.5;
-
         progressBar.appendChild(progressTag);
         progressBar.appendChild(progressPercentage);
         progressBg.appendChild(progressBar);
@@ -189,11 +183,11 @@ function printSkills() {
 }
 
 function addOrRemoveFixedNav(yOffSet, contentHeight) {
-    if ( yOffSet >= contentHeight && !navElementHasFixedClass) {
+    if (yOffSet >= contentHeight && !navElementHasFixedClass) {
         NAVELEMENT.classList.add("fixed");
         navElementHasFixedClass = true;
     }
-    else if (yOffSet< (contentHeight - 60) && navElementHasFixedClass) {
+    else if (yOffSet < (contentHeight - 60) && navElementHasFixedClass) {
         NAVELEMENT.classList.remove("fixed");
         navElementHasFixedClass = false;
     }
@@ -216,6 +210,35 @@ function animateAboutMeElementHexagon() {
 function animateAboutMeProgressList() {
     PROGRESSLIST.style = "animation-delay: 1s;"
     PROGRESSLIST.classList.add("slide-to-left");
+
+    let progressBars = document.querySelectorAll('.progress-bar');
+    let progressPercentages = document.querySelectorAll('.progress-percentage');
+    var timeDelay = 0.7;
+    var i = 0;
+
+    for (let item of progressBars) {
+        item.classList.add("fill-width");
+        item.style = `
+            width: ${skills[i].progress}%; 
+            animation-delay: ${timeDelay}s;`
+        timeDelay += 0.7;
+        i++;
+    }
+
+    i = 0;
+    timeDelay = 600; // animateValueProgress requires values in ms
+
+    for (let item of progressPercentages) {
+        let start = 0;
+        let end = skills[i].progress;
+        let duration = 4500; // animateValueProgress requires values in ms
+
+        animateValueProgress(item, start, end, duration, timeDelay)
+        timeDelay += 700;
+        i++;
+    }
+
+
 }
 
 function animateAboutMeDiamondList() {
@@ -225,6 +248,7 @@ function animateAboutMeDiamondList() {
     animateElementDiamondList.forEach((element) => {
         element.children[0].classList.add("flip-element");
         element.children[0].style = "animation-delay: " + delayTime + "s";
+        element.children[0].style = "animation-duration: 5s";
         delayTime += 0.2;
     })
 
@@ -415,4 +439,21 @@ function loadWaypoints() {
         },
         offset: "bottom-in-view"
     });
+}
+
+function animateValueProgress(item, start, end, duration, delay) {
+    var range = end - start;
+    var current = start;
+    var increment = end > start ? 1 : -1;
+    var stepTime = Math.abs(Math.floor(duration / range));
+    
+    setTimeout( ()=> { 
+        var timer = setInterval( () => {
+            current += increment;
+            item.innerHTML = current+'%';
+            if (current == end) {
+                clearInterval(timer);
+            }
+        }, stepTime);
+    }, delay);
 }

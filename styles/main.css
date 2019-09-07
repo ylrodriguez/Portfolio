@@ -144,6 +144,10 @@ body{
     font-size: 16px
 }
 
+h1{
+    color: #2d2d2d;
+}
+
 .overlay{
   position: fixed;
   background: #78838a;
@@ -366,7 +370,7 @@ span.clickable{
     position: relative;
     opacity: 0;
     font-size: 2.3rem;
-    color: #1a1c1d;
+    color: #2d2d2d;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -376,7 +380,7 @@ span.clickable{
     opacity: 0;
     width: 80px;
     height: 3px;
-    background: #1a1c1d;
+    background: #2d2d2d; 
     margin-bottom: 15px;
 }
 
@@ -400,8 +404,8 @@ span.clickable{
 
 .fill-width{
     animation-name: fillWidth;
-    animation-duration: 4s;
-    animation-timing-function: ease-out;
+    animation-duration: 4.5s;
+    animation-timing-function: linear;
     animation-fill-mode: forwards;
 }
 
@@ -423,8 +427,7 @@ span.clickable{
 }
 
 .element{
-    
-    color: #000;
+    color: #333;
     padding: 0 5px;
     margin: 10px 0;
     display: flex;
@@ -432,6 +435,7 @@ span.clickable{
     justify-content: center;
     flex-direction: column;
     max-width: 123px;
+    min-width: min-content;
     position: relative;
 }
 
@@ -476,7 +480,9 @@ span.clickable{
     width: 100%;
     background-color:#dbdbdb; 
     margin-bottom: 20px;
-    
+    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.25);
+    -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.25);
+    box-shadow: 1px 2px 3px rgba(0,0,0,.25);
     font-size: 0.9rem;
 }
 
@@ -528,7 +534,6 @@ span.clickable{
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
     background: #56b5ee;
-    
     -webkit-border-radius: 5%;
     -moz-border-radius: 5%;
     border-radius: 5%;
@@ -569,7 +574,6 @@ span.clickable{
     -webkit-border-radius: 35%;
     -moz-border-radius: 35%;
     border-radius: 35%;
-    
 }
 
 .hexagon-inner-in{
