@@ -8,12 +8,14 @@ const NAVLINKS = document.querySelectorAll("nav .link");
 const ABOUTMESECTION = document.querySelector('#about-me');
 const PROJECTSSECTION = document.querySelector('#projects');
 const PROGRESSLIST = document.querySelector('.progress-list');
+const PROJECTSLIST = document.querySelector('.projects-list');
 const DIAMONDLIST = document.querySelector(".diamond-list");
 
 const CONTACTSSECTION = document.querySelector('#contact');
 
-// const MYURL = "https://ylrodriguez.github.io/Portfolio/";
-const MYURL = "http://127.0.0.1:5500/";
+const MYURL = "https://ylrodriguez.github.io/Portfolio/";
+// const MYURL = "http://127.0.0.1:8080/Portfolio/";
+// const MYURL = "http://192.168.0.9:8080/Portfolio/";
 
 
 var navElementHasFixedClass = false;
@@ -25,7 +27,6 @@ var aboutMeCvButtonAnimated = false;
 var contactTitleAnimated = false;
 var contactSocialNetworksAnimated = false;
 
-var isMobile = false;
 var skills = [];
 var projects = [];
 var currentLanguage = "es";
@@ -34,11 +35,7 @@ var spanishJson;
 
 
 $('document').ready(function () {
-    //Check if user's using phone.
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        isMobile = true;
-    }
-
+    
     //Get english object array
     $.getJSON('data/lang/en.json', (json) => {
         englishJson = json;
@@ -64,7 +61,6 @@ $('document').ready(function () {
 
     addEventListeners();
 });
-
 
 function addEventListeners() {
     // Listener Media Query
@@ -128,18 +124,66 @@ function addEventListeners() {
         document.querySelector(".overlay").classList.remove("open");
         WRAPLINKELEMENT.classList.remove("visible");
     })
+
+    
+    document.querySelector('.email-button').addEventListener("mouseover", () => {
+        var textoTooltip = document.querySelector('.email-wrapper .tooltiptext');
+        var emailWrapper = document.querySelector('.email-wrapper');
+        textoTooltip.innerHTML = currentLanguage === "es" ? spanishJson["tooltip-copy"] : englishJson["tooltip-copy"];
+        textoTooltip.classList.remove("flip-element");
+        emailWrapper.classList.remove("minimize-and-expand");
+        emailWrapper.style = "opacity: 1";
+    });
+    
+    document.querySelector('.email-button').addEventListener("click", () => {
+        var textArea = document.createElement("textarea");
+        var textoTooltip = document.querySelector('.email-wrapper .tooltiptext');
+        var emailWrapper = document.querySelector('.email-wrapper');
+        
+        textArea.value = "ylrodriguez024@gmail.com";
+        textArea.style = "font-size: 1px; display: block; width: 10px; height: 5px;";
+        emailWrapper.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        document.execCommand('copy');
+        emailWrapper.removeChild(textArea);
+        
+        textoTooltip.innerHTML = currentLanguage === "es" ? spanishJson["tooltip-copied"] : englishJson["tooltip-copied"];
+        emailWrapper.classList.remove("slide-to-bottom");
+        textoTooltip.classList.add("flip-element");
+        emailWrapper.classList.add("minimize-and-expand");
+    });
+    
+    document.querySelector('#cv').addEventListener("click", () => {
+        var tempurl = "https://1drv.ms/b/s!AlaKRn08I0M_gvgnoeXaLTesRnOzKQ?e=Dh5LhX";
+        window.open(tempurl, "_blank ");
+    });
+
+    document.querySelector('#link-git').addEventListener("click", () => {
+        var tempurl = "https://github.com/ylrodriguez";
+        window.open(tempurl, "_blank ");
+    });
+    
+    document.querySelector('#link-linkedin').addEventListener("click", () => {
+        var tempurl = "https://www.linkedin.com/in/yojhan-leonardo-rodriguez-877680186/";
+        window.open(tempurl, "_blank ");
+    });
+    
+    document.querySelector('#link-mail').addEventListener("click", () => {
+        window.location.href = 'mailto:ylrodriguez024@gmail.com';
+    });
 }
 
 function checkMediaQueryForSmallDevices(media) {
+    
     if (media.matches) { // If media query matches
         NAVELEMENT.classList.add("fixed");
-        isMobile = true;
         navElementHasFixedClass = true;
     }
     else {
         NAVELEMENT.classList.remove("fixed");
-        isMobile = false;
         navElementHasFixedClass = false;
+        removeAllActive("projects");
     }
 }
 
@@ -163,7 +207,6 @@ function getProjects() {
         .then(res => res.json())
         .then(data => {
             projects = data.projects;
-            console.log(projects);
             printProjects();
         })
         .catch(() => {
@@ -205,7 +248,64 @@ function printSkills() {
 
 function printProjects() {
     for (let project of projects) {
+        //Create elements
+        let projectItem = document.createElement("div");
+        let projectImg = document.createElement("div");
+        let projectText = document.createElement("div");
+        let textBold = document.createElement("div");
+        let textHighlight = document.createElement("span");
+        let button = document.createElement("div");
+        // Add classes
+        projectItem.classList.add("project-item");
+        projectImg.classList.add("project-img");
+        projectText.classList.add("text");
+        textBold.classList.add("bold");
+        textHighlight.classList.add("highlight");
+        button.classList.add("button","transparent");
+        // Add additional style and set lg-key
+        projectImg.style.backgroundImage = `url('${MYURL}${project.imgUrl}')`;
+        projectImg.style.backgroundSize = 'cover';
+        projectImg.style.backgroundPosition = 'center';
 
+        button.setAttribute("lg-key", "livedemo");
+        //Configure inner html and listeners
+        button.innerHTML = currentLanguage === "es"
+                ? spanishJson["livedemo"]
+                : englishJson["livedemo"];
+        textBold.innerHTML = project.name;
+        textHighlight.innerHTML = project.tools;
+        button.addEventListener("click", () => {
+            window.open(project.link, "_blank ");
+        })
+
+        projectItem.addEventListener("click", () => {
+            if(isMobile()){
+                if(projectItem.classList.contains("active")){
+                    removeAllActive("projects");
+                }
+                else{
+                    removeAllActive("projects");
+                    projectItem.classList.add("active");
+                }
+            }
+            else{
+                removeAllActive("projects");
+            }
+        })
+        
+        //Append elements correctly
+        projectText.appendChild(textBold);
+        projectText.appendChild(textHighlight);
+        projectItem.appendChild(projectImg);
+        projectItem.appendChild(projectText);
+        projectItem.appendChild(button);
+        PROJECTSLIST.appendChild(projectItem);
+    }
+    //Add i-elements to fill space if needed in flex container
+    for (let i = 0; i<5; i++){
+        let ielement = document.createElement("i");
+        ielement.setAttribute("aria-hidden", "true");
+        PROJECTSLIST.appendChild(ielement);
     }
 }
 
@@ -297,83 +397,46 @@ function animateContactBeggining() {
 function changeActiveLinkInNav(yOffSet) {
     // #Home
     if (yOffSet > HOMESECTION.offsetTop) {
-        removeAllActive();
+        removeAllActive("navs");
         NAVLINKS[0].classList.add("active");
     }
     // #About Me
     if (yOffSet > ABOUTMESECTION.offsetTop) {
-        removeAllActive();
+       removeAllActive("navs");
         NAVLINKS[1].classList.add("active");
     }
     // #Projects
     if (yOffSet > PROJECTSSECTION.offsetTop) {
-        removeAllActive();
+       removeAllActive("navs");
         NAVLINKS[2].classList.add("active");
     }
     // #Contact
     if (yOffSet > CONTACTSSECTION.offsetTop || (window.innerHeight + yOffSet - 100) === document.body.clientHeight) {
-        removeAllActive();
+       removeAllActive("navs");
         NAVLINKS[3].classList.add("active");
     }
 }
 
-function removeAllActive() {
-    NAVLINKS.forEach((element) => {
-        element.classList.remove("active");
-    })
+function removeAllActive(type) {
+
+    if(type == "navs"){
+        NAVLINKS.forEach((element) => {
+            element.classList.remove("active");
+        }) 
+    }
+
+    if(type == "projects"){
+        let projects =  document.querySelectorAll('.projects-list .project-item');
+        for(let item of projects){
+            item.classList.remove("active");
+        }
+    }
 }
-
-document.querySelector('#cv').addEventListener("click", () => {
-    var tempurl = "https://1drv.ms/b/s!AlaKRn08I0M_gvgnoeXaLTesRnOzKQ?e=Dh5LhX";
-    window.open(tempurl, "_blank ");
-});
-
-document.querySelector('.email-button').addEventListener("mouseover", () => {
-    var textoTooltip = document.querySelector('.email-wrapper .tooltiptext');
-    var emailWrapper = document.querySelector('.email-wrapper');
-    textoTooltip.innerHTML = currentLanguage === "es" ? spanishJson["tooltip-copy"] : englishJson["tooltip-copy"];
-    textoTooltip.classList.remove("flip-element");
-    emailWrapper.classList.remove("minimize-and-expand");
-    emailWrapper.style = "opacity: 1";
-});
-
-document.querySelector('.email-button').addEventListener("click", () => {
-    var textArea = document.createElement("textarea");
-    var textoTooltip = document.querySelector('.email-wrapper .tooltiptext');
-    var emailWrapper = document.querySelector('.email-wrapper');
-
-    textArea.value = "ylrodriguez024@gmail.com";
-    textArea.style = "font-size: 1px; display: block; width: 10px; height: 5px;";
-    emailWrapper.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    document.execCommand('copy');
-    emailWrapper.removeChild(textArea);
-
-    textoTooltip.innerHTML = currentLanguage === "es" ? spanishJson["tooltip-copied"] : englishJson["tooltip-copied"];
-    emailWrapper.classList.remove("slide-to-bottom");
-    textoTooltip.classList.add("flip-element");
-    emailWrapper.classList.add("minimize-and-expand");
-});
-
-document.querySelector('#link-git').addEventListener("click", () => {
-    var tempurl = "https://github.com/ylrodriguez";
-    window.open(tempurl, "_blank ");
-});
-
-document.querySelector('#link-linkedin').addEventListener("click", () => {
-    var tempurl = "https://www.linkedin.com/in/yojhan-leonardo-rodriguez-877680186/";
-    window.open(tempurl, "_blank ");
-});
-
-document.querySelector('#link-mail').addEventListener("click", () => {
-    window.location.href = 'mailto:ylrodriguez024@gmail.com';
-});
 
 window.onscroll = (e) => {
     var yOffSet = window.pageYOffset;
 
-    if (!isMobile) {
+    if (!isMobile()) {
         addOrRemoveFixedNav(Math.ceil(yOffSet), HOMESECTION.offsetHeight);
     }
 
@@ -387,7 +450,7 @@ function loadWaypoints() {
      * Animations
      */
 
-    let waypointAboutMeTitle = new Waypoint({
+    new Waypoint({
         element: BUTTONSEEMORE,
         handler: function (direction) {
             if (direction === "down" && !aboutMeTitleAnimated) {
@@ -397,7 +460,7 @@ function loadWaypoints() {
         }
     });
 
-    let waypointAboutMeHexagon = new Waypoint({
+    new Waypoint({
         element: BUTTONSEEMORE,
         handler: function (direction) {
             if (direction === "down" && !aboutMeHexagonAnimated) {
@@ -409,7 +472,7 @@ function loadWaypoints() {
         offset: -200
     });
 
-    let waypointAboutMeDiamondList = new Waypoint({
+    new Waypoint({
         element: DIAMONDLIST,
         handler: function (direction) {
             if (direction === "down" && !aboutMeDiamondListAnimated) {
@@ -420,7 +483,7 @@ function loadWaypoints() {
         offset: "80%"
     });
 
-    let waypointAboutMeCvButton = new Waypoint({
+    new Waypoint({
         element: document.querySelector('#cv'),
         handler: function (direction) {
             if (direction === "down" && !aboutMeCvButtonAnimated) {
@@ -434,7 +497,7 @@ function loadWaypoints() {
         offset: "80%"
     });
 
-    let waypointProjectsTitle = new Waypoint({
+    new Waypoint({
         element: BUTTONSEEMORE,
         handler: function (direction) {
             if (direction === "down" && !projectsTitleAnimated) {
@@ -444,7 +507,7 @@ function loadWaypoints() {
         }
     });
 
-    let waypointContactTitle = new Waypoint({
+    new Waypoint({
         element: CONTACTSSECTION,
         handler: function (direction) {
             if (direction === "down" && !contactTitleAnimated) {
@@ -456,7 +519,7 @@ function loadWaypoints() {
         offset: "60%"
     });
 
-    let waypointContactSocialNetworks = new Waypoint({
+    new Waypoint({
         element: document.getElementById("link-wrapper"),
         handler: function (direction) {
             if (direction === "down" && !contactSocialNetworksAnimated) {
@@ -498,4 +561,19 @@ function animateValueProgress(item, start, end, duration, delay) {
             }
         }, stepTime);
     }, delay);
+}
+
+function isMobile(){
+//Check if user's using phone.
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    return true;
+    }
+    else{
+        let media = window.matchMedia("(max-width: 599px)");
+        //If media query is similar to phone
+        if (media.matches) {
+            return true;
+        }
+        return false;
+    }
 }
