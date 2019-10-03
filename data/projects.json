@@ -1,16 +1,16 @@
 {
     "projects":[
         {
-            "imgUrl" : "img/projects/thumb-1.png",
+            "imgUrl" : "img/projects/thumb-1.gif",
             "name": "DeepCart",
             "tools": "Angular + Laravel",
             "link": "http://deepcart.s3-website-us-east-1.amazonaws.com/"
         },
         {
-            "imgUrl" : "img/projects/thumb-1.png",
-            "name": "DeepCart",
-            "tools": "Angular + Laravel",
-            "link": "http://deepcart.s3-website-us-east-1.amazonaws.com/"
+            "imgUrl" : "img/projects/thumb-2.gif",
+            "name": "Web Smartphones Tutorial",
+            "tools": "Laravel + Blade + Bootstrap",
+            "link": "https://github.com/ylrodriguez/Tutorial-Web-Accesible"
         }
     ]
 }

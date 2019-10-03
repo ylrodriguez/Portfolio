@@ -14,7 +14,7 @@ const DIAMONDLIST = document.querySelector(".diamond-list");
 const CONTACTSSECTION = document.querySelector('#contact');
 
 const MYURL = "https://ylrodriguez.github.io/Portfolio/";
-// const MYURL = "http://127.0.0.1:8080/Portfolio/";
+// const MYURL = "http://127.0.0.1:5500/";
 // const MYURL = "http://192.168.0.9:8080/Portfolio/";
 
 
@@ -268,15 +268,15 @@ function printProjects() {
         projectImg.style.backgroundSize = 'cover';
         projectImg.style.backgroundPosition = 'center';
 
-        button.setAttribute("lg-key", "livedemo");
+        button.setAttribute("lg-key", "see-more");
         //Configure inner html and listeners
         button.innerHTML = currentLanguage === "es"
-                ? spanishJson["livedemo"]
-                : englishJson["livedemo"];
+                ? spanishJson["see-more"]
+                : englishJson["see-more"];
         textBold.innerHTML = project.name;
         textHighlight.innerHTML = project.tools;
         button.addEventListener("click", () => {
-            window.open(project.link, "_blank ");
+            window.open(project.link);
         })
 
         projectItem.addEventListener("click", () => {
