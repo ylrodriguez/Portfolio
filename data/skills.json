@@ -6,15 +6,19 @@
         },
         {
             "skillName": "CSS3",
-            "progress": 70
+            "progress": 75
         },
         {
             "skillName": "JavaScript",
-            "progress": 65
+            "progress": 70
         },
         {
             "skillName": "Bootstrap 4",
             "progress": 60
+        },
+        {
+            "skillName": "Angular",
+            "progress": 65
         },
         {
             "skillName": "Java",

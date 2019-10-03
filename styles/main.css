@@ -55,6 +55,17 @@ https://www.color-hex.com/color-palette/79118
     }
 }
 
+@keyframes slideToTop{
+    0%{
+        opacity: 0;
+        top: 150px;
+    }
+    100%{
+        opacity: 1;
+        top: 0;
+    }
+}
+
 @keyframes minimizeAndExpand{
     0%{
         transform: scale(1);
@@ -405,6 +416,13 @@ span.clickable{
     animation-fill-mode: forwards;
 }
 
+.slide-to-top{
+    animation-name: slideToTop;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+
 .fill-width{
     animation-name: fillWidth;
     animation-duration: 4.5s;
@@ -597,7 +615,6 @@ span.clickable{
     position: relative;
     justify-content: center;
     align-items: center;
-    
 }
 
 .projects-list .project-item{
@@ -607,8 +624,9 @@ span.clickable{
     max-width: 100%;
     background-color: #f5f5f5;
     overflow: hidden;
-    position: relative;
     border-radius: 3px;
+    position: relative;
+    opacity: 0;
 }
 
 .projects-list i{

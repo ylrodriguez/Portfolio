@@ -23,6 +23,7 @@ var aboutMeTitleAnimated = false;
 var aboutMeHexagonAnimated = false;
 var aboutMeDiamondListAnimated = false;
 var projectsTitleAnimated = false;
+var projectsListAnimated = false;
 var aboutMeCvButtonAnimated = false;
 var contactTitleAnimated = false;
 var contactSocialNetworksAnimated = false;
@@ -320,6 +321,9 @@ function addOrRemoveFixedNav(yOffSet, contentHeight) {
     }
 }
 
+/**
+ * --- Animations
+ */
 function animateTitleOfASection(section, direction) {
     var title = document.querySelector(section + " .title");
     var titleBar = document.querySelector(section + " .title-bar");
@@ -394,6 +398,22 @@ function animateContactBeggining() {
     emailWrapper.classList.add("slide-to-bottom");
 }
 
+function animateProjectsList(){
+
+    var animateElementProjectList = document.querySelectorAll('.projects-list .project-item');
+    var delayTime = 0.5;
+
+    animateElementProjectList.forEach((element) => {
+        element.classList.add("slide-to-top");
+        element.style = "animation-delay: " + delayTime + "s";
+        delayTime += 0.3;
+    })
+}
+
+/**
+ * --- End Animations
+ */
+
 function changeActiveLinkInNav(yOffSet) {
     // #Home
     if (yOffSet > HOMESECTION.offsetTop) {
@@ -450,6 +470,7 @@ function loadWaypoints() {
      * Animations
      */
 
+    // ---> About Me Section
     new Waypoint({
         element: BUTTONSEEMORE,
         handler: function (direction) {
@@ -459,7 +480,7 @@ function loadWaypoints() {
             }
         }
     });
-
+    
     new Waypoint({
         element: BUTTONSEEMORE,
         handler: function (direction) {
@@ -496,17 +517,30 @@ function loadWaypoints() {
         },
         offset: "80%"
     });
-
+    // ---> Projects Section
     new Waypoint({
-        element: BUTTONSEEMORE,
+        element: document.querySelector('#projects'),
         handler: function (direction) {
             if (direction === "down" && !projectsTitleAnimated) {
                 animateTitleOfASection("#projects", "left");
                 projectsTitleAnimated = true;
             }
-        }
+        },
+        offset: "80%"
     });
 
+    new Waypoint({
+        element: PROJECTSLIST, 
+        handler: function (direction) {
+            if (direction === "down" && !projectsListAnimated) {
+                animateProjectsList();
+                projectsListAnimated = true;
+            }
+        },
+        offset: "80%"
+    });
+
+    //---> Contact Section
     new Waypoint({
         element: CONTACTSSECTION,
         handler: function (direction) {
