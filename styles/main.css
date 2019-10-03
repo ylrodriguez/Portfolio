@@ -144,8 +144,6 @@ https://www.color-hex.com/color-palette/79118
     }
 }
 
-
-
 body{
     margin: 0; 
     padding: 0;
@@ -631,7 +629,6 @@ span.clickable{
 
 .projects-list i{
     width: 95vw;
-    border: 1px solid #f6f6f6;
 }
 .project-item .project-img{
     width: 100%;
@@ -933,13 +930,12 @@ span.clickable{
     }
 
     .projects-list .project-item{
-        height: 300px;
-        width: calc(50vw - 8px);
+        height: 265px;
+        width: 45vw;
     }
 
     .projects-list i{
-        width: calc(50vw - 8px);
-        border: 1px solid #f6f6f6;
+        width: 45vw;
     }
 }
 
@@ -972,11 +968,11 @@ span.clickable{
     }
 
     .projects-list .project-item{
-        width: 390px;
+        width: 420px;
     }
 
     .projects-list i{
-        width: 390px;
+        width: 420px;
     }
 }
 
