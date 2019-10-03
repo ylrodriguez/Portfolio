@@ -14,14 +14,14 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
-    
+
 </head>
 
 <body>
     <section id="home">
         <div class="home-container flex">
             <div class="text" lg-key="short-description">
-                Hola, me llamo<br><span class="highlight">Yojhan Rodríguez</span>.<br>Soy desarrollador web junior.
+                Hola, me llamo<br><span class="highlight bold">Yojhan Rodríguez</span>.<br>Soy desarrollador web junior.
             </div>
             <div id="see-more" class="button transparent" lg-key="see-more">
                 Ver más
@@ -34,6 +34,7 @@
                 <div class="wrap-link">
                     <div class="link" go="home" lg-key="home">Home</div>
                     <div class="link" go="about-me" lg-key="about">Sobre mi</div>
+                    <div class="link" go="projects" lg-key="projects">Proyectos</div>
                     <div class="link" go="contact" lg-key="contact">Contacto</div>
                 </div>
                 <i class="fas fa-bars"></i>
@@ -54,7 +55,8 @@
                         </div>
                     </div>
                     <div class="text-element">
-                        <div lg-key="description">Soy una persona apasionada por la tecnología, el desarrollo web, la programación, los
+                        <div lg-key="description">Soy una persona apasionada por la tecnología, el desarrollo web, la
+                            programación, los
                             idiomas y los viajes, dispuesto a asumir nuevos retos y aprender cosas nuevas cada día.
                         </div>
                         <div>
@@ -83,7 +85,8 @@
                     </div>
                     <div class="text-element">
                         <h1 lg-key="tools">Herramientas</h1>
-                        <div lg-key="tools-desc">Mis habilidades abarcan tecnologías como HTML5, CSS3, JavaScript, Bootstrap, Java, PHP
+                        <div lg-key="tools-desc">Mis habilidades abarcan tecnologías como HTML5, CSS3, JavaScript,
+                            Bootstrap, Java, PHP
                             Laravel y
                             MySQL. Además, tengo gran interés en mejorar mis habilidades en Angular, React, entre
                             otros.
@@ -97,7 +100,8 @@
                     </div>
                     <div class="text-element">
                         <h1 lg-key="learn">Aprendizaje</h1>
-                        <div lg-key="learn-desc">Me considero una persona autodidacta y dedicada, que en poco tiempo puede mostrar el
+                        <div lg-key="learn-desc">Me considero una persona autodidacta y dedicada, que en poco tiempo
+                            puede mostrar el
                             potencial necesario para manejar herramientas o tecnologías requeridas.
                         </div>
                     </div>
@@ -108,7 +112,8 @@
                     </div>
                     <div class="text-element">
                         <h1 lg-key="langu">Idiomas</h1>
-                        <div lg-key="langu-desc">Tengo un gran gusto hacia otras culturas, lo que me ha permitido, junto a experiencias
+                        <div lg-key="langu-desc">Tengo un gran gusto hacia otras culturas, lo que me ha permitido, junto
+                            a experiencias
                             en
                             el exterior, tener un nivel fluido en inglés y moderado en alemán.
                         </div>
@@ -123,19 +128,56 @@
 
         </div>
     </section>
-
-    <!-- <section id="projects">
+    <!-- Start Projects Section -->
+    <section id="projects">
+        <div class="gapnav"></div>
         <div class="container flex">
-            
-        </div>
-    </section> -->
+            <div class="title" lg-key="projects">Proyectos</div>
+            <div class="title-bar"></div>
+            <div class="flex row projects-list">
 
+                <div class="project-item">
+                    <div class="project-img"
+                        style="background: url('http://findmatthew.com/style/../img/thumb-1.jpg') center center/cover;">
+                    </div>
+                    <div class="text">
+                        <div class="bold">Hola</div>
+                        <span class="highlight">Angular</span>
+                    </div>
+                    <div class="button">Ver demo</div>
+                </div>
+                <div class="project-item">
+                    <div class="project-img"
+                        style="background: url('http://findmatthew.com/style/../img/thumb-1.jpg') center center/cover;">
+                    </div>
+                    <div class="text">
+                        <div class="bold">Hola</div>
+                        <span class="highlight">Angular</span>
+                    </div>
+                    <div class="button">Ver demo</div>
+                </div>
+
+
+
+                <i aria-hidden="true"></i>
+                <i aria-hidden="true"></i>
+                <i aria-hidden="true"></i>
+                <i aria-hidden="true"></i>
+                <i aria-hidden="true"></i>
+                <i aria-hidden="true"></i>
+            </div>
+        </div>
+    </section>
+    <!-- End Projects Section -->
+
+    <!-- Start Contact Section -->
     <section id="contact">
         <div class="gapnav"></div>
         <div class="container flex">
             <div class="title" lg-key="contact">Contacto</div>
             <div class="title-bar"></div>
-            <p id="text-goodbye" lg-key="text-goodbye">Si tienes alguna pregunta, no dudes en ponerte en contacto conmigo. <br>
+            <p id="text-goodbye" lg-key="text-goodbye">Si tienes alguna pregunta, no dudes en ponerte en contacto
+                conmigo. <br>
                 A continuación, se encuentra mi correo electrónico y mis redes sociales:</p>
             <div class="flex row">
 
@@ -168,6 +210,7 @@
             </div>
         </div>
     </section>
+    <!-- End Contact Section -->
     <div class="overlay">
     </div>
 

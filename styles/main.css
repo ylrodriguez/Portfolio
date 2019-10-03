@@ -197,8 +197,11 @@ h1{
 }
 
 .highlight{
-    font-weight: bold;
     color: #56b5ee;
+}
+
+.bold{
+    font-weight: bold;
 }
 
 .flex{
@@ -590,6 +593,66 @@ span.clickable{
     border-radius: 35%;
 }
 
+.flex.row.projects-list{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.projects-list .project-item{
+    width: 95vw;
+    height: 240px;
+    border: 1px solid #f6f6f6;
+    max-width: 100%;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    position: relative;
+    border-radius: 3px;
+}
+
+.projects-list i{
+    width: 95vw;
+    border: 1px solid #f6f6f6;
+}
+.project-item .project-img{
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.project-item .button{
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    border: 2px solid #56b5ee;
+    width: 170px;
+    margin: 0 auto;
+    font-size: 13pt;
+    padding: 7px 0
+}
+
+.project-item .text{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.project-item .text .bold{
+    font-size: 18pt;
+}
+
+.project-item .button,
+.project-item .text{
+    z-index: 2;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    color: #1B242F;
+}
+
 .email-wrapper{
     margin: 15px 0px; 
     width: 100%; 
@@ -766,6 +829,18 @@ span.clickable{
     .square:hover {
         background-color: #639cbf;
     }
+
+    .projects-list .project-item:hover .project-img{
+        opacity: 0;
+    }
+    .projects-list .project-item:hover .text{
+        opacity: 1;
+        top: 24%;
+    }
+    .projects-list .project-item:hover .button{
+        opacity: 1;
+        bottom: 24%;
+    }
 }
 
 @media(min-width: 600px){
@@ -821,6 +896,16 @@ span.clickable{
         width: 340px;
         height: 237px;
     }
+
+    .projects-list .project-item{
+        height: 300px;
+        width: calc(50vw - 8px);
+    }
+
+    .projects-list i{
+        width: calc(50vw - 8px);
+        border: 1px solid #f6f6f6;
+    }
 }
 
 @media(min-width: 960px){
@@ -850,6 +935,14 @@ span.clickable{
         width: 390px;
         height: 287px;
     }
+
+    .projects-list .project-item{
+        width: 390px;
+    }
+
+    .projects-list i{
+        width: 390px;
+    }
 }
 
 @media(min-width: 2040px){
@@ -874,8 +967,9 @@ span.clickable{
     max-width: initial;
 }
 }
+
 /*Pantallas extra pequeñas.*/
-@media(max-width: 310px){
+@media(max-width: 400px){
     .email-button{
         display:none;
     }

@@ -6,27 +6,28 @@ const WRAPLINKELEMENT = document.getElementsByClassName("wrap-link")[0];
 const NAVLINKS = document.querySelectorAll("nav .link");
 
 const ABOUTMESECTION = document.querySelector('#about-me');
+const PROJECTSSECTION = document.querySelector('#projects');
 const PROGRESSLIST = document.querySelector('.progress-list');
 const DIAMONDLIST = document.querySelector(".diamond-list");
 
-// const PROJECTSSECTION = document.querySelector('#projects');
-
 const CONTACTSSECTION = document.querySelector('#contact');
 
-const MYURL = "https://ylrodriguez.github.io/Portfolio/";
+// const MYURL = "https://ylrodriguez.github.io/Portfolio/";
+const MYURL = "http://127.0.0.1:5500/";
 
 
 var navElementHasFixedClass = false;
 var aboutMeTitleAnimated = false;
 var aboutMeHexagonAnimated = false;
 var aboutMeDiamondListAnimated = false;
-// var projectsTitleAnimated = false;
+var projectsTitleAnimated = false;
 var aboutMeCvButtonAnimated = false;
 var contactTitleAnimated = false;
 var contactSocialNetworksAnimated = false;
 
 var isMobile = false;
 var skills = [];
+var projects = [];
 var currentLanguage = "es";
 var englishJson;
 var spanishJson;
@@ -44,15 +45,20 @@ $('document').ready(function () {
         //Get spanish object array
         $.getJSON('data/lang/es.json', (json) => {
             spanishJson = json;
-            //Simulate api call to get data.
+            //Simulate api call to get skills.
             getSkills()
                 .then(() => {
-                    loadWaypoints();
+                    //Simulate api call to get projects.
+                    getProjects()
+                        .then(() => {
+                            loadWaypoints();
+                        })
+                        .catch(() => {
+                            console.log("Error Loading.");
+                            loadWaypoints();
+                        })
                 })
-                .catch(() => {
-                    console.log("Error Loading.");
-                    loadWaypoints();
-                })
+
         });
     });
 
@@ -151,6 +157,21 @@ function getSkills() {
         })
 }
 
+function getProjects() {
+    return fetch(MYURL + "data/projects.json")
+        // return fetch("data/skills.json")
+        .then(res => res.json())
+        .then(data => {
+            projects = data.projects;
+            console.log(projects);
+            printProjects();
+        })
+        .catch(() => {
+            console.log("Error retrieving projects.json");
+            console.log(MYURL + "data/projects.json");
+        })
+}
+
 function printSkills() {
     for (let skillItem of skills) {
 
@@ -179,6 +200,12 @@ function printSkills() {
         progressBar.appendChild(progressPercentage);
         progressBg.appendChild(progressBar);
         PROGRESSLIST.appendChild(progressBg);
+    }
+}
+
+function printProjects() {
+    for (let project of projects) {
+
     }
 }
 
@@ -278,10 +305,15 @@ function changeActiveLinkInNav(yOffSet) {
         removeAllActive();
         NAVLINKS[1].classList.add("active");
     }
+    // #Projects
+    if (yOffSet > PROJECTSSECTION.offsetTop) {
+        removeAllActive();
+        NAVLINKS[2].classList.add("active");
+    }
     // #Contact
     if (yOffSet > CONTACTSSECTION.offsetTop || (window.innerHeight + yOffSet - 100) === document.body.clientHeight) {
         removeAllActive();
-        NAVLINKS[2].classList.add("active");
+        NAVLINKS[3].classList.add("active");
     }
 }
 
@@ -325,7 +357,7 @@ document.querySelector('.email-button').addEventListener("click", () => {
 });
 
 document.querySelector('#link-git').addEventListener("click", () => {
-    var tempurl = "https://github.com/ylrtests";
+    var tempurl = "https://github.com/ylrodriguez";
     window.open(tempurl, "_blank ");
 });
 
@@ -402,6 +434,16 @@ function loadWaypoints() {
         offset: "80%"
     });
 
+    let waypointProjectsTitle = new Waypoint({
+        element: BUTTONSEEMORE,
+        handler: function (direction) {
+            if (direction === "down" && !projectsTitleAnimated) {
+                animateTitleOfASection("#projects", "left");
+                projectsTitleAnimated = true;
+            }
+        }
+    });
+
     let waypointContactTitle = new Waypoint({
         element: CONTACTSSECTION,
         handler: function (direction) {
@@ -446,11 +488,11 @@ function animateValueProgress(item, start, end, duration, delay) {
     var current = start;
     var increment = end > start ? 1 : -1;
     var stepTime = Math.abs(Math.floor(duration / range));
-    
-    setTimeout( ()=> { 
-        var timer = setInterval( () => {
+
+    setTimeout(() => {
+        var timer = setInterval(() => {
             current += increment;
-            item.innerHTML = current+'%';
+            item.innerHTML = current + '%';
             if (current == end) {
                 clearInterval(timer);
             }

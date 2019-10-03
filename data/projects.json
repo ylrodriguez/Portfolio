@@ -1,0 +1,28 @@
+{
+    "projects":[
+        {
+            "imgUrl" : "img/projects/deepcartimg.png",
+            "name": "DeepCart",
+            "desc": "E-Commerce Web App",
+            "lg-key": "project-desc",
+            "tools": "Angular + Laravel",
+            "link": "http://deepcart.s3-website-us-east-1.amazonaws.com/"
+        },
+        {
+            "imgUrl" : "img/projects/deepcartimg.png",
+            "name": "DeepCart",
+            "desc": "E-Commerce Web App",
+            "lg-key": "project-desc",
+            "tools": "Angular + Laravel",
+            "link": "http://deepcart.s3-website-us-east-1.amazonaws.com/"
+        },
+        {
+            "imgUrl" : "img/projects/deepcartimg.png",
+            "name": "DeepCart",
+            "desc": "E-Commerce Web App",
+            "lg-key": "project-desc",
+            "tools": "Angular + Laravel",
+            "link": "http://deepcart.s3-website-us-east-1.amazonaws.com/"
+        }
+    ]
+}
