@@ -1,13 +1,19 @@
 {
-    "projects":[
+    "projects": [
         {
-            "imgUrl" : "img/projects/thumb-1.gif",
-            "name": "DeepCart",
-            "tools": "Angular + Laravel",
-            "link": "http://deepcart.s3-website-us-east-1.amazonaws.com/"
+            "imgUrl": "img/projects/thumb-3.gif",
+            "name": "Casa Luker Talento y Gestión",
+            "tools": "Desarrollo Frontend: Angular 6.0",
+            "link": "https://luker-demo.herokuapp.com/#/"
         },
         {
-            "imgUrl" : "img/projects/thumb-2.gif",
+            "imgUrl": "img/projects/thumb-1.gif",
+            "name": "DeepCart",
+            "tools": "Angular 8.0 + Laravel",
+            "link": "http://deepcart-web.s3-website-us-east-1.amazonaws.com/"
+        },
+        {
+            "imgUrl": "img/projects/thumb-2.gif",
             "name": "Web Smartphones Tutorial",
             "tools": "Laravel + Blade + Bootstrap",
             "link": "https://github.com/ylrodriguez/Tutorial-Web-Accesible"

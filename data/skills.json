@@ -1,5 +1,5 @@
 {
-    "skills":[
+    "skills": [
         {
             "skillName": "HTML5",
             "progress": 85
@@ -18,7 +18,7 @@
         },
         {
             "skillName": "Angular",
-            "progress": 65
+            "progress": 75
         },
         {
             "skillName": "Java",
