@@ -2,19 +2,19 @@
     "skills": [
         {
             "skillName": "HTML5",
-            "progress": 85
+            "progress": 90
         },
         {
             "skillName": "CSS3",
-            "progress": 75
+            "progress": 85
         },
         {
             "skillName": "JavaScript",
-            "progress": 70
+            "progress": 75
         },
         {
             "skillName": "Bootstrap 4",
-            "progress": 60
+            "progress": 70
         },
         {
             "skillName": "Angular",
@@ -30,17 +30,12 @@
         },
         {
             "skillName": "Laravel",
-            "progress": 55
+            "progress": 60
         },
         {
             "skillName": "Inglés",
             "progress": 90,
             "lg-key": "english"
-        },
-        {
-            "skillName": "Alemán",
-            "progress": 60,
-            "lg-key": "german"
         }
     ]
 }

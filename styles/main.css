@@ -598,10 +598,10 @@ span.clickable{
 .hexagon-inner-in{
     width: 100%;
     height: 100%;
-    background-image: url("../img/img1.jpg");
+    background-image: url("../img/img3.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 50% 35%;
     transform: rotate(-60deg);
     visibility: visible;
     -webkit-border-radius: 35%;

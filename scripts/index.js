@@ -156,7 +156,7 @@ function addEventListeners() {
     });
     
     document.querySelector('#cv').addEventListener("click", () => {
-        var tempurl = "https://1drv.ms/b/s!AlaKRn08I0M_gvgnoeXaLTesRnOzKQ?e=Dh5LhX";
+        var tempurl = "https://1drv.ms/b/s!AlaKRn08I0M_gvsU-LrLO6qF9x7O9w?e=5oQpKE";
         window.open(tempurl, "_blank ");
     });
 
