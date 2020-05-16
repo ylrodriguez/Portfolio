@@ -10,7 +10,7 @@
             "imgUrl": "img/projects/thumb-1.gif",
             "name": "DeepCart",
             "tools": "Angular 8.0 + Laravel",
-            "link": "http://deepcart-web.s3-website-us-east-1.amazonaws.com/"
+            "link": "https://deepcart-app.herokuapp.com/"
         },
         {
             "imgUrl": "img/projects/thumb-2.gif",
