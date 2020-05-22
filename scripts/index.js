@@ -14,6 +14,11 @@ const DIAMONDLIST = document.querySelector(".diamond-list");
 const CONTACTSSECTION = document.querySelector('#contact');
 
 const MYURL = "https://ylrodriguez.github.io/Portfolio/";
+const HEROKUPROJECTSURL = [
+    `https://deepcart-app.herokuapp.com/fake.${Date.now()}jpg`,
+    `https://deepcartapi-env.herokuapp.com/fake.${Date.now()}jpg`,
+    `https://luker-demo.herokuapp.com/fake.${Date.now()}jpg`
+]
 // const MYURL = "http://127.0.0.1:5500/";
 // const MYURL = "http://192.168.0.9:8080/Portfolio/";
 
@@ -36,7 +41,7 @@ var spanishJson;
 
 
 $('document').ready(function () {
-    
+
     //Get english object array
     $.getJSON('data/lang/en.json', (json) => {
         englishJson = json;
@@ -50,13 +55,13 @@ $('document').ready(function () {
                     getProjects()
                         .then(() => {
                             loadWaypoints();
+                            wakeHerokuProjects();
                         })
                         .catch(() => {
                             console.log("Error Loading.");
                             loadWaypoints();
                         })
                 })
-
         });
     });
 
@@ -126,7 +131,7 @@ function addEventListeners() {
         WRAPLINKELEMENT.classList.remove("visible");
     })
 
-    
+
     document.querySelector('.email-button').addEventListener("mouseover", () => {
         var textoTooltip = document.querySelector('.email-wrapper .tooltiptext');
         var emailWrapper = document.querySelector('.email-wrapper');
@@ -135,12 +140,12 @@ function addEventListeners() {
         emailWrapper.classList.remove("minimize-and-expand");
         emailWrapper.style = "opacity: 1";
     });
-    
+
     document.querySelector('.email-button').addEventListener("click", () => {
         var textArea = document.createElement("textarea");
         var textoTooltip = document.querySelector('.email-wrapper .tooltiptext');
         var emailWrapper = document.querySelector('.email-wrapper');
-        
+
         textArea.value = "ylrodriguez024@gmail.com";
         textArea.style = "font-size: 1px; display: block; width: 10px; height: 5px;";
         emailWrapper.appendChild(textArea);
@@ -148,13 +153,13 @@ function addEventListeners() {
         textArea.select();
         document.execCommand('copy');
         emailWrapper.removeChild(textArea);
-        
+
         textoTooltip.innerHTML = currentLanguage === "es" ? spanishJson["tooltip-copied"] : englishJson["tooltip-copied"];
         emailWrapper.classList.remove("slide-to-bottom");
         textoTooltip.classList.add("flip-element");
         emailWrapper.classList.add("minimize-and-expand");
     });
-    
+
     document.querySelector('#cv').addEventListener("click", () => {
         var tempurl = "https://1drv.ms/b/s!AlaKRn08I0M_gvsU-LrLO6qF9x7O9w?e=5oQpKE";
         window.open(tempurl, "_blank ");
@@ -164,19 +169,19 @@ function addEventListeners() {
         var tempurl = "https://github.com/ylrodriguez";
         window.open(tempurl, "_blank ");
     });
-    
+
     document.querySelector('#link-linkedin').addEventListener("click", () => {
         var tempurl = "https://www.linkedin.com/in/yojhan-leonardo-rodriguez-877680186/";
         window.open(tempurl, "_blank ");
     });
-    
+
     document.querySelector('#link-mail').addEventListener("click", () => {
         window.location.href = 'mailto:ylrodriguez024@gmail.com';
     });
 }
 
 function checkMediaQueryForSmallDevices(media) {
-    
+
     if (media.matches) { // If media query matches
         NAVELEMENT.classList.add("fixed");
         navElementHasFixedClass = true;
@@ -200,6 +205,14 @@ function getSkills() {
             console.log("Error retrieving skills.json");
             console.log(MYURL + "data/skills.json");
         })
+}
+
+function wakeHerokuProjects() {
+    // Wake up Heroku Projects requesting a fake image.
+    for (let projectUrl of HEROKUPROJECTSURL) {
+        var i = document.createElement("img");
+        i.src = projectUrl
+    }
 }
 
 function getProjects() {
@@ -262,7 +275,7 @@ function printProjects() {
         projectText.classList.add("text");
         textBold.classList.add("bold");
         textHighlight.classList.add("highlight");
-        button.classList.add("button","transparent");
+        button.classList.add("button", "transparent");
         // Add additional style and set lg-key
         projectImg.style.backgroundImage = `url('${MYURL}${project.imgUrl}')`;
         projectImg.style.backgroundSize = 'cover';
@@ -271,8 +284,8 @@ function printProjects() {
         button.setAttribute("lg-key", "see-more");
         //Configure inner html and listeners
         button.innerHTML = currentLanguage === "es"
-                ? spanishJson["see-more"]
-                : englishJson["see-more"];
+            ? spanishJson["see-more"]
+            : englishJson["see-more"];
         textBold.innerHTML = project.name;
         textHighlight.innerHTML = project.tools;
         button.addEventListener("click", () => {
@@ -280,20 +293,20 @@ function printProjects() {
         })
 
         projectItem.addEventListener("click", () => {
-            if(isMobile()){
-                if(projectItem.classList.contains("active")){
+            if (isMobile()) {
+                if (projectItem.classList.contains("active")) {
                     removeAllActive("projects");
                 }
-                else{
+                else {
                     removeAllActive("projects");
                     projectItem.classList.add("active");
                 }
             }
-            else{
+            else {
                 removeAllActive("projects");
             }
         })
-        
+
         //Append elements correctly
         projectText.appendChild(textBold);
         projectText.appendChild(textHighlight);
@@ -303,7 +316,7 @@ function printProjects() {
         PROJECTSLIST.appendChild(projectItem);
     }
     //Add i-elements to fill space if needed in flex container
-    for (let i = 0; i<5; i++){
+    for (let i = 0; i < 5; i++) {
         let ielement = document.createElement("i");
         ielement.setAttribute("aria-hidden", "true");
         PROJECTSLIST.appendChild(ielement);
@@ -398,7 +411,7 @@ function animateContactBeggining() {
     emailWrapper.classList.add("slide-to-bottom");
 }
 
-function animateProjectsList(){
+function animateProjectsList() {
 
     var animateElementProjectList = document.querySelectorAll('.projects-list .project-item');
     var delayTime = 0.5;
@@ -422,32 +435,32 @@ function changeActiveLinkInNav(yOffSet) {
     }
     // #About Me
     if (yOffSet > ABOUTMESECTION.offsetTop) {
-       removeAllActive("navs");
+        removeAllActive("navs");
         NAVLINKS[1].classList.add("active");
     }
     // #Projects
     if (yOffSet > PROJECTSSECTION.offsetTop) {
-       removeAllActive("navs");
+        removeAllActive("navs");
         NAVLINKS[2].classList.add("active");
     }
     // #Contact
     if (yOffSet > CONTACTSSECTION.offsetTop || (window.innerHeight + yOffSet - 100) === document.body.clientHeight) {
-       removeAllActive("navs");
+        removeAllActive("navs");
         NAVLINKS[3].classList.add("active");
     }
 }
 
 function removeAllActive(type) {
 
-    if(type == "navs"){
+    if (type == "navs") {
         NAVLINKS.forEach((element) => {
             element.classList.remove("active");
-        }) 
+        })
     }
 
-    if(type == "projects"){
-        let projects =  document.querySelectorAll('.projects-list .project-item');
-        for(let item of projects){
+    if (type == "projects") {
+        let projects = document.querySelectorAll('.projects-list .project-item');
+        for (let item of projects) {
             item.classList.remove("active");
         }
     }
@@ -480,7 +493,7 @@ function loadWaypoints() {
             }
         }
     });
-    
+
     new Waypoint({
         element: BUTTONSEEMORE,
         handler: function (direction) {
@@ -530,7 +543,7 @@ function loadWaypoints() {
     });
 
     new Waypoint({
-        element: PROJECTSLIST, 
+        element: PROJECTSLIST,
         handler: function (direction) {
             if (direction === "down" && !projectsListAnimated) {
                 animateProjectsList();
@@ -597,12 +610,12 @@ function animateValueProgress(item, start, end, duration, delay) {
     }, delay);
 }
 
-function isMobile(){
-//Check if user's using phone.
+function isMobile() {
+    //Check if user's using phone.
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-    return true;
+        return true;
     }
-    else{
+    else {
         let media = window.matchMedia("(max-width: 599px)");
         //If media query is similar to phone
         if (media.matches) {
