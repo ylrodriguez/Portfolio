@@ -17,7 +17,8 @@ const MYURL = "https://ylrodriguez.github.io/Portfolio/";
 const HEROKUPROJECTSURL = [
     `https://deepcart-app.herokuapp.com/fake.${Date.now()}jpg`,
     `https://deepcartapi-env.herokuapp.com/fake.${Date.now()}jpg`,
-    `https://luker-demo.herokuapp.com/fake.${Date.now()}jpg`
+    `https://luker-demo.herokuapp.com/fake.${Date.now()}jpg`,
+    `http://weather-yrapp.herokuapp.com/fake.${Date.now()}jpg`
 ]
 // const MYURL = "http://127.0.0.1:5500/";
 // const MYURL = "http://192.168.0.9:8080/Portfolio/";

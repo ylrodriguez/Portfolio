@@ -13,6 +13,12 @@
             "link": "https://deepcart-app.herokuapp.com/"
         },
         {
+            "imgUrl": "img/projects/thumb-4.gif",
+            "name": "WeatherApp",
+            "tools": "Angular 8.0 + API OpenWeather + API Unsplash",
+            "link": "http://weather-yrapp.herokuapp.com"
+        },
+        {
             "imgUrl": "img/projects/thumb-2.gif",
             "name": "Web Smartphones Tutorial",
             "tools": "Laravel + Blade + Bootstrap",
