@@ -172,7 +172,7 @@ function addEventListeners() {
     });
 
     document.querySelector('#link-linkedin').addEventListener("click", () => {
-        var tempurl = "https://www.linkedin.com/in/yojhan-leonardo-rodriguez-877680186/";
+        var tempurl = "www.linkedin.com/in/ylrodriguez";
         window.open(tempurl, "_blank ");
     });
 
