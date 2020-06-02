@@ -172,7 +172,7 @@ function addEventListeners() {
     });
 
     document.querySelector('#link-linkedin').addEventListener("click", () => {
-        var tempurl = "www.linkedin.com/in/ylrodriguez";
+        var tempurl = "https://www.linkedin.com/in/ylrodriguez";
         window.open(tempurl, "_blank ");
     });
 
