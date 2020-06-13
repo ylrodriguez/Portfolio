@@ -83,9 +83,7 @@ function addEventListeners() {
 
             WRAPLINKELEMENT.classList.remove("visible");
             document.querySelector(".overlay").classList.remove("open");
-            section.scrollIntoView({
-                behavior: "smooth"
-            });
+            scrollToElementId(attr)
             section.focus();
         })
     }
@@ -112,17 +110,13 @@ function addEventListeners() {
 
     //Listener button see more
     BUTTONSEEMORE.addEventListener("click", () => {
-        ABOUTMESECTION.scrollIntoView({
-            behavior: "smooth"
-        });
+        scrollToElementId('about-me')
         ABOUTMESECTION.focus();
     })
 
     //Listener up button
     document.querySelector('#up-button').addEventListener("click", () => {
-        HOMESECTION.scrollIntoView({
-            behavior: "smooth"
-        });
+        scrollToElementId('home')
         HOMESECTION.focus();
     })
 
@@ -623,5 +617,15 @@ function isMobile() {
             return true;
         }
         return false;
+    }
+}
+
+function scrollToElementId(id) {
+    const $element = $('#' + id);
+
+    if ($element.length) {
+        $('html, body').animate({
+            scrollTop: $element.offset().top
+        }, 700);
     }
 }
