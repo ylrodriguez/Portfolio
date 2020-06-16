@@ -18,6 +18,7 @@ const HEROKUPROJECTSURL = [
     `https://deepcart-app.herokuapp.com/fake.${Date.now()}jpg`,
     `https://deepcartapi-env.herokuapp.com/fake.${Date.now()}jpg`,
     `https://luker-demo.herokuapp.com/fake.${Date.now()}jpg`,
+    `https://heim-realestate.herokuapp.com/fake.${Date.now()}jpg`,
     `http://weather-yrapp.herokuapp.com/fake.${Date.now()}jpg`
 ]
 // const MYURL = "http://127.0.0.1:5500/";
@@ -57,9 +58,11 @@ $('document').ready(function () {
                         .then(() => {
                             loadWaypoints();
                             wakeHerokuProjects();
+                            translateWebPage(spanishJson);
                         })
                         .catch(() => {
                             console.log("Error Loading.");
+                            translateWebPage(spanishJson);
                             loadWaypoints();
                         })
                 })

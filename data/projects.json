@@ -19,6 +19,12 @@
             "link": "http://weather-yrapp.herokuapp.com"
         },
         {
+            "imgUrl": "img/projects/thumb-5.gif",
+            "name": "HeimRealEstate",
+            "tools": "MEAN Stack",
+            "link": "https://heim-realestate.herokuapp.com/"
+        },
+        {
             "imgUrl": "img/projects/thumb-2.gif",
             "name": "Web Smartphones Tutorial",
             "tools": "Laravel + Blade + Bootstrap",
