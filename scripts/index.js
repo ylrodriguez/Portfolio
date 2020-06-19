@@ -159,7 +159,7 @@ function addEventListeners() {
     });
 
     document.querySelector('#cv').addEventListener("click", () => {
-        var tempurl = "https://1drv.ms/b/s!AlaKRn08I0M_gvsU-LrLO6qF9x7O9w?e=5oQpKE";
+        var tempurl = "https://1drv.ms/b/s!AlaKRn08I0M_gvtbjkgA_3-TxHuzSQ?e=GLu1F1";
         window.open(tempurl, "_blank ");
     });
 
