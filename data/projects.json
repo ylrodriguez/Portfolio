@@ -21,13 +21,13 @@
         {
             "imgUrl": "img/projects/thumb-5.gif",
             "name": "HeimRealEstate",
-            "tools": "MEAN Stack",
+            "tools": "MEAN Stack: MongoDB + Express.js + Angular 6.0 + Node.js",
             "link": "https://heim-realestate.herokuapp.com/"
         },
         {
             "imgUrl": "img/projects/thumb-2.gif",
             "name": "Web Smartphones Tutorial",
-            "tools": "Laravel + Blade + Bootstrap",
+            "tools": "Laravel + Blade + Bootstrap 4.0",
             "link": "https://github.com/ylrodriguez/Tutorial-Web-Accesible"
         }
     ]

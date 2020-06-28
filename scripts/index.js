@@ -22,8 +22,6 @@ const HEROKUPROJECTSURL = [
     `http://weather-yrapp.herokuapp.com/fake.${Date.now()}jpg`
 ]
 // const MYURL = "http://127.0.0.1:5500/";
-// const MYURL = "http://192.168.0.9:8080/Portfolio/";
-
 
 var navElementHasFixedClass = false;
 var aboutMeTitleAnimated = false;
@@ -54,17 +52,15 @@ $('document').ready(function () {
             getSkills()
                 .then(() => {
                     //Simulate api call to get projects.
-                    getProjects()
-                        .then(() => {
-                            loadWaypoints();
-                            wakeHerokuProjects();
-                            translateWebPage(spanishJson);
-                        })
-                        .catch(() => {
-                            console.log("Error Loading.");
-                            translateWebPage(spanishJson);
-                            loadWaypoints();
-                        })
+                    return getProjects()
+                }).then(() => {
+                    loadWaypoints();
+                    wakeHerokuProjects();
+                    translateWebPage(spanishJson);
+                }).catch(() => {
+                    console.log("Error Loading.");
+                    translateWebPage(spanishJson);
+                    loadWaypoints();
                 })
         });
     });

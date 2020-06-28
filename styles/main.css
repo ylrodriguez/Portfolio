@@ -148,13 +148,13 @@ body{
     margin: 0; 
     padding: 0;
     text-align: center;
-    color: #fff;
+    color: #f4f4f4;
     font-family: 'Raleway', sans-serif;
     font-size: 16px
 }
 
 h1{
-    color: #2d2d2d;
+    color: #333;
 }
 
 .overlay{
@@ -234,9 +234,10 @@ h1{
         rgba(26,63,86, 0.65)
       ),
       url("../img/backgroundMobile.jpg");
-    background-size: cover;
-    background-position: auto;
+    background-size: auto 100vh;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    
     height: calc(95vh + 60px);
     box-sizing: border-box;
     
@@ -382,7 +383,7 @@ span.clickable{
     position: relative;
     opacity: 0;
     font-size: 2.3rem;
-    color: #2d2d2d;
+    color: #333;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -392,7 +393,7 @@ span.clickable{
     opacity: 0;
     width: 80px;
     height: 3px;
-    background: #2d2d2d; 
+    background: #333; 
     margin-bottom: 15px;
 }
 
@@ -650,9 +651,10 @@ span.clickable{
 
 .project-item .text{
     top: 0;
-    left: 0;
+    left: 50%;
     position: absolute;
-    width: 100%;
+    width: 70%;
+    transform: translateX(-50%)
 }
 
 .project-item .text .bold{
@@ -665,7 +667,7 @@ span.clickable{
     text-align: center; 
     opacity: 0;
     transition: all 0.3s ease-in-out;
-    color: #1B242F;
+    color: #333;
 }
 
 .project-item.active{
@@ -877,8 +879,8 @@ span.clickable{
 
 @media(min-width: 600px){
     .home-container{
-        background-size: cover; 
-        background-position: center; 
+        background-position: center;
+        background-size: cover;
         background-image:  linear-gradient(
          rgba(26,63,86, 0.65), 
          rgba(26,63,86, 0.65)
