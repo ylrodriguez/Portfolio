@@ -15,11 +15,11 @@ const CONTACTSSECTION = document.querySelector('#contact');
 
 const MYURL = "https://ylrodriguez.github.io/Portfolio/";
 const HEROKUPROJECTSURL = [
-    `https://deepcart-app.herokuapp.com/fake.${Date.now()}jpg`,
-    `https://deepcartapi-env.herokuapp.com/fake.${Date.now()}jpg`,
-    `https://luker-demo.herokuapp.com/fake.${Date.now()}jpg`,
-    `https://heim-realestate.herokuapp.com/fake.${Date.now()}jpg`,
-    `http://weather-yrapp.herokuapp.com/fake.${Date.now()}jpg`
+    `https://deepcart-app.herokuapp.com/fake/${Date.now()}.jpg`,
+    `https://deepcartapi-env.herokuapp.com/fake/${Date.now()}.jpg`,
+    `https://luker-demo.herokuapp.com/fake/${Date.now()}.jpg`,
+    `https://heim-realestate.herokuapp.com/fake/${Date.now()}.jpg`,
+    `http://weather-yrapp.herokuapp.com/fake/${Date.now()}.jpg`
 ]
 // const MYURL = "http://127.0.0.1:5500/";
 
@@ -35,7 +35,7 @@ var contactSocialNetworksAnimated = false;
 
 var skills = [];
 var projects = [];
-var currentLanguage = "es";
+var currentLanguage = "en";
 var englishJson;
 var spanishJson;
 
@@ -56,10 +56,10 @@ $('document').ready(function () {
                 }).then(() => {
                     loadWaypoints();
                     wakeHerokuProjects();
-                    translateWebPage(spanishJson);
+                    translateWebPage(englishJson);
                 }).catch(() => {
                     console.log("Error Loading.");
-                    translateWebPage(spanishJson);
+                    translateWebPage(englishJson);
                     loadWaypoints();
                 })
         });
@@ -255,6 +255,7 @@ function printSkills() {
 }
 
 function printProjects() {
+    let gradient = 'linear-gradient(rgba(26,63,86, 0.65),rgba(26,63,86, 0.65)),'
     for (let project of projects) {
         //Create elements
         let projectItem = document.createElement("div");
@@ -271,7 +272,7 @@ function printProjects() {
         textHighlight.classList.add("highlight");
         button.classList.add("button", "transparent");
         // Add additional style and set lg-key
-        projectImg.style.backgroundImage = `url('${MYURL}${project.imgUrl}')`;
+        projectImg.style.backgroundImage = `${gradient}url('${MYURL}${project.imgUrl}')`;
         projectImg.style.backgroundSize = 'cover';
         projectImg.style.backgroundPosition = 'center';
 

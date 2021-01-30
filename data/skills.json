@@ -18,19 +18,15 @@
         },
         {
             "skillName": "Angular",
-            "progress": 75
+            "progress": 80
         },
         {
             "skillName": "Java",
             "progress": 70
         },
         {
-            "skillName": "PHP",
-            "progress": 50
-        },
-        {
             "skillName": "Laravel",
-            "progress": 60
+            "progress": 65
         },
         {
             "skillName": "Inglés",

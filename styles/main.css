@@ -619,13 +619,17 @@ span.clickable{
 .projects-list .project-item{
     width: 95vw;
     height: 240px;
-    margin-bottom: 15px;
     max-width: 100%;
     background-color: #f5f5f5;
     overflow: hidden;
     border-radius: 3px;
     position: relative;
     opacity: 0;
+    padding: 3px;
+}
+
+.projects-list i{
+    padding: 3px;
 }
 
 .projects-list i{
