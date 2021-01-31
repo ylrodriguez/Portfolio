@@ -1,226 +1,253 @@
 /*
 https://www.color-hex.com/color-palette/79118
+https://coolors.co/0b132b-1c2541-3a506b-5bc0be-ffffff
 */
 
-@keyframes slideDown{
-    0%{
-        height:0;
-        overflow: hidden; 
+:root {
+    --page-bg: #f6f5ff;
+    --main-bg: #061029;
+    --second-bg: #020917;
+    --highlight: #5bc0be;
+}
+
+@keyframes slideDown {
+    0% {
+        height: 0;
+        overflow: hidden;
     }
-    100%{
-        height:60px;
-        overflow:visible;
+
+    100% {
+        height: 60px;
+        overflow: visible;
     }
 }
 
-@keyframes rotateRightAndLeft{
-    25%{
+@keyframes rotateRightAndLeft {
+    25% {
         transform: rotate(5deg);
     }
-    50%{
+
+    50% {
         transform: rotate(-5deg);
     }
 }
 
-@keyframes slideToLeft{
-    0%{
+@keyframes slideToLeft {
+    0% {
         opacity: 0;
         left: 50%;
     }
-    100%{
+
+    100% {
         opacity: 1;
         left: 0;
     }
 }
 
-@keyframes slideToRight{
-    0%{
+@keyframes slideToRight {
+    0% {
         opacity: 0;
         right: 50%;
     }
-    100%{
+
+    100% {
         opacity: 1;
         right: 0;
     }
 }
 
-@keyframes slideToBottom{
-    0%{
+@keyframes slideToBottom {
+    0% {
         opacity: 0;
         bottom: 150px;
     }
-    100%{
+
+    100% {
         opacity: 1;
         bottom: 0;
     }
 }
 
-@keyframes slideToTop{
-    0%{
+@keyframes slideToTop {
+    0% {
         opacity: 0;
         top: 150px;
     }
-    100%{
+
+    100% {
         opacity: 1;
         top: 0;
     }
 }
 
-@keyframes minimizeAndExpand{
-    0%{
+@keyframes minimizeAndExpand {
+    0% {
         transform: scale(1);
         opacity: 0;
         animation-timing-function: ease-in;
     }
 
-    20%{
+    20% {
         opacity: 1;
         transform: scale(0.1);
     }
 
-    40%{
+    40% {
         transform: scale(0.6);
     }
 
-    60%{
+    60% {
         transform: scale(0.2);
     }
 
-    100%{
+    100% {
         transform: scale(1);
         opacity: 1;
     }
 }
 
-@keyframes flipElement{
-  0% {
-    visibility: visible;
-    transform: rotateY(90deg);
-    animation-timing-function: ease-in;
-    opacity: 0; 
+@keyframes flipElement {
+    0% {
+        visibility: visible;
+        transform: rotateY(90deg);
+        animation-timing-function: ease-in;
+        opacity: 0;
     }
-  40% {
-    transform: rotateY(-40deg);
-    animation-timing-function: ease-in; 
-}
-  60% {
-    transform: rotateY(20deg);
-    opacity: 1; 
-}
-  80% {
-    transform:  rotateY(5deg); 
-}
-  100% {
-    opacity: 1; 
-    } 
+
+    40% {
+        transform: rotateY(-40deg);
+        animation-timing-function: ease-in;
+    }
+
+    60% {
+        transform: rotateY(20deg);
+        opacity: 1;
+    }
+
+    80% {
+        transform: rotateY(5deg);
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
-@keyframes slideToBottomSquare{
-    0%{
+@keyframes slideToBottomSquare {
+    0% {
         bottom: 0;
     }
-    50%{
+
+    50% {
         bottom: 50px;
         opacity: 0;
     }
-    55%{
-        top: 50px;  
+
+    55% {
+        top: 50px;
     }
-    100%{
+
+    100% {
         top: 0;
         opacity: 1;
     }
 }
 
-@keyframes fillWidth{
-    0%{
+@keyframes fillWidth {
+    0% {
         width: 0%;
     }
-    20%{
+
+    20% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
 
-body{
-    margin: 0; 
+body {
+    margin: 0;
     padding: 0;
     text-align: center;
-    color: #f4f4f4;
-    font-family: 'Raleway', sans-serif;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px
 }
 
-h1{
+h1 {
     color: #333;
 }
 
-.overlay{
-  position: fixed;
-  background: #78838a;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-  transition: opacity .35s, visibility .35s, height .35s;
+.overlay {
+    position: fixed;
+    background: #78838a;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: opacity .35s, visibility .35s, height .35s;
 }
 
-.overlay.open{
+.overlay.open {
     opacity: 0.8;
     visibility: visible;
     height: 120%;
 }
 
-section{
+section {
     position: relative;
 }
 
-section:nth-of-type(2n + 2){
+section:nth-of-type(2n + 2) {
     background-color: whitesmoke;
 }
 
-#contact{
-    background-color: #34454f;
-   
+#contact {
+    background-color: var(--main-bg);
 }
-#contact div{
+
+#contact .last{
+    background-color: var(--second-bg);
+}
+
+#contact div {
     color: white;
 }
 
-#contact .title-bar{
+#contact .title-bar {
     background: white;
 }
 
-a{
+a {
     text-decoration: none;
     color: #fff;
 }
 
-h1{
+h1 {
     margin: 0;
 }
 
-.highlight{
-    color: #56b5ee;
+.highlight {
+    color: var(--highlight);
 }
 
-.bold{
+.bold {
     font-weight: bold;
 }
 
-.flex{
+.flex {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.flex.row{
+.flex.row {
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: flex-start;
@@ -229,10 +256,10 @@ h1{
 }
 
 .home-container{
-    background-image:  linear-gradient(
-        rgba(26,63,86, 0.65), 
-        rgba(26,63,86, 0.65)
-      ),
+    background-image: linear-gradient(
+        rgb(6, 16, 41, 0.75), 
+        rgba(6, 16, 41, 0.65)
+     ),
       url("../img/backgroundMobile.jpg");
     background-size: auto 100vh;
     background-repeat: no-repeat;
@@ -243,82 +270,88 @@ h1{
     
 }
 
-.home-container .text{
+.home-container .text {
     font-size: 1.5rem;
     margin-bottom: 25px;
 }
 
-.container{
+.home-container img.hero{
+    position: absolute;
+    bottom: 0;
+    max-height: 250px;
+}
+
+.container {
     width: 100%;
     padding: 10px 10px;
     box-sizing: border-box;
     position: relative;
 }
 
-.flex.center{
+.flex.center {
     justify-content: center;
 }
 
-.button{
+.button {
     font-size: 1.25rem;
     padding: 12px 35px;
     cursor: pointer;
     transition: all 1s;
     position: relative;
-    user-select:none;
+    user-select: none;
 }
 
-#cv{
+#cv {
     opacity: 0;
 }
 
-.transparent{
+.transparent {
     border: 2px solid white;
 }
 
-.solid{
-    border: 2px solid #1e313c;
-    background-color: #1a3f56;
+.solid {
+    border: 2px solid var(--second-bg);
+    background-color: var(--main-bg);
 }
 
-.transparent:active{
-    background-color: #56b5ee;
-    border: 2px solid #1a3f56;
+.transparent:active {
+    background-color: var(--highlight);
+    border: 2px solid var(--second-bg);
 }
 
-.solid:active{
-    background-color: #639cbf;
-    border: 2px solid #456d85;
+.solid:active {
+    background-color:#4ea5a3;
+    border: 2px solid var(--highlight);
     transform: scale(1.2);
 }
 
-nav{ 
+nav {
     bottom: 0;
     left: 0;
-    background-color: #1a3f56;
+    background-color: var(--second-bg);
     height: 60px;
     width: 100%;
     position: absolute;
     z-index: 99;
 }
 
-.clickable{
+.clickable {
     cursor: pointer;
 }
 
-.lang-div{
+.lang-div {
     margin-right: 5vw;
     position: absolute;
-    right:0;
+    right: 0;
 }
 
-.gapnav{
+.gapnav {
     position: relative;
     height: 60px;
     width: 100%;
 }
 
-.wrap-link{
+.wrap-link {
     width: 100%;
     overflow: hidden;
     text-align: left;
@@ -329,12 +362,12 @@ nav{
     max-height: 0;
 }
 
-nav .wrap-link > div {
+nav .wrap-link>div {
     margin: 10px 20px;
     text-transform: uppercase;
 }
 
-.fixed{
+.fixed {
     top: 0;
     left: 0;
     position: fixed;
@@ -344,13 +377,13 @@ nav .wrap-link > div {
 
 }
 
-.wrap-link .link{
+.wrap-link .link {
     transition: color 0.5s;
     cursor: pointer;
 }
 
 
-nav i{
+nav i {
     margin-left: 5vw;
     font-size: 2.2rem;
     position: absolute;
@@ -358,28 +391,28 @@ nav i{
     cursor: pointer;
 }
 
-.active{
-    color: #56b5ee; 
+.active {
+    color: var(--highlight);
     text-decoration: underline;
 }
 
-span.active{
-    color: white; 
+span.active {
+    color: white;
     border-bottom: 1px solid white;
     padding-bottom: 1px;
     text-decoration: none;
 }
 
-span.clickable{
+span.clickable {
     font-size: 0.9rem;
 }
 
-.visible{
+.visible {
     height: initial;
     max-height: 130px;
 }
 
-.title{
+.title {
     position: relative;
     opacity: 0;
     font-size: 2.3rem;
@@ -388,65 +421,65 @@ span.clickable{
     font-weight: bold;
 }
 
-.title-bar{
+.title-bar {
     position: relative;
     opacity: 0;
     width: 80px;
-    height: 3px;
-    background: #333; 
+    height: 4px;
+    background: #333;
     margin-bottom: 15px;
 }
 
-.slide-to-left{
+.slide-to-left {
     animation-name: slideToLeft;
     animation-duration: 1.3s;
     animation-fill-mode: forwards;
 }
 
-.slide-to-right{
+.slide-to-right {
     animation-name: slideToRight;
     animation-duration: 1.3s;
     animation-fill-mode: forwards;
 }
 
-.slide-to-bottom{
+.slide-to-bottom {
     animation-name: slideToBottom;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
-.slide-to-top{
+.slide-to-top {
     animation-name: slideToTop;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
 
-.fill-width{
+.fill-width {
     animation-name: fillWidth;
     animation-duration: 4.5s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
 }
 
-.flip-element{
+.flip-element {
     animation: flipElement 2.5s ease both;
     animation-fill-mode: forwards;
 }
 
-.minimize-and-expand{
+.minimize-and-expand {
     animation: minimizeAndExpand 1.5s ease forwards;
 }
 
-.diamond-list{
+.diamond-list {
     position: relative;
 }
 
-.hex-skills{
+.hex-skills {
     position: relative;
 }
 
-.element{
+.element {
     color: #333;
     padding: 0 5px;
     margin: 10px 0;
@@ -459,36 +492,36 @@ span.clickable{
     position: relative;
 }
 
-.diamond-list .element .diamond-wrapper{
+.diamond-list .element .diamond-wrapper {
     opacity: 0;
 }
 
-.element.hex{
+.element.hex {
     opacity: 0;
     max-width: 275px;
 }
 
-.element.hex.show{
+.element.hex.show {
     transition: opacity 1.5s,
-                transform 0.8s ease-out;
+        transform 0.8s ease-out;
     opacity: 1;
     animation-duration: 2s;
     animation-name: rotateRightAndLeft;
     animation-delay: 0.5s;
 }
 
-.text-element{
+.text-element {
     margin-top: 15px;
     position: relative;
     opacity: 0;
 }
 
-.element.hex .text-element{
+.element.hex .text-element {
     opacity: 1;
 }
 
 
-.progress-list{
+.progress-list {
     opacity: 0;
     position: relative;
     width: 80vw;
@@ -498,41 +531,41 @@ span.clickable{
 
 .progress-bg {
     width: 100%;
-    background-color:#dbdbdb; 
+    background-color: #dbdbdb;
     margin-bottom: 20px;
-    -moz-box-shadow: 1px 2px 3px rgba(0,0,0,.25);
-    -webkit-box-shadow: 1px 2px 3px rgba(0,0,0,.25);
-    box-shadow: 1px 2px 3px rgba(0,0,0,.25);
+    -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+    -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
     font-size: 0.9rem;
 }
 
 .progress-bar {
     position: relative;
     height: 30px;
-    background-color: #639cbf;
+    background-color: var(--highlight);
     width: 0;
     opacity: 0;
 }
 
-.progress-tag{
+.progress-tag {
     position: absolute;
     width: 105px;
     height: 30px;
-    background-color:#72a5c5;
+    background-color: #4ea5a3;
     font-weight: bold;
     left: 0;
     z-index: 1;
 }
 
-.progress-percentage{
-    position: absolute; 
+.progress-percentage {
+    position: absolute;
     right: 1%;
 }
 
 
-.diamond-wrapper{
+.diamond-wrapper {
     height: 100px;
-    width:  100px;
+    width: 100px;
     position: relative;
     margin-bottom: 5px;
 }
@@ -544,23 +577,23 @@ span.clickable{
     text-align: center;
 }
 
-.diamond::before{
+.diamond::before {
     display: inline-block;
     height: calc(100% * 0.71);
     width: calc(100% * 0.71);
-    content:"";
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
-    background: #56b5ee;
+    background: var(--highlight);
     -webkit-border-radius: 5%;
     -moz-border-radius: 5%;
     border-radius: 5%;
 }
 
 
-.diamond i{
+.diamond i {
     position: absolute;
     font-size: 1.6rem;
     z-index: 1;
@@ -571,7 +604,7 @@ span.clickable{
 }
 
 
-.hexagon{
+.hexagon {
     width: 320px;
     height: 217px;
     background: #000;
@@ -581,10 +614,10 @@ span.clickable{
     -webkit-border-radius: 35%;
     -moz-border-radius: 35%;
     border-radius: 35%;
-    
+
 }
 
-.hexagon-inner{
+.hexagon-inner {
     width: 100%;
     height: 100%;
     background-color: #000;
@@ -596,27 +629,30 @@ span.clickable{
     border-radius: 35%;
 }
 
-.hexagon-inner-in{
+.hexagon-inner-in {
     width: 100%;
     height: 100%;
-    background-image: url("../img/img3.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: 50% 35%;
-    transform: rotate(-60deg);
     visibility: visible;
+    transform: rotate(-60deg);
     -webkit-border-radius: 35%;
     -moz-border-radius: 35%;
     border-radius: 35%;
 }
 
-.flex.row.projects-list{
+.profile{
+    background-image: url("../img/profile.jpeg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 50% 85%;
+}
+
+.flex.row.projects-list {
     position: relative;
     justify-content: center;
     align-items: center;
 }
 
-.projects-list .project-item{
+.projects-list .project-item {
     width: 95vw;
     height: 240px;
     max-width: 100%;
@@ -628,32 +664,33 @@ span.clickable{
     padding: 3px;
 }
 
-.projects-list i{
+.projects-list i {
     padding: 3px;
 }
 
-.projects-list i{
+.projects-list i {
     width: 95vw;
 }
-.project-item .project-img{
+
+.project-item .project-img {
     width: 100%;
     height: 100%;
     transition: all 0.3s ease-in-out 0s;
 }
 
-.project-item .button{
+.project-item .button {
     right: 0;
     bottom: 0;
     left: 0;
     position: absolute;
-    border: 2px solid #56b5ee;
+    border: 2px solid var(--highlight);
     width: 170px;
     margin: 0 auto;
     font-size: 13pt;
     padding: 7px 0
 }
 
-.project-item .text{
+.project-item .text {
     top: 0;
     left: 50%;
     position: absolute;
@@ -661,45 +698,47 @@ span.clickable{
     transform: translateX(-50%)
 }
 
-.project-item .text .bold{
+.project-item .text .bold {
     font-size: 18pt;
 }
 
 .project-item .button,
-.project-item .text{
+.project-item .text {
     z-index: 2;
-    text-align: center; 
+    text-align: center;
     opacity: 0;
     transition: all 0.3s ease-in-out;
     color: #333;
 }
 
-.project-item.active{
+.project-item.active {
     text-decoration: none;
 }
 
-.projects-list .project-item.active .project-img{
+.projects-list .project-item.active .project-img {
     opacity: 0;
 }
-.projects-list .project-item.active .text{
+
+.projects-list .project-item.active .text {
     opacity: 1;
     top: 24%;
 }
-.projects-list .project-item.active .button{
+
+.projects-list .project-item.active .button {
     opacity: 1;
     bottom: 24%;
 }
 
-.email-wrapper{
-    margin: 15px 0px; 
-    width: 100%; 
-    position:relative;
+.email-wrapper {
+    margin: 15px 0px;
+    width: 100%;
+    position: relative;
     display: inline-block;
     margin-top: 50px;
     opacity: 0;
 }
 
-.email-wrapper .tooltiptext{
+.email-wrapper .tooltiptext {
     visibility: hidden;
     width: 120px;
     background-color: #555;
@@ -707,14 +746,14 @@ span.clickable{
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
-  
+
     /* Posición del tooltip */
     position: absolute;
     z-index: 1;
     bottom: 200%;
     left: 50%;
     margin-left: -60px;
-  
+
     /* Fade tooltip */
     opacity: 0;
     transition: opacity 0.5s;
@@ -729,15 +768,15 @@ span.clickable{
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
-  }
-  
-.email{
+}
+
+.email {
     padding: 10px 12px;
     transition: all 1s;
     display: inline;
 }
 
-.email-button{
+.email-button {
     padding: 10px 15px;
     transition: all 1s;
     display: inline;
@@ -745,36 +784,36 @@ span.clickable{
     background-color: #8e989d;
 }
 
-.email.transparent:active{
+.email.transparent:active {
     background-color: initial;
     border: 2px solid white;
 }
 
-.email-button.transparent:active{
-    background-color: #56b5ee;
+.email-button.transparent:active {
+    background-color: var(--highlight);
     border: 2px solid white;
 }
 
-#up-button{
+#up-button {
     padding: 10px 15px;
     transition: all 1s;
     display: inline;
     cursor: pointer;
-    background-color: #56b5ee;
+    background-color: var(--highlight);
     font-size: 1.6rem;
 }
 
-.divided::before{
-    content:"";
+.divided::before {
+    content: "";
     width: 100%;
     height: 50%;
-    bottom:0;
+    bottom: 0;
     left: 0;
     position: absolute;
-    background-color: #1a2227;
+    background-color: var(--second-bg)
 }
 
-.square{
+.square {
     padding: 10px 15px;
     margin: 0 15px;
     transition: all 0.5s;
@@ -785,7 +824,7 @@ span.clickable{
     overflow: hidden;
 }
 
-.square.link{
+.square.link {
     position: relative;
     opacity: 0;
 }
@@ -794,11 +833,11 @@ span.clickable{
     position: relative;
 }
 
-.copy{
+.copy {
     font-size: 0.625rem;
 }
 
-#text-goodbye{
+#text-goodbye {
     position: relative;
     opacity: 0;
     animation-delay: 0.5s;
@@ -808,96 +847,101 @@ span.clickable{
 /*Equipos que soportan hover.*/
 @media (hover: hover) {
 
-    .clickable:hover{
-        color: #56b5ee;
+    .clickable:hover {
+        color: var(--highlight);
     }
 
-    span.active:hover{
-        border-bottom: 1px solid #56b5ee;
+    span.active:hover {
+        border-bottom: 1px solid var(--highlight);
     }
 
-    .transparent:hover{
-        background-color: #56b5ee;
-        border: 2px solid #1a3f56;
+    .transparent:hover {
+        background-color: var(--highlight);
+        border: 2px solid var(--second-bg);
         color: white;
     }
 
-    .email.transparent:hover{
+    .email.transparent:hover {
         background-color: initial;
         border: 2px solid white;
     }
 
-    .email-button.transparent:hover{
-        background-color: #56b5ee;
+    .email-button.transparent:hover {
+        background-color: var(--highlight);
         border: 2px solid white;
     }
 
-    .email-button:hover + .tooltiptext {
+    .email-button:hover+.tooltiptext {
         visibility: visible;
         opacity: 1;
-      }
+    }
 
-    .solid:hover{
-        background-color: #639cbf;
-        border: 2px solid #456d85;
+    .solid:hover {
+        background-color: #4ea5a3;
+        border: 2px solid var(--highlight);;
         transform: scale(1.1);
     }
 
     .wrap-link .link:hover {
-        color: #56b5ee;
+        color: var(--highlight);
     }
 
-    .element.hex:hover{
+    .element.hex:hover {
         transform: scale(1.1);
     }
 
-    .diamond-list .diamond:hover{
+    .diamond-list .diamond:hover {
         animation-name: rotateRightAndLeft;
-        animation-duration:  0.2s;
-        animation-timing-function:  ease;
+        animation-duration: 0.2s;
+        animation-timing-function: ease;
         animation-iteration-count: 3;
         animation-fill-mode: forwards;
     }
 
-    .square:hover i{
+    .square:hover i {
         animation-name: slideToBottomSquare;
         animation-duration: 0.5s;
         animation-fill-mode: forwards;
     }
+
     .square:hover {
-        background-color: #639cbf;
+        background-color: var(--highlight);
     }
 
-    .projects-list .project-item:hover .project-img{
+    .projects-list .project-item:hover .project-img {
+        transform: scale(1.1);
         opacity: 0;
+        transition: 0.5s;
     }
-    .projects-list .project-item:hover .text{
+
+    .projects-list .project-item:hover .text {
         opacity: 1;
         top: 24%;
     }
-    .projects-list .project-item:hover .button{
+
+    .projects-list .project-item:hover .button {
         opacity: 1;
         bottom: 24%;
     }
 }
 
-@media(min-width: 600px){
+@media(min-width: 600px) {
     .home-container{
         background-position: center;
         background-size: cover;
         background-image:  linear-gradient(
-         rgba(26,63,86, 0.65), 
-         rgba(26,63,86, 0.65)
-      ),
+            rgb(6, 16, 41, 0.75), 
+            rgba(6, 16, 41, 0.65)
+         ),
       url("../img/backgroundDesk.jpg");
       height: calc(100vh + 60px);
     }
-    
-    .home-container .text{
+
+    .home-container .text {
         font-size: 2.2rem;
     }
 
-    .wrap-link{
+    .wrap-link {
         height: initial;
         overflow: visible;
         position: static;
@@ -905,109 +949,113 @@ span.clickable{
         max-height: initial;
     }
 
-    nav .wrap-link > div {
+    nav .wrap-link>div {
         display: inline;
     }
 
-    nav i{
+    nav i {
         visibility: hidden;
     }
 
-    .element{
+    .element {
         max-width: 150px;
     }
 
-    .element.hex{
+    .element.hex {
         max-width: 375px;
     }
 
-    .diamond-wrapper{
+    .diamond-wrapper {
         height: 130px;
-        width:  130px;
+        width: 130px;
     }
 
-    .diamond i{
+    .diamond i {
         font-size: 2.5rem;
     }
 
-    .hexagon{
+    .hexagon {
         width: 340px;
         height: 237px;
     }
 
-    .projects-list .project-item{
+    .projects-list .project-item {
         height: 265px;
         width: 45vw;
     }
 
-    .projects-list i{
+    .projects-list i {
         width: 45vw;
     }
 }
 
-@media(min-width: 960px){
-    .element{
+@media(min-width: 960px) {
+    .element {
         max-width: 250px;
     }
-    .diamond-wrapper{
+
+    .diamond-wrapper {
         height: 170px;
-        width:  170px;
+        width: 170px;
     }
-    .diamond i{
+
+    .diamond i {
         font-size: 3rem;
     }
 
-    .hex-skills{
+    .hex-skills {
         flex-flow: row wrap;
         justify-content: space-evenly;
         align-items: center;
         width: 100%;
     }
 
-    .progress-list{
+    .progress-list {
         width: 40%;
     }
 
-    .hexagon{
+    .hexagon {
         width: 390px;
         height: 287px;
     }
 
-    .projects-list .project-item{
+    .projects-list .project-item {
         width: 420px;
     }
 
-    .projects-list i{
+    .projects-list i {
         width: 420px;
     }
 }
 
-@media(min-width: 2040px){
-  section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  section#home{
-    display: block;
-  }
+@media(min-width: 2040px) {
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 
-  .container{
-      max-width: 2040px;
-  }
+    section#home {
+        display: block;
+    }
 
-  .container.divided{
-      max-width: initial;
-  }
-  .container.divided + .container{
-    max-width: initial;
-}
+    .container {
+        max-width: 2040px;
+    }
+
+    .container.divided {
+        max-width: initial;
+    }
+
+    .container.divided+.container {
+        max-width: initial;
+    }
 }
 
 /*Pantallas extra pequeñas.*/
-@media(max-width: 400px){
-    .email-button{
-        display:none;
+@media(max-width: 400px) {
+    .email-button {
+        display: none;
     }
 }

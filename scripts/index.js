@@ -14,6 +14,7 @@ const DIAMONDLIST = document.querySelector(".diamond-list");
 const CONTACTSSECTION = document.querySelector('#contact');
 
 const MYURL = "https://ylrodriguez.github.io/Portfolio/";
+// const MYURL = "http://127.0.0.1:5500/";
 const HEROKUPROJECTSURL = [
     `https://deepcart-app.herokuapp.com/fake/${Date.now()}.jpg`,
     `https://deepcartapi-env.herokuapp.com/fake/${Date.now()}.jpg`,
@@ -21,7 +22,6 @@ const HEROKUPROJECTSURL = [
     `https://heim-realestate.herokuapp.com/fake/${Date.now()}.jpg`,
     `http://weather-yrapp.herokuapp.com/fake/${Date.now()}.jpg`
 ]
-// const MYURL = "http://127.0.0.1:5500/";
 
 var navElementHasFixedClass = false;
 var aboutMeTitleAnimated = false;
@@ -255,7 +255,7 @@ function printSkills() {
 }
 
 function printProjects() {
-    let gradient = 'linear-gradient(rgba(26,63,86, 0.65),rgba(26,63,86, 0.65)),'
+    let gradient = 'linear-gradient(rgba(6, 16, 41, 0.6), rgba(6, 16, 41, 0.6)),'
     for (let project of projects) {
         //Create elements
         let projectItem = document.createElement("div");
