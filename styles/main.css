@@ -4,1058 +4,1074 @@ https://coolors.co/0b132b-1c2541-3a506b-5bc0be-ffffff
 */
 
 :root {
-    --page-bg: #f6f5ff;
-    --main-bg: #061029;
-    --second-bg: #020917;
-    --highlight: #5bc0be;
+  --page-bg: #f6f5ff;
+  --main-bg: #061029;
+  --second-bg: #020917;
+  --highlight: #5bc0be;
 }
 
 @keyframes slideDown {
-    0% {
-        height: 0;
-        overflow: hidden;
-    }
+  0% {
+    height: 0;
+    overflow: hidden;
+  }
 
-    100% {
-        height: 60px;
-        overflow: visible;
-    }
+  100% {
+    height: 60px;
+    overflow: visible;
+  }
 }
 
 @keyframes rotateRightAndLeft {
-    25% {
-        transform: rotate(5deg);
-    }
+  25% {
+    transform: rotate(5deg);
+  }
 
-    50% {
-        transform: rotate(-5deg);
-    }
+  50% {
+    transform: rotate(-5deg);
+  }
 }
 
 @keyframes slideToLeft {
-    0% {
-        opacity: 0;
-        left: 50%;
-    }
+  0% {
+    opacity: 0;
+    left: 50%;
+  }
 
-    100% {
-        opacity: 1;
-        left: 0;
-    }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
 }
 
 @keyframes slideToRight {
-    0% {
-        opacity: 0;
-        right: 50%;
-    }
+  0% {
+    opacity: 0;
+    right: 50%;
+  }
 
-    100% {
-        opacity: 1;
-        right: 0;
-    }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
 }
 
 @keyframes slideToBottom {
-    0% {
-        opacity: 0;
-        bottom: 150px;
-    }
+  0% {
+    opacity: 0;
+    bottom: 150px;
+  }
 
-    100% {
-        opacity: 1;
-        bottom: 0;
-    }
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
 }
 
 @keyframes slideToTop {
-    0% {
-        opacity: 0;
-        top: 150px;
-    }
+  0% {
+    opacity: 0;
+    top: 150px;
+  }
 
-    100% {
-        opacity: 1;
-        top: 0;
-    }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
 }
 
 @keyframes minimizeAndExpand {
-    0% {
-        transform: scale(1);
-        opacity: 0;
-        animation-timing-function: ease-in;
-    }
+  0% {
+    transform: scale(1);
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
 
-    20% {
-        opacity: 1;
-        transform: scale(0.1);
-    }
+  20% {
+    opacity: 1;
+    transform: scale(0.1);
+  }
 
-    40% {
-        transform: scale(0.6);
-    }
+  40% {
+    transform: scale(0.6);
+  }
 
-    60% {
-        transform: scale(0.2);
-    }
+  60% {
+    transform: scale(0.2);
+  }
 
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes flipElement {
-    0% {
-        visibility: visible;
-        transform: rotateY(90deg);
-        animation-timing-function: ease-in;
-        opacity: 0;
-    }
+  0% {
+    visibility: visible;
+    transform: rotateY(90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
 
-    40% {
-        transform: rotateY(-40deg);
-        animation-timing-function: ease-in;
-    }
+  40% {
+    transform: rotateY(-40deg);
+    animation-timing-function: ease-in;
+  }
 
-    60% {
-        transform: rotateY(20deg);
-        opacity: 1;
-    }
+  60% {
+    transform: rotateY(20deg);
+    opacity: 1;
+  }
 
-    80% {
-        transform: rotateY(5deg);
-    }
+  80% {
+    transform: rotateY(5deg);
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes slideToBottomSquare {
-    0% {
-        bottom: 0;
-    }
+  0% {
+    bottom: 0;
+  }
 
-    50% {
-        bottom: 50px;
-        opacity: 0;
-    }
+  50% {
+    bottom: 50px;
+    opacity: 0;
+  }
 
-    55% {
-        top: 50px;
-    }
+  55% {
+    top: 50px;
+  }
 
-    100% {
-        top: 0;
-        opacity: 1;
-    }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 @keyframes fillWidth {
-    0% {
-        width: 0%;
-    }
+  0% {
+    width: 0%;
+  }
 
-    20% {
-        opacity: 1;
-    }
+  20% {
+    opacity: 1;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    color: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px
 }
 
 h1 {
-    color: #333;
+  color: #333;
+}
+
+.hide{
+	display: none;
 }
 
 .overlay {
-    position: fixed;
-    background: #78838a;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0;
-    opacity: 0;
-    visibility: hidden;
-    overflow: hidden;
-    transition: opacity .35s, visibility .35s, height .35s;
+  position: fixed;
+  background: #78838a;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: opacity .35s, visibility .35s, height .35s;
 }
 
 .overlay.open {
-    opacity: 0.8;
-    visibility: visible;
-    height: 120%;
+  opacity: 0.8;
+  visibility: visible;
+  height: 120%;
 }
 
 section {
-    position: relative;
+  position: relative;
 }
 
 section:nth-of-type(2n + 2) {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
 #contact {
-    background-color: var(--main-bg);
+  background-color: var(--main-bg);
 }
 
-#contact .last{
-    background-color: var(--second-bg);
+#contact .last {
+  background-color: var(--second-bg);
 }
 
 #contact div {
-    color: white;
+  color: white;
 }
 
 #contact .title-bar {
-    background: white;
+  background: white;
 }
 
 a {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 h1 {
-    margin: 0;
+  margin: 0;
+}
+
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: rgb(2 9 23 / 45%);
+}
+
+.loader>img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .highlight {
-    color: var(--highlight);
+  color: var(--highlight);
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .flex.row {
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    width: 100%;
-    margin-bottom: 15px;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-.home-container{
-    background-image: linear-gradient(
-        rgb(6, 16, 41, 0.75), 
-        rgba(6, 16, 41, 0.65)
-     ),
-      url("../img/backgroundMobile.jpg");
-    background-size: auto 100vh;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    
-    height: calc(95vh + 60px);
-    box-sizing: border-box;
-    
+.home-container {
+  background-image: linear-gradient(rgb(6, 16, 41, 0.75),
+      rgba(6, 16, 41, 0.65)),
+    url("../img/backgroundMobile.jpg");
+  background-size: auto 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  height: calc(95vh + 60px);
+  box-sizing: border-box;
+
 }
 
 .home-container .text {
-    font-size: 1.5rem;
-    margin-bottom: 25px;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
 }
 
-.home-container img.hero{
-    position: absolute;
-    bottom: 0;
-    max-height: 250px;
+.home-container img.hero {
+  position: absolute;
+  bottom: 0;
+  max-height: 250px;
 }
 
 .container {
-    width: 100%;
-    padding: 10px 10px;
-    box-sizing: border-box;
-    position: relative;
+  width: 100%;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .flex.center {
-    justify-content: center;
+  justify-content: center;
 }
 
 .button {
-    font-size: 1.25rem;
-    padding: 12px 35px;
-    cursor: pointer;
-    transition: all 1s;
-    position: relative;
-    user-select: none;
+  font-size: 1.25rem;
+  padding: 12px 35px;
+  cursor: pointer;
+  transition: all 1s;
+  position: relative;
+  user-select: none;
 }
 
 #cv {
-    opacity: 0;
+  opacity: 0;
 }
 
 .transparent {
-    border: 2px solid white;
+  border: 2px solid white;
 }
 
 .solid {
-    border: 2px solid var(--second-bg);
-    background-color: var(--main-bg);
+  border: 2px solid var(--second-bg);
+  background-color: var(--main-bg);
 }
 
 .transparent:active {
-    background-color: var(--highlight);
-    border: 2px solid var(--second-bg);
+  background-color: var(--highlight);
+  border: 2px solid var(--second-bg);
 }
 
 .solid:active {
-    background-color:#4ea5a3;
-    border: 2px solid var(--highlight);
-    transform: scale(1.2);
+  background-color: #4ea5a3;
+  border: 2px solid var(--highlight);
+  transform: scale(1.2);
 }
 
 nav {
-    bottom: 0;
-    left: 0;
-    background-color: var(--second-bg);
-    height: 60px;
-    width: 100%;
-    position: absolute;
-    z-index: 99;
+  bottom: 0;
+  left: 0;
+  background-color: var(--second-bg);
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 99;
 }
 
 .clickable {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .lang-div {
-    margin-right: 5vw;
-    position: absolute;
-    right: 0;
+  margin-right: 5vw;
+  position: absolute;
+  right: 0;
 }
 
 .gapnav {
-    position: relative;
-    height: 60px;
-    width: 100%;
+  position: relative;
+  height: 60px;
+  width: 100%;
 }
 
 .wrap-link {
-    width: 100%;
-    overflow: hidden;
-    text-align: left;
-    position: absolute;
-    top: 60px;
-    background: #0d151a;
-    transition: max-height 0.5s ease-in-out;
-    max-height: 0;
+  width: 100%;
+  overflow: hidden;
+  text-align: left;
+  position: absolute;
+  top: 60px;
+  background: #0d151a;
+  transition: max-height 0.5s ease-in-out;
+  max-height: 0;
 }
 
 nav .wrap-link>div {
-    margin: 10px 20px;
-    text-transform: uppercase;
+  margin: 10px 20px;
+  text-transform: uppercase;
 }
 
 .fixed {
-    top: 0;
-    left: 0;
-    position: fixed;
-    animation-duration: 0.8s;
-    animation-name: slideDown;
-    height: 60px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  animation-duration: 0.8s;
+  animation-name: slideDown;
+  height: 60px;
 
 }
 
 .wrap-link .link {
-    transition: color 0.5s;
-    cursor: pointer;
+  transition: color 0.5s;
+  cursor: pointer;
 }
 
 
 nav i {
-    margin-left: 5vw;
-    font-size: 2.2rem;
-    position: absolute;
-    left: 0;
-    cursor: pointer;
+  margin-left: 5vw;
+  font-size: 2.2rem;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
 }
 
 .active {
-    color: var(--highlight);
-    text-decoration: underline;
+  color: var(--highlight);
+  text-decoration: underline;
 }
 
 span.active {
-    color: white;
-    border-bottom: 1px solid white;
-    padding-bottom: 1px;
-    text-decoration: none;
+  color: white;
+  border-bottom: 1px solid white;
+  padding-bottom: 1px;
+  text-decoration: none;
 }
 
 span.clickable {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 .visible {
-    height: initial;
-    max-height: 130px;
+  height: initial;
+  max-height: 130px;
 }
 
 .title {
-    position: relative;
-    opacity: 0;
-    font-size: 2.3rem;
-    color: #333;
-    text-transform: uppercase;
-    font-weight: bold;
+  position: relative;
+  opacity: 0;
+  font-size: 2.3rem;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .title-bar {
-    position: relative;
-    opacity: 0;
-    width: 80px;
-    height: 4px;
-    background: #333;
-    margin-bottom: 15px;
+  position: relative;
+  opacity: 0;
+  width: 80px;
+  height: 4px;
+  background: #333;
+  margin-bottom: 15px;
 }
 
 .slide-to-left {
-    animation-name: slideToLeft;
-    animation-duration: 1.3s;
-    animation-fill-mode: forwards;
+  animation-name: slideToLeft;
+  animation-duration: 1.3s;
+  animation-fill-mode: forwards;
 }
 
 .slide-to-right {
-    animation-name: slideToRight;
-    animation-duration: 1.3s;
-    animation-fill-mode: forwards;
+  animation-name: slideToRight;
+  animation-duration: 1.3s;
+  animation-fill-mode: forwards;
 }
 
 .slide-to-bottom {
-    animation-name: slideToBottom;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+  animation-name: slideToBottom;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 .slide-to-top {
-    animation-name: slideToTop;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+  animation-name: slideToTop;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 
 .fill-width {
-    animation-name: fillWidth;
-    animation-duration: 4.5s;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+  animation-name: fillWidth;
+  animation-duration: 4.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
 
 .flip-element {
-    animation: flipElement 2.5s ease both;
-    animation-fill-mode: forwards;
+  animation: flipElement 2.5s ease both;
+  animation-fill-mode: forwards;
 }
 
 .minimize-and-expand {
-    animation: minimizeAndExpand 1.5s ease forwards;
+  animation: minimizeAndExpand 1.5s ease forwards;
 }
 
 .diamond-list {
-    position: relative;
+  position: relative;
 }
 
 .hex-skills {
-    position: relative;
+  position: relative;
 }
 
 .element {
-    color: #333;
-    padding: 0 5px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 123px;
-    min-width: min-content;
-    position: relative;
+  color: #333;
+  padding: 0 5px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 123px;
+  min-width: min-content;
+  position: relative;
 }
 
 .diamond-list .element .diamond-wrapper {
-    opacity: 0;
+  opacity: 0;
 }
 
 .element.hex {
-    opacity: 0;
-    max-width: 275px;
+  opacity: 0;
+  max-width: 275px;
 }
 
 .element.hex.show {
-    transition: opacity 1.5s,
-        transform 0.8s ease-out;
-    opacity: 1;
-    animation-duration: 2s;
-    animation-name: rotateRightAndLeft;
-    animation-delay: 0.5s;
+  transition: opacity 1.5s,
+    transform 0.8s ease-out;
+  opacity: 1;
+  animation-duration: 2s;
+  animation-name: rotateRightAndLeft;
+  animation-delay: 0.5s;
 }
 
 .text-element {
-    margin-top: 15px;
-    position: relative;
-    opacity: 0;
+  margin-top: 15px;
+  position: relative;
+  opacity: 0;
 }
 
 .element.hex .text-element {
-    opacity: 1;
+  opacity: 1;
 }
 
 
 .progress-list {
-    opacity: 0;
-    position: relative;
-    width: 80vw;
-    margin-bottom: 20px;
-    margin-top: 20px;
+  opacity: 0;
+  position: relative;
+  width: 80vw;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .progress-bg {
-    width: 100%;
-    background-color: #dbdbdb;
-    margin-bottom: 20px;
-    -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
-    -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
-    box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
-    font-size: 0.9rem;
+  width: 100%;
+  background-color: #dbdbdb;
+  margin-bottom: 20px;
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  font-size: 0.9rem;
 }
 
 .progress-bar {
-    position: relative;
-    height: 30px;
-    background-color: var(--highlight);
-    width: 0;
-    opacity: 0;
+  position: relative;
+  height: 30px;
+  background-color: var(--highlight);
+  width: 0;
+  opacity: 0;
 }
 
 .progress-tag {
-    position: absolute;
-    width: 105px;
-    height: 30px;
-    background-color: #4ea5a3;
-    font-weight: bold;
-    left: 0;
-    z-index: 1;
+  position: absolute;
+  width: 105px;
+  height: 30px;
+  background-color: #4ea5a3;
+  font-weight: bold;
+  left: 0;
+  z-index: 1;
 }
 
 .progress-percentage {
-    position: absolute;
-    right: 1%;
+  position: absolute;
+  right: 1%;
 }
 
 
 .diamond-wrapper {
-    height: 100px;
-    width: 100px;
-    position: relative;
-    margin-bottom: 5px;
+  height: 100px;
+  width: 100px;
+  position: relative;
+  margin-bottom: 5px;
 }
 
 .diamond {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    text-align: center;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
 
 .diamond::before {
-    display: inline-block;
-    height: calc(100% * 0.71);
-    width: calc(100% * 0.71);
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    background: var(--highlight);
-    -webkit-border-radius: 5%;
-    -moz-border-radius: 5%;
-    border-radius: 5%;
+  display: inline-block;
+  height: calc(100% * 0.71);
+  width: calc(100% * 0.71);
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--highlight);
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  border-radius: 5%;
 }
 
 
 .diamond i {
-    position: absolute;
-    font-size: 1.6rem;
-    z-index: 1;
-    color: #FFF;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  font-size: 1.6rem;
+  z-index: 1;
+  color: #FFF;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 
 .hexagon {
-    width: 320px;
-    height: 217px;
-    background: #000;
-    transform: rotate(120deg);
-    overflow: hidden;
-    visibility: hidden;
-    -webkit-border-radius: 35%;
-    -moz-border-radius: 35%;
-    border-radius: 35%;
+  width: 320px;
+  height: 217px;
+  background: #000;
+  transform: rotate(120deg);
+  overflow: hidden;
+  visibility: hidden;
+  -webkit-border-radius: 35%;
+  -moz-border-radius: 35%;
+  border-radius: 35%;
 
 }
 
 .hexagon-inner {
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    transform: rotate(-60deg);
-    overflow: hidden;
-    visibility: hidden;
-    -webkit-border-radius: 35%;
-    -moz-border-radius: 35%;
-    border-radius: 35%;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform: rotate(-60deg);
+  overflow: hidden;
+  visibility: hidden;
+  -webkit-border-radius: 35%;
+  -moz-border-radius: 35%;
+  border-radius: 35%;
 }
 
 .hexagon-inner-in {
-    width: 100%;
-    height: 100%;
-    visibility: visible;
-    transform: rotate(-60deg);
-    -webkit-border-radius: 35%;
-    -moz-border-radius: 35%;
-    border-radius: 35%;
+  width: 100%;
+  height: 100%;
+  visibility: visible;
+  transform: rotate(-60deg);
+  -webkit-border-radius: 35%;
+  -moz-border-radius: 35%;
+  border-radius: 35%;
 }
 
-.profile{
-    background-image: url("../img/profile.jpeg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: 50% 85%;
+.profile {
+  background-image: url("../img/profile.jpeg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 85%;
 }
 
 .flex.row.projects-list {
-    position: relative;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
 
 .projects-list .project-item {
-    width: 95vw;
-    height: 240px;
-    max-width: 100%;
-    background-color: #f5f5f5;
-    overflow: hidden;
-    border-radius: 3px;
-    position: relative;
-    opacity: 0;
-    padding: 3px;
+  width: 95vw;
+  height: 240px;
+  max-width: 100%;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  border-radius: 3px;
+  position: relative;
+  opacity: 0;
+  padding: 3px;
 }
 
 .projects-list i {
-    padding: 3px;
+  padding: 3px;
 }
 
 .projects-list i {
-    width: 95vw;
+  width: 95vw;
 }
 
 .project-item .project-img {
-    width: 100%;
-    height: 100%;
-    transition: all 0.3s ease-in-out 0s;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 .project-item .button {
-    right: 0;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    border: 2px solid var(--highlight);
-    width: 170px;
-    margin: 0 auto;
-    font-size: 13pt;
-    padding: 7px 0
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  border: 2px solid var(--highlight);
+  width: 170px;
+  margin: 0 auto;
+  font-size: 13pt;
+  padding: 7px 0
 }
 
 .project-item .text {
-    top: 0;
-    left: 50%;
-    position: absolute;
-    width: 70%;
-    transform: translateX(-50%)
+  top: 0;
+  left: 50%;
+  position: absolute;
+  width: 70%;
+  transform: translateX(-50%)
 }
 
 .project-item .text .bold {
-    font-size: 18pt;
+  font-size: 18pt;
 }
 
 .project-item .button,
 .project-item .text {
-    z-index: 2;
-    text-align: center;
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-    color: #333;
+  z-index: 2;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  color: #333;
 }
 
 .project-item.active {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .projects-list .project-item.active .project-img {
-    opacity: 0;
+  opacity: 0;
 }
 
 .projects-list .project-item.active .text {
-    opacity: 1;
-    top: 24%;
+  opacity: 1;
+  top: 24%;
 }
 
 .projects-list .project-item.active .button {
-    opacity: 1;
-    bottom: 24%;
+  opacity: 1;
+  bottom: 24%;
 }
 
 .email-wrapper {
-    margin: 15px 0px;
-    width: 100%;
-    position: relative;
-    display: inline-block;
-    margin-top: 50px;
-    opacity: 0;
+  margin: 15px 0px;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  margin-top: 50px;
+  opacity: 0;
 }
 
 .email-wrapper .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
 
-    /* Posición del tooltip */
-    position: absolute;
-    z-index: 1;
-    bottom: 200%;
-    left: 50%;
-    margin-left: -60px;
+  /* Posición del tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 200%;
+  left: 50%;
+  margin-left: -60px;
 
-    /* Fade tooltip */
-    opacity: 0;
-    transition: opacity 0.5s;
+  /* Fade tooltip */
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
 .email-wrapper .tooltiptext::after {
-    content: initial;
-    position: absolute;
-    top: 100%;
-    right: 15%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
+  content: initial;
+  position: absolute;
+  top: 100%;
+  right: 15%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
 }
 
 .email {
-    padding: 10px 12px;
-    transition: all 1s;
-    display: inline;
+  padding: 10px 12px;
+  transition: all 1s;
+  display: inline;
 }
 
 .email-button {
-    padding: 10px 15px;
-    transition: all 1s;
-    display: inline;
-    cursor: pointer;
-    background-color: #8e989d;
+  padding: 10px 15px;
+  transition: all 1s;
+  display: inline;
+  cursor: pointer;
+  background-color: #8e989d;
 }
 
 .email.transparent:active {
-    background-color: initial;
-    border: 2px solid white;
+  background-color: initial;
+  border: 2px solid white;
 }
 
 .email-button.transparent:active {
-    background-color: var(--highlight);
-    border: 2px solid white;
+  background-color: var(--highlight);
+  border: 2px solid white;
 }
 
 #up-button {
-    padding: 10px 15px;
-    transition: all 1s;
-    display: inline;
-    cursor: pointer;
-    background-color: var(--highlight);
-    font-size: 1.6rem;
+  padding: 10px 15px;
+  transition: all 1s;
+  display: inline;
+  cursor: pointer;
+  background-color: var(--highlight);
+  font-size: 1.6rem;
 }
 
 .divided::before {
-    content: "";
-    width: 100%;
-    height: 50%;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    background-color: var(--second-bg)
+  content: "";
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background-color: var(--second-bg)
 }
 
 .square {
-    padding: 10px 15px;
-    margin: 0 15px;
-    transition: all 0.5s;
-    display: inline;
-    cursor: pointer;
-    background-color: #29373f;
-    font-size: 1.6rem;
-    overflow: hidden;
+  padding: 10px 15px;
+  margin: 0 15px;
+  transition: all 0.5s;
+  display: inline;
+  cursor: pointer;
+  background-color: #29373f;
+  font-size: 1.6rem;
+  overflow: hidden;
 }
 
 .square.link {
-    position: relative;
-    opacity: 0;
+  position: relative;
+  opacity: 0;
 }
 
 .square i {
-    position: relative;
+  position: relative;
 }
 
 .copy {
-    font-size: 0.625rem;
+  font-size: 0.625rem;
 }
 
 #text-goodbye {
-    position: relative;
-    opacity: 0;
-    animation-delay: 0.5s;
+  position: relative;
+  opacity: 0;
+  animation-delay: 0.5s;
 }
 
 
 /*Equipos que soportan hover.*/
 @media (hover: hover) {
 
-    .clickable:hover {
-        color: var(--highlight);
-    }
+  .clickable:hover {
+    color: var(--highlight);
+  }
 
-    span.active:hover {
-        border-bottom: 1px solid var(--highlight);
-    }
+  span.active:hover {
+    border-bottom: 1px solid var(--highlight);
+  }
 
-    .transparent:hover {
-        background-color: var(--highlight);
-        border: 2px solid var(--second-bg);
-        color: white;
-    }
+  .transparent:hover {
+    background-color: var(--highlight);
+    border: 2px solid var(--second-bg);
+    color: white;
+  }
 
-    .email.transparent:hover {
-        background-color: initial;
-        border: 2px solid white;
-    }
+  .email.transparent:hover {
+    background-color: initial;
+    border: 2px solid white;
+  }
 
-    .email-button.transparent:hover {
-        background-color: var(--highlight);
-        border: 2px solid white;
-    }
+  .email-button.transparent:hover {
+    background-color: var(--highlight);
+    border: 2px solid white;
+  }
 
-    .email-button:hover+.tooltiptext {
-        visibility: visible;
-        opacity: 1;
-    }
+  .email-button:hover+.tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
 
-    .solid:hover {
-        background-color: #4ea5a3;
-        border: 2px solid var(--highlight);;
-        transform: scale(1.1);
-    }
+  .solid:hover {
+    background-color: #4ea5a3;
+    border: 2px solid var(--highlight);
+    ;
+    transform: scale(1.1);
+  }
 
-    .wrap-link .link:hover {
-        color: var(--highlight);
-    }
+  .wrap-link .link:hover {
+    color: var(--highlight);
+  }
 
-    .element.hex:hover {
-        transform: scale(1.1);
-    }
+  .element.hex:hover {
+    transform: scale(1.1);
+  }
 
-    .diamond-list .diamond:hover {
-        animation-name: rotateRightAndLeft;
-        animation-duration: 0.2s;
-        animation-timing-function: ease;
-        animation-iteration-count: 3;
-        animation-fill-mode: forwards;
-    }
+  .diamond-list .diamond:hover {
+    animation-name: rotateRightAndLeft;
+    animation-duration: 0.2s;
+    animation-timing-function: ease;
+    animation-iteration-count: 3;
+    animation-fill-mode: forwards;
+  }
 
-    .square:hover i {
-        animation-name: slideToBottomSquare;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-    }
+  .square:hover i {
+    animation-name: slideToBottomSquare;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
 
-    .square:hover {
-        background-color: var(--highlight);
-    }
+  .square:hover {
+    background-color: var(--highlight);
+  }
 
-    .projects-list .project-item:hover .project-img {
-        transform: scale(1.1);
-        opacity: 0;
-        transition: 0.5s;
-    }
+  .projects-list .project-item:hover .project-img {
+    transform: scale(1.1);
+    opacity: 0;
+    transition: 0.5s;
+  }
 
-    .projects-list .project-item:hover .text {
-        opacity: 1;
-        top: 24%;
-    }
+  .projects-list .project-item:hover .text {
+    opacity: 1;
+    top: 24%;
+  }
 
-    .projects-list .project-item:hover .button {
-        opacity: 1;
-        bottom: 24%;
-    }
+  .projects-list .project-item:hover .button {
+    opacity: 1;
+    bottom: 24%;
+  }
 }
 
 @media(min-width: 600px) {
-    .home-container{
-        background-position: center;
-        background-size: cover;
-        background-image:  linear-gradient(
-            rgb(6, 16, 41, 0.75), 
-            rgba(6, 16, 41, 0.65)
-         ),
+  .home-container {
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgb(6, 16, 41, 0.75),
+        rgba(6, 16, 41, 0.65)),
       url("../img/backgroundDesk.jpg");
-      height: calc(100vh + 60px);
-    }
+    height: calc(100vh + 60px);
+  }
 
-    .home-container .text {
-        font-size: 2.2rem;
-    }
+  .home-container .text {
+    font-size: 2.2rem;
+  }
 
-    .wrap-link {
-        height: initial;
-        overflow: visible;
-        position: static;
-        background: inherit;
-        max-height: initial;
-    }
+  .wrap-link {
+    height: initial;
+    overflow: visible;
+    position: static;
+    background: inherit;
+    max-height: initial;
+  }
 
-    nav .wrap-link>div {
-        display: inline;
-    }
+  nav .wrap-link>div {
+    display: inline;
+  }
 
-    nav i {
-        visibility: hidden;
-    }
+  nav i {
+    visibility: hidden;
+  }
 
-    .element {
-        max-width: 150px;
-    }
+  .element {
+    max-width: 150px;
+  }
 
-    .element.hex {
-        max-width: 375px;
-    }
+  .element.hex {
+    max-width: 375px;
+  }
 
-    .diamond-wrapper {
-        height: 130px;
-        width: 130px;
-    }
+  .diamond-wrapper {
+    height: 130px;
+    width: 130px;
+  }
 
-    .diamond i {
-        font-size: 2.5rem;
-    }
+  .diamond i {
+    font-size: 2.5rem;
+  }
 
-    .hexagon {
-        width: 340px;
-        height: 237px;
-    }
+  .hexagon {
+    width: 340px;
+    height: 237px;
+  }
 
-    .projects-list .project-item {
-        height: 265px;
-        width: 45vw;
-    }
+  .projects-list .project-item {
+    height: 265px;
+    width: 45vw;
+  }
 
-    .projects-list i {
-        width: 45vw;
-    }
+  .projects-list i {
+    width: 45vw;
+  }
 }
 
 @media(min-width: 960px) {
-    .element {
-        max-width: 250px;
-    }
+  .element {
+    max-width: 250px;
+  }
 
-    .diamond-wrapper {
-        height: 170px;
-        width: 170px;
-    }
+  .diamond-wrapper {
+    height: 170px;
+    width: 170px;
+  }
 
-    .diamond i {
-        font-size: 3rem;
-    }
+  .diamond i {
+    font-size: 3rem;
+  }
 
-    .hex-skills {
-        flex-flow: row wrap;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 100%;
-    }
+  .hex-skills {
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+  }
 
-    .progress-list {
-        width: 40%;
-    }
+  .progress-list {
+    width: 40%;
+  }
 
-    .hexagon {
-        width: 390px;
-        height: 287px;
-    }
+  .hexagon {
+    width: 390px;
+    height: 287px;
+  }
 
-    .projects-list .project-item {
-        width: 420px;
-    }
+  .projects-list .project-item {
+    width: 420px;
+  }
 
-    .projects-list i {
-        width: 420px;
-    }
+  .projects-list i {
+    width: 420px;
+  }
 }
 
 @media(min-width: 2040px) {
-    section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 
-    section#home {
-        display: block;
-    }
+  section#home {
+    display: block;
+  }
 
-    .container {
-        max-width: 2040px;
-    }
+  .container {
+    max-width: 2040px;
+  }
 
-    .container.divided {
-        max-width: initial;
-    }
+  .container.divided {
+    max-width: initial;
+  }
 
-    .container.divided+.container {
-        max-width: initial;
-    }
+  .container.divided+.container {
+    max-width: initial;
+  }
 }
 
 /*Pantallas extra pequeñas.*/
 @media(max-width: 400px) {
-    .email-button {
-        display: none;
-    }
+  .email-button {
+    display: none;
+  }
 }

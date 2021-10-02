@@ -41,7 +41,7 @@ var spanishJson;
 
 
 $('document').ready(function () {
-
+		$('.loader').show();
     //Get english object array
     $.getJSON('data/lang/en.json', (json) => {
         englishJson = json;
@@ -57,10 +57,14 @@ $('document').ready(function () {
                     loadWaypoints();
                     wakeHerokuProjects();
                     translateWebPage(englishJson);
+										$('.loader').hide();
+										$('#see-more').removeClass('hide');
                 }).catch(() => {
                     console.log("Error Loading.");
                     translateWebPage(englishJson);
                     loadWaypoints();
+										$('.loader').hide();
+										$('#see-more').removeClass('hide');
                 })
         });
     });
