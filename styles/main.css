@@ -180,8 +180,8 @@ h1 {
   color: #333;
 }
 
-.hide{
-	display: none;
+.hide {
+  display: none;
 }
 
 .overlay {
@@ -860,6 +860,14 @@ span.clickable {
   animation-delay: 0.5s;
 }
 
+.mobile {
+  display: inherit;
+}
+
+.desktop {
+  display: none;
+}
+
 
 /*Equipos que soportan hover.*/
 @media (hover: hover) {
@@ -944,6 +952,15 @@ span.clickable {
 }
 
 @media(min-width: 600px) {
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: inherit;
+  }
+
   .home-container {
     background-position: center;
     background-size: cover;
