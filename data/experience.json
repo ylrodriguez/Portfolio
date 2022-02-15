@@ -1,0 +1,38 @@
+{
+	"experiences": [
+		{
+			"companyName": "Grupo 525",
+			"link": "https://cincoveinticinco.com/",
+			"´position": "Front end Developer",
+			"startDate": "2020-06-01",
+			"endDate": null,
+			"descriptions_eng": [
+				"Develop and maintain in-house and clients' software mainly for cinema and television.",
+				"Work with a variety of different languages, platforms, frameworks such as JavaScript, TypeScript, Angular, Ruby on Rails, among others.",
+				"Architect and implement front-end solutions for different clients including Netflix, Sony Pictures, Telemundo, RCN and more."
+			],
+			"descriptions_esp": [
+				"Desarrollar y mantener software dedicado para producción de cine y televisión.",
+				"Trabajar con varios lenguajes, plataformas, frameworks como JavaScript, TypeScript, Angular, Ruby on Rails, entre otros.",
+				"Proponer e implementar arquitecturas y soluciones front-end para diferentes clientes como Netflix, Sony Pictures, Telemundo, RCN, etc."
+			]
+		},
+		{
+			"companyName": "Freelance",
+			"link": null,
+			"position": "Front end Developer",
+			"startDate": "2019-02-01",
+			"endDate": null,
+			"descriptions_eng": [
+				"Develop and maintain in-house and clients' software mainly for cinema and television.",
+				"Work with a variety of different languages, platforms, frameworks such as JavaScript, TypeScript, Angular, Ruby on Rails, among others.",
+				"Architect and implement front-end solutions for different clients including Netflix, Sony Pictures, Telemundo, RCN and more."
+			],
+			"descriptions_esp": [
+				"Desarrollar y mantener software dedicado para producción de cine y televisión.",
+				"Trabajar con varios lenguajes, plataformas, frameworks como JavaScript, TypeScript, Angular, Ruby on Rails, entre otros.",
+				"Proponer e implementar arquitecturas y soluciones front-end para diferentes clientes como Netflix, Sony Pictures, Telemundo, RCN, etc."
+			]
+		}
+	]
+}
