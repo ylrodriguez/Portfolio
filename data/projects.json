@@ -1,34 +1,34 @@
 {
-    "projects": [
-        {
-            "imgUrl": "img/projects/thumb-3.gif",
-            "name": "Casa Luker Talento y Gestión",
-            "tools": "Angular 6.0 + JHipster",
-            "link": "https://luker-demo.herokuapp.com/#/"
-        },
-        {
-            "imgUrl": "img/projects/thumb-1.gif",
-            "name": "DeepCart",
-            "tools": "Angular 8.0 + Laravel",
-            "link": "https://deepcart-app.herokuapp.com/"
-        },
-        {
-            "imgUrl": "img/projects/thumb-4.gif",
-            "name": "WeatherApp",
-            "tools": "Angular 8.0 + API OpenWeather + API Unsplash",
-            "link": "http://weather-yrapp.herokuapp.com"
-        },
-        {
-            "imgUrl": "img/projects/thumb-5.gif",
-            "name": "HeimRealEstate",
-            "tools": "MEAN Stack: MongoDB + Express.js + Angular 6.0 + Node.js",
-            "link": "https://heim-realestate.herokuapp.com/"
-        },
-        {
-            "imgUrl": "img/projects/thumb-2.gif",
-            "name": "Web Smartphones Tutorial",
-            "tools": "Laravel + Blade + Bootstrap 4.0",
-            "link": "https://github.com/ylrodriguez/Tutorial-Web-Accesible"
-        }
-    ]
+	"projects": [
+		{
+			"imgUrl": "img/projects/thumb-3.gif",
+			"name": "Casa Luker Talento y Gestión",
+			"tools": "Angular 8.0 + JHipster",
+			"link": "https://luker-demo.herokuapp.com/#/"
+		},
+		{
+			"imgUrl": "img/projects/thumb-1.gif",
+			"name": "DeepCart",
+			"tools": "Angular 8.0 + Laravel",
+			"link": "https://deepcart-app.herokuapp.com/"
+		},
+		{
+			"imgUrl": "img/projects/thumb-4.gif",
+			"name": "WeatherApp",
+			"tools": "Angular 8.0 + API OpenWeather + API Unsplash",
+			"link": "http://weather-yrapp.herokuapp.com"
+		},
+		{
+			"imgUrl": "img/projects/thumb-5.gif",
+			"name": "HeimRealEstate",
+			"tools": "MEAN Stack: MongoDB + Express.js + Angular 6.0 + Node.js",
+			"link": "https://heim-realestate.herokuapp.com/"
+		},
+		{
+			"imgUrl": "img/projects/thumb-2.gif",
+			"name": "Web Smartphones Tutorial",
+			"tools": "Laravel + Blade + Bootstrap 4.0",
+			"link": "https://github.com/ylrodriguez/Tutorial-Web-Accesible"
+		}
+	]
 }

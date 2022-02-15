@@ -1,41 +1,41 @@
 {
-    "skills": [
-        {
-            "skillName": "HTML5",
-            "progress": 90
-        },
-        {
-            "skillName": "CSS3",
-            "progress": 90
-        },
-        {
-            "skillName": "JavaScript",
-            "progress": 85
-        },
-        {
-					"skillName": "Angular 2+",
-					"progress": 85
-				},
-        {
-            "skillName": "Bootstrap",
-            "progress": 75
-        },
-        {
-            "skillName": "Foundation",
-            "progress": 75
-        },
-        {
-            "skillName": "Java",
-            "progress": 70
-        },
-        {
-            "skillName": "Laravel",
-            "progress": 70
-        },
-        {
-            "skillName": "Inglés",
-            "progress": 90,
-            "lg-key": "english"
-        }
-    ]
+	"skills": [
+		{
+			"skillName": "HTML5",
+			"progress": 90
+		},
+		{
+			"skillName": "CSS3",
+			"progress": 90
+		},
+		{
+			"skillName": "JavaScript",
+			"progress": 85
+		},
+		{
+			"skillName": "Angular 2+",
+			"progress": 85
+		},
+		{
+			"skillName": "Material",
+			"progress": 80
+		},
+		{
+			"skillName": "Bootstrap",
+			"progress": 75
+		},
+		{
+			"skillName": "Foundation",
+			"progress": 75
+		},
+		{
+			"skillName": "MySQL",
+			"progress": 70
+		},
+		{
+			"skillName": "Inglés",
+			"progress": 90,
+			"lg-key": "english"
+		}
+	]
 }

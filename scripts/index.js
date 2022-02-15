@@ -19,6 +19,7 @@ const HEROKUPROJECTSURL = [
     `https://deepcart-app.herokuapp.com/fake/${Date.now()}.jpg`,
     `https://deepcartapi-env.herokuapp.com/fake/${Date.now()}.jpg`,
     `https://luker-demo.herokuapp.com/fake/${Date.now()}.jpg`,
+		`https://heim-realestateapi.herokuapp.com/fake/${Date.now()}.jpg`,
     `https://heim-realestate.herokuapp.com/fake/${Date.now()}.jpg`,
     `http://weather-yrapp.herokuapp.com/fake/${Date.now()}.jpg`
 ]
