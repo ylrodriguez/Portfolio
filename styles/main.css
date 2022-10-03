@@ -952,6 +952,7 @@ span.clickable {
 }
 
 .tablist button.selected {
+  font-weight: bold;
   background-color: var(--page-bg);
   color: var(--highlight);
   border-bottom: 3px solid var(--highlight);
