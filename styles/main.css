@@ -456,7 +456,7 @@ span.clickable {
 
 .visible {
   height: initial;
-  max-height: 130px;
+  max-height: 200px;
 }
 
 .title {
