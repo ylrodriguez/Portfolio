@@ -36,7 +36,8 @@ Built from scratch, no template used. -->
 				</div>
 				<div class="wrap-link">
 					<div class="link" go="home" lg-key="home"></div>
-					<div class="link" go="about-me" lg-key="about"> mi</div>
+					<div class="link" go="about-me" lg-key="about"></div>
+					<div class="link" go="experience" lg-key="experience"></div>
 					<div class="link" go="projects" lg-key="projects"></div>
 					<div class="link" go="contact" lg-key="contact"></div>
 				</div>
@@ -128,11 +129,11 @@ Built from scratch, no template used. -->
 				<div class="experience-info">
 					<h1 class="company-name">
 						<span></span>
-						<a rel="noopener noreferrer" target="_blank" class="highlight" href=""></a>
+						<a rel="noopener noreferrer" target="_blank" class="highlight hover" href=""></a>
 					</h1>
 					<p class="range"></p>
 					<div>
-						<ul>
+						<ul class="ul-exp">
 						</ul>
 					</div>
 				</div>
@@ -147,6 +148,7 @@ Built from scratch, no template used. -->
 		<div class="container flex">
 			<div class="title" lg-key="projects"></div>
 			<div class="title-bar"></div>
+			<p class="short-desc" lg-key="projects-short"></p>
 			<div class="flex row projects-list">
 
 			</div>
@@ -160,7 +162,7 @@ Built from scratch, no template used. -->
 	<section id="contact">
 		<svg _ngcontent-kuf-c5="" height="75" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 102" width="100%"
 			xmlns="http://www.w3.org/2000/svg">
-			<path _ngcontent-kuf-c5="" d="M0 0 L50 100 L100 0 Z" fill="#ffffff" stroke="#ffffff"></path>
+			<path _ngcontent-kuf-c5="" d="M0 0 L50 100 L100 0 Z" fill="whitesmoke" stroke="whitesmoke"></path>
 		</svg>
 		<div class="gapnav"></div>
 		<div class="container flex">
@@ -193,8 +195,8 @@ Built from scratch, no template used. -->
 			</div>
 
 			<div class="flex row">
-				<p class="copy" style="font-size: 0.7rem">Yojhan Leonardo Rodríguez Ascencio <span
-						class="highlight">©2021</span></p>
+				<p class="copy" style="font-size: 0.7rem">Yojhan Leonardo Rodríguez Ascencio <span class="highlight"
+						id="current-year"></span></p>
 			</div>
 		</div>
 	</section>

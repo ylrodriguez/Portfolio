@@ -7,6 +7,7 @@ const NAVLINKS = document.querySelectorAll("nav .link");
 
 const ABOUTMESECTION = document.querySelector('#about-me');
 const PROJECTSSECTION = document.querySelector('#projects');
+const EXPERIENCESECTION = document.querySelector('#experience');
 const PROGRESSLIST = document.querySelector('.progress-list');
 const PROJECTSLIST = document.querySelector('.projects-list');
 const EXPERIENCELIST = document.querySelector('.experience-list');
@@ -14,8 +15,8 @@ const DIAMONDLIST = document.querySelector(".diamond-list");
 
 const CONTACTSSECTION = document.querySelector('#contact');
 
-// const MYURL = "https://ylrodriguez.github.io/Portfolio/";
-const MYURL = "http://127.0.0.1:5500/";
+const MYURL = "https://ylrodriguez.github.io/Portfolio/";
+// const MYURL = "http://127.0.0.1:5500/";
 const HEROKUPROJECTSURL = [
 	`https://deepcart-app.herokuapp.com/fake/${Date.now()}.jpg`,
 	`https://deepcartapi-env.herokuapp.com/fake/${Date.now()}.jpg`,
@@ -46,6 +47,9 @@ var spanishJson;
 
 
 $('document').ready(function () {
+
+	$('#current-year').text(`©${new Date().getFullYear()}`);
+
 	$('.loader').show();
 	//Get english object array
 	$.getJSON('data/lang/en.json', (json) => {
@@ -101,12 +105,14 @@ function addEventListeners() {
 		document.getElementById("span-en").classList.add("active");
 		document.getElementById("span-es").classList.remove("active");
 		translateWebPage(englishJson);
+		showInfoExperience(0);
 	})
 	document.getElementById("span-es").addEventListener("click", () => {
 		currentLanguage = "es";
 		document.getElementById("span-es").classList.add("active");
 		document.getElementById("span-en").classList.remove("active");
 		translateWebPage(spanishJson);
+		showInfoExperience(0);
 	})
 
 	//Listener to hamburguer element
@@ -325,7 +331,7 @@ function showInfoExperience(index) {
 			? `${dateRangeExperience(EXPERIENCE_DATA.endDate)}`
 			: `${currentLanguage === "es" ? 'Presente' : 'Present'}`
 
-		titleJob.innerHTML = `${EXPERIENCE_DATA.position}`;
+		titleJob.innerHTML = EXPERIENCE_DATA[`position_${key}`];
 		companyRef.innerHTML = `@ ${EXPERIENCE_DATA.companyName}`;
 		companyRef.href = EXPERIENCE_DATA.link;
 		range.innerHTML = `${startDate} - ${endDate}`;
@@ -524,15 +530,20 @@ function changeActiveLinkInNav(yOffSet) {
 		removeAllActive("navs");
 		NAVLINKS[1].classList.add("active");
 	}
+	// #Experience
+	if (yOffSet > EXPERIENCESECTION.offsetTop) {
+		removeAllActive("navs");
+		NAVLINKS[2].classList.add("active");
+	}
 	// #Projects
 	if (yOffSet > PROJECTSSECTION.offsetTop) {
 		removeAllActive("navs");
-		NAVLINKS[2].classList.add("active");
+		NAVLINKS[3].classList.add("active");
 	}
 	// #Contact
 	if (yOffSet > CONTACTSSECTION.offsetTop || (window.innerHeight + yOffSet - 100) === document.body.clientHeight) {
 		removeAllActive("navs");
-		NAVLINKS[3].classList.add("active");
+		NAVLINKS[4].classList.add("active");
 	}
 }
 

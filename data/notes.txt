@@ -1,0 +1,6 @@
+{
+			"imgUrl": "img/projects/thumb-2.gif",
+			"name": "Web Smartphones Tutorial",
+			"tools": "Laravel + Blade + Bootstrap 4.0",
+			"link": "https://github.com/ylrodriguez/Tutorial-Web-Accesible"
+		}

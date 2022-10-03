@@ -1,6 +1,30 @@
 {
 	"projects": [
 		{
+			"imgUrl": "img/projects/thumb-7.gif",
+			"name": "Locaciones Colombia",
+			"tools": "Javascript + Ruby on Rails",
+			"link": "https://locationcolombia.com/"
+		},
+		{
+			"imgUrl": "img/projects/thumb-8.gif",
+			"name": "Onewrapp Production Management",
+			"tools": "Angular 11.0 + Material 11.0",
+			"link": "https://onewrapp.com/"
+		},
+		{
+			"imgUrl": "img/projects/thumb-9.gif",
+			"name": "RCN Clap",
+			"tools": "Angular 8.0",
+			"link": "https://clap.rcntv.com.co/"
+		},
+		{
+			"imgUrl": "img/projects/thumb-6.gif",
+			"name": "Bogota Audiovisual Market",
+			"tools": "Javascript + Ruby on Rails",
+			"link": "https://www.bogotamarket.com/index.html"
+		},
+		{
 			"imgUrl": "img/projects/thumb-3.gif",
 			"name": "Casa Luker Talento y Gestión",
 			"tools": "Angular 8.0 + JHipster",
@@ -23,12 +47,6 @@
 			"name": "HeimRealEstate",
 			"tools": "MEAN Stack: MongoDB + Express.js + Angular 6.0 + Node.js",
 			"link": "https://heim-realestate.herokuapp.com/"
-		},
-		{
-			"imgUrl": "img/projects/thumb-2.gif",
-			"name": "Web Smartphones Tutorial",
-			"tools": "Laravel + Blade + Bootstrap 4.0",
-			"link": "https://github.com/ylrodriguez/Tutorial-Web-Accesible"
 		}
 	]
 }
