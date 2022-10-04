@@ -2,11 +2,11 @@
 	"skills": [
 		{
 			"skillName": "HTML5",
-			"progress": 90
+			"progress": 100
 		},
 		{
 			"skillName": "CSS3",
-			"progress": 90
+			"progress": 100
 		},
 		{
 			"skillName": "JavaScript",
@@ -22,7 +22,7 @@
 		},
 		{
 			"skillName": "Bootstrap",
-			"progress": 75
+			"progress": 80
 		},
 		{
 			"skillName": "Foundation",
