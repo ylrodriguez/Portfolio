@@ -15,8 +15,8 @@ const DIAMONDLIST = document.querySelector(".diamond-list");
 
 const CONTACTSSECTION = document.querySelector('#contact');
 
-// const MYURL = "https://ylrodriguez.github.io/Portfolio/";
-const MYURL = "http://127.0.0.1:5500/";
+const MYURL = "https://ylrodriguez.github.io/Portfolio/";
+// const MYURL = "http://127.0.0.1:5500/";
 const HEROKUPROJECTSURL = [
 	`https://deepcart-app.herokuapp.com/fake/${Date.now()}.jpg`,
 	`https://deepcartapi-env.herokuapp.com/fake/${Date.now()}.jpg`,
@@ -168,7 +168,7 @@ function addEventListeners() {
 	});
 
 	document.querySelector('#cv').addEventListener("click", () => {
-		var tempurl = "https://1drv.ms/b/s!AlaKRn08I0M_gvtbjkgA_3-TxHuzSQ?e=GLu1F1";
+		var tempurl = "https://1drv.ms/b/s!AlaKRn08I0M_g4R_5zWK_EhmIeUQAA?e=fnMyCB";
 		window.open(tempurl, "_blank ");
 	});
 
