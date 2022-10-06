@@ -169,7 +169,9 @@ function addEventListeners() {
 	});
 
 	document.querySelector('#cv').addEventListener("click", () => {
-		var tempurl = "https://1drv.ms/b/s!AlaKRn08I0M_g4R_5zWK_EhmIeUQAA?e=fnMyCB";
+		// var tempurl = "https://1drv.ms/b/s!AlaKRn08I0M_g4R_5zWK_EhmIeUQAA?e=fnMyCB";
+		var tempurl = `${MYURL}data/CV - Yojhan Rodriguez.pdf`;
+
 		window.open(tempurl, "_blank ");
 	});
 
