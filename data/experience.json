@@ -24,13 +24,13 @@
 			"position_eng": "Front-end Developer",
 			"position_esp": "Desarrollador Front-end",
 			"startDate": "2019-03-01",
-			"endDate": "2020-04-01",
+			"endDate": "2020-05-01",
 			"descriptions_eng": [
-				"Update legacy software and improve user interfaces in small modules from different local companies such as Casa Luker and Tybasoft.",
+				"Update legacy software and improve user interfaces from different local companies such as Casa Luker and Tybasoft.",
 				"Develop using different tools such as HTML5, CSS3, Angular 2+, SASS, Bootstrap, SVG animations, REST services, among others."
 			],
 			"descriptions_esp": [
-				"Actualizar software antiguo y mejorar interfaces de usuario de pequeños módulos de diferentes clientes.",
+				"Actualizar software antiguo y mejorar interfaces de usuario de diferentes clientes como Casa Luker y Tybasoft.",
 				"Desarollar aplicaciones usando diferentes herramientas como HTML5, CSS3, Angular 2+, SASS, Bootstrap, animaciones SVG, servicios REST, entre otros."
 			]
 		},
@@ -42,14 +42,14 @@
 			"startDate": "2018-01-01",
 			"endDate": "2018-07-01",
 			"descriptions_eng": [
-				"Manage and maintain internal system according to all the needs of the project 'Conocí-siento'.",
-				"Work with the following technologies: Angular, Laravel and MySQL",
-				"Develop modules to generate reports and final products."
+				"Manage and maintain internal system according to all the needs of the internal software and also one main project called 'Conocí-siento'.",
+				"Work with the following technologies: Angular, JavaScript, Laravel and MySQL",
+				"Develop and adapt existing modules to generate reports and final products."
 			],
 			"descriptions_esp": [
-				"Administrar y mantener el sistema interno de acuerdo a las necesidades del proyecto 'Conocí-siento'.",
-				"Trabajar con las siguientes tecnologías: Angular, Laravel y MySQL",
-				"Desarrollar módulos para generar reportes y productos finales."
+				"Administrar y mantener el sistema interno de acuerdo a las necesidades del software interno y del proyecto 'Conocí-siento'.",
+				"Trabajar con las siguientes tecnologías: Angular, JavaScript Laravel y MySQL",
+				"Desarrollar y adaptar módulos existentes para generar reportes y productos finales."
 			]
 		}
 	]
