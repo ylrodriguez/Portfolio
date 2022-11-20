@@ -8,13 +8,13 @@
 			"startDate": "2020-06-01",
 			"endDate": "2022-05-01",
 			"descriptions_eng": [
-				"Develop and maintain in-house and clients' software mainly for cinema and television.",
-				"Work with a variety of different languages, platforms, frameworks and tools such as JavaScript, TypeScript, Angular, Ruby on Rails, among others.",
+				"Develop and maintain in-house and clients' software mainly for cinema and television networks.",
+				"Work with a variety of different languages, platforms, frameworks and tools such as JavaScript, TypeScript, Angular 2+, Ruby on Rails, among others.",
 				"Architect and implement front-end solutions for different clients including Netflix, Sony Pictures, Telemundo, RCN Colombia and more."
 			],
 			"descriptions_esp": [
 				"Desarrollar y mantener software dedicado para producción de cine y televisión.",
-				"Trabajar con varios lenguajes, plataformas, frameworks y herramientas como JavaScript, TypeScript, Angular, Ruby on Rails, entre otros.",
+				"Trabajar con varios lenguajes, plataformas, frameworks y herramientas como JavaScript, TypeScript, Angular 2+, Ruby on Rails, entre otros.",
 				"Proponer e implementar arquitecturas y soluciones front-end para diferentes clientes como Netflix, Sony Pictures, Telemundo, RCN Colombia, etc."
 			]
 		},
@@ -23,15 +23,15 @@
 			"link": "https://www.linkedin.com/in/ylrodriguez/",
 			"position_eng": "Front-end Developer",
 			"position_esp": "Desarrollador Front-end",
-			"startDate": "2019-04-01",
-			"endDate": "2021-12-01",
+			"startDate": "2019-03-01",
+			"endDate": "2020-04-01",
 			"descriptions_eng": [
-				"Update legacy software and improve user interfaces in small modules from differents clients.",
-				"Develop using different tools such as HTML5, CSS3, Angular, SASS, Bootstrap, SVG animations, REST services, among others."
+				"Update legacy software and improve user interfaces in small modules from different local companies such as Casa Luker and Tybasoft.",
+				"Develop using different tools such as HTML5, CSS3, Angular 2+, SASS, Bootstrap, SVG animations, REST services, among others."
 			],
 			"descriptions_esp": [
 				"Actualizar software antiguo y mejorar interfaces de usuario de pequeños módulos de diferentes clientes.",
-				"Desarollar aplicaciones usando diferentes herramientas como HTML5, CSS3, Angular, SASS, Bootstrap, animaciones SVG, servicios REST, entre otros."
+				"Desarollar aplicaciones usando diferentes herramientas como HTML5, CSS3, Angular 2+, SASS, Bootstrap, animaciones SVG, servicios REST, entre otros."
 			]
 		},
 		{
