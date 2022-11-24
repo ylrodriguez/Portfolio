@@ -34,19 +34,19 @@
 			"imgUrl": "img/projects/thumb-1.gif",
 			"name": "DeepCart",
 			"tools": "Angular 8.0 + Laravel",
-			"link": "https://deepcart-app.herokuapp.com/"
+			"link": "https://deepcart-app.netlify.app/"
 		},
 		{
 			"imgUrl": "img/projects/thumb-4.gif",
 			"name": "WeatherApp",
 			"tools": "Angular 8.0 + API OpenWeather + API Unsplash",
-			"link": "http://weather-yrapp.herokuapp.com"
+			"link": "https://weather-yr-app.netlify.app/"
 		},
 		{
 			"imgUrl": "img/projects/thumb-5.gif",
 			"name": "HeimRealEstate",
 			"tools": "MEAN Stack: MongoDB + Express.js + Angular 6.0 + Node.js",
-			"link": "https://heim-realestate.herokuapp.com/"
+			"link": "https://heim-realestate.netlify.app/"
 		}
 	]
 }

@@ -16,15 +16,15 @@ const DIAMONDLIST = document.querySelector(".diamond-list");
 const CONTACTSSECTION = document.querySelector('#contact');
 
 const MYURL = "https://ylrodriguez.github.io/Portfolio/";
-// const MYURL = "http://127.0.0.1:5500/";
+// const MYURL = "http://127.0.0.1:5500/Portfolio/";
 
 const HEROKUPROJECTSURL = [
-	`https://deepcart-app.herokuapp.com/fake/${Date.now()}.jpg`,
-	`https://deepcartapi-env.herokuapp.com/fake/${Date.now()}.jpg`,
+	`https://deepcart-app.netlify.app/fake/${Date.now()}.jpg`,
+	`https://deepcartapi-env.fly.dev/fake/${Date.now()}.jpg`,
 	`https://luker-demo.herokuapp.com/fake/${Date.now()}.jpg`,
-	`https://heim-realestateapi.herokuapp.com/fake/${Date.now()}.jpg`,
-	`https://heim-realestate.herokuapp.com/fake/${Date.now()}.jpg`,
-	`http://weather-yrapp.herokuapp.com/fake/${Date.now()}.jpg`
+	`https://heim-realestateapi.fly.dev/fake/${Date.now()}.jpg`,
+	`https://heim-realestate.netlify.app/fake/${Date.now()}.jpg`,
+	`https://weather-yr-app.netlify.app/fake/${Date.now()}.jpg`
 ]
 
 var navElementHasFixedClass = false;
