@@ -28,7 +28,7 @@
 			"imgUrl": "img/projects/thumb-3.gif",
 			"name": "Casa Luker Talento y Gestión",
 			"tools": "Angular 8.0 + JHipster",
-			"link": "https://luker-demo.herokuapp.com/#/"
+			"link": "https://luker-talent.netlify.app/"
 		},
 		{
 			"imgUrl": "img/projects/thumb-1.gif",

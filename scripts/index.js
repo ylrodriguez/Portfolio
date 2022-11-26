@@ -16,12 +16,12 @@ const DIAMONDLIST = document.querySelector(".diamond-list");
 const CONTACTSSECTION = document.querySelector('#contact');
 
 const MYURL = "https://ylrodriguez.github.io/Portfolio/";
-// const MYURL = "http://127.0.0.1:5500/Portfolio/";
+// const MYURL = "http://127.0.0.1:5500/";
 
-const HEROKUPROJECTSURL = [
+const PROJECTSURL = [
 	`https://deepcart-app.netlify.app/fake/${Date.now()}.jpg`,
 	`https://deepcartapi-env.fly.dev/fake/${Date.now()}.jpg`,
-	`https://luker-demo.herokuapp.com/fake/${Date.now()}.jpg`,
+	`https://luker-talent.netlify.app/fake/${Date.now()}.jpg`,
 	`https://heim-realestateapi.fly.dev/fake/${Date.now()}.jpg`,
 	`https://heim-realestate.netlify.app/fake/${Date.now()}.jpg`,
 	`https://weather-yr-app.netlify.app/fake/${Date.now()}.jpg`
@@ -64,7 +64,7 @@ $('document').ready(function () {
 				.then(() => getExperience())
 				.then(() => {
 					loadWaypoints();
-					wakeHerokuProjects();
+					wakePersonalProjects();
 					translateWebPage(englishJson);
 					$('.loader').hide();
 					$('#see-more').removeClass('hide');
@@ -217,9 +217,9 @@ function getSkills() {
 		})
 }
 
-function wakeHerokuProjects() {
-	// Wake up Heroku Projects requesting a fake image.
-	for (let projectUrl of HEROKUPROJECTSURL) {
+function wakePersonalProjects() {
+	// Wake up Projects requesting a fake image.
+	for (let projectUrl of PROJECTSURL) {
 		var i = document.createElement("img");
 		i.src = projectUrl
 	}
