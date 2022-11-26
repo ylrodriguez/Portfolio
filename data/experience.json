@@ -5,7 +5,7 @@
 			"link": "https://cincoveinticinco.com/",
 			"position_eng": "Front-end Engineer",
 			"position_esp": "Ingeniero Front-end",
-			"startDate": "2020-06-01",
+			"startDate": "2020-04-01",
 			"endDate": "2022-05-01",
 			"descriptions_eng": [
 				"Develop and maintain in-house and clients' software mainly for cinema and television networks.",
@@ -19,12 +19,12 @@
 			]
 		},
 		{
-			"companyName": "Freelancer",
+			"companyName": "Front-end Freelancer",
 			"link": "https://www.linkedin.com/in/ylrodriguez/",
 			"position_eng": "Front-end Developer",
 			"position_esp": "Desarrollador Front-end",
-			"startDate": "2019-03-01",
-			"endDate": "2020-05-01",
+			"startDate": "2019-02-01",
+			"endDate": "2020-03-01",
 			"descriptions_eng": [
 				"Update legacy software and improve user interfaces from different local companies such as Casa Luker and Tybasoft.",
 				"Develop using different tools such as HTML5, CSS3, Angular 2+, SASS, Bootstrap, SVG animations, REST services, among others."
@@ -37,8 +37,8 @@
 		{
 			"companyName": "Universidad Distrital",
 			"link": "http://idexud.udistrital.edu.co/?p=158",
-			"position_eng": "Technical Support",
-			"position_esp": "Apoyo técnico",
+			"position_eng": "Junior Software Developer",
+			"position_esp": "Desarrollador de Software Junior",
 			"startDate": "2018-01-01",
 			"endDate": "2018-07-01",
 			"descriptions_eng": [
