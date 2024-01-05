@@ -13,28 +13,28 @@
 			"link": "https://onewrapp.com/"
 		},
 		{
-			"imgUrl": "img/projects/thumb-9.gif",
-			"name": "RCN Clap",
-			"tools": "Angular 8.0",
-			"link": "https://clap.rcntv.com.co/"
+			"imgUrl": "img/projects/thumb-10.gif",
+			"name": "Tiendas D1",
+			"tools": "React + Next.js",
+			"link": "https://domicilios.tiendasd1.com/"
 		},
 		{
 			"imgUrl": "img/projects/thumb-6.gif",
 			"name": "Bogota Audiovisual Market",
 			"tools": "Javascript + Ruby on Rails",
-			"link": "https://www.bogotamarket.com/index.html"
+			"link": "https://bogotamarket.com/"
 		},
 		{
 			"imgUrl": "img/projects/thumb-3.gif",
 			"name": "Casa Luker Talento y Gestión",
-			"tools": "Angular 8.0 + JHipster",
+			"tools": "Angular 12.0 + JHipster",
 			"link": "https://luker-talent.netlify.app/"
 		},
 		{
-			"imgUrl": "img/projects/thumb-1.gif",
-			"name": "DeepCart",
-			"tools": "Angular 8.0 + Laravel",
-			"link": "https://deepcart-app.netlify.app/"
+			"imgUrl": "img/projects/thumb-9.gif",
+			"name": "RCN Clap",
+			"tools": "Angular 14.0",
+			"link": "https://clap.rcntv.com.co/"
 		},
 		{
 			"imgUrl": "img/projects/thumb-4.gif",

@@ -17,20 +17,20 @@
 			"progress": 90
 		},
 		{
-			"skillName": "Material",
+			"skillName": "React",
+			"progress": 90
+		},
+		{
+			"skillName": "Next.js",
+			"progress": 85
+		},
+		{
+			"skillName": "Material UI",
 			"progress": 80
 		},
 		{
 			"skillName": "Bootstrap",
 			"progress": 80
-		},
-		{
-			"skillName": "Foundation",
-			"progress": 75
-		},
-		{
-			"skillName": "MySQL",
-			"progress": 70
 		},
 		{
 			"skillName": "Inglés",

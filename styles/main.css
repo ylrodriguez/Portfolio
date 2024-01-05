@@ -965,6 +965,11 @@ span.clickable {
   font-size: 13px;
 }
 
+#experience .container {
+  min-height: 520px;
+  justify-content: start;
+}
+
 .experience-info ul {
   list-style: none;
 }
@@ -1201,6 +1206,10 @@ span.clickable {
 
   .projects-list i {
     width: 420px;
+  }
+
+  #experience .container {
+    min-height: 390px;
   }
 }
 

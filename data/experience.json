@@ -1,12 +1,29 @@
 {
 	"experience": [
 		{
+			"companyName": "Instaleap",
+			"link": "https://instaleap.io/",
+			"position_eng": "Front-end Engineer",
+			"position_esp": "Ingeniero Front-end",
+			"startDate": "2022-11-01",
+			"descriptions_eng": [
+				"Develop and design views, features, and robust infrastructures for a recognized e-commerce platform.",
+				"Utilize primarily tools such as React, Next.js, Webpack, Rollup, and Ant Design to enhance the platform relied upon by thousands of users.",
+				"Participate consistently in the architectural process and decisions to meet product requirements and provide value to all stakeholders."
+			],
+			"descriptions_esp": [
+				"Desarrollar y diseñar vistas, modulos e infraestructurs robustas para una plataforma de e-commerce reconocida.",
+				"Usar herramientas como React, Next.js, Webpack, Rollup y Ant Design para mejorar la plataforma en la que confían miles de usuarios.",
+				"Participar de manera constante en el proceso de arquitectura y en la toma de decisiones para cumplir con los requisitos de producto y brindar valor a todas las partes interesadas."
+			]
+		},
+		{
 			"companyName": "Grupo 525",
 			"link": "https://cincoveinticinco.com/",
 			"position_eng": "Front-end Engineer",
 			"position_esp": "Ingeniero Front-end",
-			"startDate": "2020-04-01",
-			"endDate": "2022-05-01",
+			"startDate": "2020-03-01",
+			"endDate": "2022-11-01",
 			"descriptions_eng": [
 				"Develop and maintain in-house and clients' software mainly for cinema and television networks.",
 				"Work with a variety of different languages, platforms, frameworks and tools such as JavaScript, TypeScript, Angular 2+, Ruby on Rails, among others.",
@@ -37,8 +54,8 @@
 		{
 			"companyName": "Universidad Distrital",
 			"link": "http://idexud.udistrital.edu.co/?p=158",
-			"position_eng": "Junior Software Developer",
-			"position_esp": "Desarrollador de Software Junior",
+			"position_eng": "Jr. Software Developer",
+			"position_esp": "Desarrollador de Software Jr.",
 			"startDate": "2018-01-01",
 			"endDate": "2018-07-01",
 			"descriptions_eng": [
