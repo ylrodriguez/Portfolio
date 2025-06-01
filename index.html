@@ -24,23 +24,25 @@
 		<img class="mobile" src="img/loader-mini.svg" alt="">
 		<img class="desktop" src="img/loader.svg" alt="">
 	</div>
+	<!-- Home Section -->
 	<section id="home">
 		<div class="home-container flex">
+			<div class="home-container__mask"></div>
 			<p class="description__main" lg-key="short-description"></p>
 			<p class="description__sub">
 				<span class="description__sub-main" lg-key="short-description-main"></span>
 				<span class="description__sub-secondary highlight" lg-key="short-description-secondary"></span>
-				<span class="description__sub-position highlight">|</span>
+				<span class="description__sub-position highlight hide">|</span>
 			</p>
 			<div id="see-more" class="button transparent hide" lg-key="see-more"></div>
-			<nav class="flex">
+			<nav class="flex hide">
 				<div class="lang-div">
 					<span class="clickable" id="span-es">ES</span>&nbsp&nbsp
 					<span class="clickable active" id="span-en">EN</span>
 				</div>
 				<div class="wrap-link">
 					<div class="link" go="home" lg-key="home"></div>
-					<div class="link" go="about-me" lg-key="about"></div>
+					<div class="link" go="skills" lg-key="skills"></div>
 					<div class="link" go="experience" lg-key="experience"></div>
 					<div class="link" go="projects" lg-key="projects"></div>
 					<div class="link" go="contact" lg-key="contact"></div>
@@ -50,78 +52,17 @@
 		</div>
 
 	</section>
-	<section id="about-me">
+	<!-- Skills Section -->
+	<section id="skills">
 		<div class="container flex">
 			<div class="gapnav"></div>
-			<div class="title" lg-key="about"></div>
+			<div class="title" lg-key="skills"></div>
 			<div class="title-bar"></div>
-			<div class="flex hex-skills">
-				<div class="element hex">
-					<div class="hexagon">
-						<div class="hexagon-inner">
-							<div class="hexagon-inner-in profile">
-							</div>
-						</div>
-					</div>
-					<div class="text-element">
-						<div lg-key="description"></div>
-						<div>
-						</div>
-					</div>
-				</div>
-				<div class="progress-list">
-				</div>
-			</div>
-			<div class="flex row diamond-list">
-				<div class="element">
-					<div class="diamond-wrapper">
-						<div class="diamond"><i class="fas fa-university"></i></div>
-					</div>
-					<div class="text-element">
-						<h1 lg-key="edu"></h1>
-						<div lg-key="edu-desc"></div>
-					</div>
-				</div>
-
-				<div class="element">
-					<div class="diamond-wrapper">
-						<div class="diamond"><i class="fas fa-file-code"></i></div>
-					</div>
-					<div class="text-element">
-						<h1 lg-key="tools"></h1>
-						<div lg-key="tools-desc"></div>
-					</div>
-				</div>
-
-				<div class="element">
-					<div class="diamond-wrapper">
-						<div class="diamond"><i class="fas fa-book-open"></i></div>
-					</div>
-					<div class="text-element">
-						<h1 lg-key="learn"></h1>
-						<div lg-key="learn-desc"></div>
-					</div>
-				</div>
-				<div class="element">
-					<div class="diamond-wrapper">
-						<div class="diamond"><i class="fas fa-language"></i></div>
-					</div>
-					<div class="text-element">
-						<h1 lg-key="langu"></h1>
-						<div lg-key="langu-desc"></div>
-					</div>
-				</div>
-			</div>
-			<div class="flex row">
-				<div id="cv" class="button solid">
-					Curriculum vitae
-				</div>
-			</div>
 
 		</div>
 	</section>
 
-	<!-- Start Experience Section -->
+	<!-- Experience Section -->
 	<section id="experience">
 		<div class="gapnav"></div>
 		<div class="container flex">
@@ -144,9 +85,8 @@
 			</div>
 		</div>
 	</section>
-	<!-- End Experience Section -->
 
-	<!-- Start Projects Section -->
+	<!-- Projects Section -->
 	<section id="projects">
 		<div class="gapnav"></div>
 		<div class="container flex">
@@ -158,33 +98,20 @@
 			</div>
 		</div>
 	</section>
-	<!-- End Projects Section -->
 
-
-
-	<!-- Start Contact Section -->
+	<!-- Contact Section -->
 	<section id="contact">
 		<svg _ngcontent-kuf-c5="" height="75" preserveAspectRatio="none" version="1.1" viewBox="0 0 100 102" width="100%"
 			xmlns="http://www.w3.org/2000/svg">
-			<path _ngcontent-kuf-c5="" d="M0 0 L50 100 L100 0 Z" fill="whitesmoke" stroke="whitesmoke"></path>
+			<path _ngcontent-kuf-c5="" d="M0 0 L50 100 L100 0 Z" fill="#02090A" stroke="#02090A"></path>
 		</svg>
 		<div class="gapnav"></div>
 		<div class="container flex">
 			<div class="title" lg-key="contact"></div>
 			<div class="title-bar"></div>
 			<p id="text-goodbye" lg-key="text-goodbye"></p>
-			<div class="flex row">
-
-				<div class="email-wrapper">
-					<div class="email transparent">ylrodriguez024@gmail.com </div>
-					<div class="email-button transparent">
-						<i class="fas fa-copy"></i>
-					</div>
-					<div class="tooltiptext" lg-key="tooltip-copy"></div>
-				</div>
-			</div>
-			<div class="flex row">
-			</div>
+			<div class="flex row"></div>
+			<div class="flex row"></div>
 		</div>
 		<div class="container gapnav flex divided">
 			<div id="up-button" class="button transparent"><i class="fas fa-angle-double-up"></i></div>
@@ -204,7 +131,6 @@
 			</div>
 		</div>
 	</section>
-	<!-- End Contact Section -->
 	<div class="overlay">
 	</div>
 

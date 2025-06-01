@@ -1,4 +1,4 @@
-import { ABOUTMESECTION, CONTACTSSECTION, EXPERIENCESECTION, HOMESECTION, NAVLINKS, PROJECTSSECTION } from "../../constants/elements.js";
+import { SKILLSSECTION, CONTACTSSECTION, EXPERIENCESECTION, HOMESECTION, NAVLINKS, PROJECTSSECTION } from "../../constants/elements.js";
 import { removeAllActive } from "../../shared/utils/index.js";
 
 export default function changeActiveLinkInNav(yOffSet) {
@@ -8,9 +8,9 @@ export default function changeActiveLinkInNav(yOffSet) {
 		removeAllActive("navs");
 		NAVLINKS[0].classList.add("active");
 	}
-	// #About Me
+	// #Skills
 
-	if (yOffSet > ABOUTMESECTION.offsetTop) {
+	if (yOffSet > SKILLSSECTION.offsetTop) {
 		removeAllActive("navs");
 		NAVLINKS[1].classList.add("active");
 	}

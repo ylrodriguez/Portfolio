@@ -89,9 +89,6 @@ export function animateAboutMeDiamondList() {
 export function animateContactBeggining() {
 	var paragraphContact = document.querySelector("#text-goodbye");
 	paragraphContact.classList.add("slide-to-left");
-
-	var emailWrapper = document.querySelector(".email-wrapper");
-	emailWrapper.classList.add("slide-to-bottom");
 }
 
 export function animateProjectsList() {

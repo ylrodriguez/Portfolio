@@ -1,6 +1,6 @@
 
 let navElementHasFixedClass = false;
-let aboutMeTitleAnimated = false;
+let skillsTitleAnimated = false;
 let aboutMeHexagonAnimated = false;
 let aboutMeDiamondListAnimated = false;
 let projectsTitleAnimated = false;
@@ -22,7 +22,7 @@ let spanishJson = {}
 
 export default {
 	navElementHasFixedClass,
-	aboutMeTitleAnimated,
+	skillsTitleAnimated,
 	aboutMeHexagonAnimated,
 	aboutMeDiamondListAnimated,
 	projectsTitleAnimated,
@@ -38,5 +38,6 @@ export default {
 	currentLanguage,
 	englishJson,
 	spanishJson,
-	translations
+	translations,
+	shortDescriptionBlockAnimation
 }

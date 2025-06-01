@@ -1,6 +1,7 @@
+import { MYURL } from "./constants/elements.js";
 import state from "./constants/state.js";
 import { wakePersonalProjects, addEventListeners, lang, loadWaypoints, scrollEffects } from "./core/index.js";
-import { getSkills, getProjects, getExperience, getLanguageJSON } from "./shared/services/index.js";
+import { getSkills, getProjects, getExperience, getLanguageJSON, getMaskSVG } from "./shared/services/index.js";
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -9,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('.loader').style.display = 'block';
 
   getLanguageJSON()
-    .then(() => Promise.all([getSkills(), getProjects(), getExperience()]))
+    .then(() => Promise.all([getSkills(), getProjects(), getExperience(), getMaskSVG()]))
     .then(() => {
       loadWaypoints();
       wakePersonalProjects();

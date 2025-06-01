@@ -12,6 +12,8 @@ const NAVLINKS = document.querySelectorAll("nav .link");
 /** @type {HTMLElement} */
 const ABOUTMESECTION = document.querySelector('#about-me');
 /** @type {HTMLElement} */
+const SKILLSSECTION = document.querySelector('#skills');
+/** @type {HTMLElement} */
 const PROJECTSSECTION = document.querySelector('#projects');
 /** @type {HTMLElement} */
 const EXPERIENCESECTION = document.querySelector('#experience');
@@ -52,4 +54,5 @@ export {
 	CONTACTSSECTION,
 	MYURL,
 	FAKE_PROJECTS_URL,
+	SKILLSSECTION
 }

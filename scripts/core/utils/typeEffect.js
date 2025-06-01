@@ -1,4 +1,4 @@
-export default function typeText(element, text, speed = 50) {
+export default function typeText(element, text, speed = 40) {
 	return new Promise((resolve) => {
 		let i = 0;
 		function type() {

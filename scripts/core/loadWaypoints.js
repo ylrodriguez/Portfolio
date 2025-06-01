@@ -28,54 +28,15 @@ export default function loadWaypoints() {
 		},
 	});
 
-	// ---> About Me Section
+	// ---> Skills Section
 	new Waypoint({
 		element: BUTTONSEEMORE,
 		handler: function (direction) {
-			if (direction === "down" && !state.aboutMeTitleAnimated) {
-				animateTitleOfASection("#about-me", "right");
-				state.aboutMeTitleAnimated = true;
+			if (direction === "down" && !state.skillsTitleAnimated) {
+				animateTitleOfASection("#skills", "right");
+				state.skillsTitleAnimated = true;
 			}
 		}
-	});
-
-	new Waypoint({
-		element: BUTTONSEEMORE,
-		handler: function (direction) {
-			if (direction === "down" && !state.aboutMeHexagonAnimated) {
-				animateAboutMeElementHexagon();
-				animateAboutMeProgressList();
-				state.aboutMeHexagonAnimated = true;
-			}
-		},
-		offset: -200
-	});
-
-	new Waypoint({
-		element: DIAMONDLIST,
-		handler: function (direction) {
-			if (direction === "down" && !state.aboutMeDiamondListAnimated) {
-				animateAboutMeDiamondList();
-				state.aboutMeDiamondListAnimated = true;
-			}
-		},
-		offset: "80%"
-	});
-
-	new Waypoint({
-		element: document.querySelector('#cv'),
-		handler: function (direction) {
-			if (direction === "down" && !state.aboutMeCvButtonAnimated) {
-
-				/** @type {HTMLElement} */
-				var buttonCV = document.querySelector('#cv');
-
-				buttonCV.style = "animation-delay: 0.5s; animation-timing-function: ease-in-out;";
-				buttonCV.classList.add("slide-to-left");
-				state.aboutMeCvButtonAnimated = true;
-			}
-		},
-		offset: "80%"
 	});
 
 	// ---> Experience Section

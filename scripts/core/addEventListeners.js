@@ -1,4 +1,4 @@
-import { ABOUTMESECTION, BUTTONSEEMORE, HOMESECTION, MYURL, NAVELEMENT, NAVLINKS, WRAPLINKELEMENT } from "../constants/elements.js";
+import { SKILLSSECTION, BUTTONSEEMORE, HOMESECTION, MYURL, NAVELEMENT, NAVLINKS, WRAPLINKELEMENT } from "../constants/elements.js";
 import state from "../constants/state.js";
 import { removeAllActive, scrollToElementId, showInfoExperience } from "../shared/utils/index.js";
 import lang from "./lang.js";
@@ -7,6 +7,7 @@ function checkMediaQueryForSmallDevices(media) {
 
 	if (media.matches) { // If media query matches
 		NAVELEMENT.classList.add("fixed");
+		NAVELEMENT.classList.remove("hide");
 		state.navElementHasFixedClass = true;
 	}
 	else {
@@ -63,8 +64,8 @@ export default function addEventListeners() {
 
 	//Listener button see more
 	BUTTONSEEMORE.addEventListener("click", () => {
-		scrollToElementId('about-me')
-		ABOUTMESECTION.focus();
+		scrollToElementId('skills')
+		SKILLSSECTION.focus();
 	})
 
 	//Listener up button
@@ -79,44 +80,6 @@ export default function addEventListeners() {
 
 		WRAPLINKELEMENT.classList.remove("visible");
 	})
-
-	document.querySelector('.email-button').addEventListener("mouseover", () => {
-		var textoTooltip = document.querySelector('.email-wrapper .tooltiptext');
-		/** @type {HTMLElement} */
-		var emailWrapper = document.querySelector('.email-wrapper');
-
-		textoTooltip.innerHTML = state.translations["tooltip-copy"];
-		textoTooltip.classList.remove("flip-element");
-		emailWrapper.classList.remove("minimize-and-expand");
-		emailWrapper.style = "opacity: 1";
-	});
-
-	document.querySelector('.email-button').addEventListener("click", () => {
-		var textArea = document.createElement("textarea");
-		var textoTooltip = document.querySelector('.email-wrapper .tooltiptext');
-		var emailWrapper = document.querySelector('.email-wrapper');
-
-		textArea.value = "ylrodriguez024@gmail.com";
-		textArea.style = "font-size: 1px; display: block; width: 10px; height: 5px;";
-		emailWrapper.appendChild(textArea);
-		textArea.focus();
-		textArea.select();
-		document.execCommand('copy');
-		emailWrapper.removeChild(textArea);
-
-
-		textoTooltip.innerHTML = state.translations["tooltip-copied"]
-		emailWrapper.classList.remove("slide-to-bottom");
-		textoTooltip.classList.add("flip-element");
-		emailWrapper.classList.add("minimize-and-expand");
-	});
-
-	document.querySelector('#cv').addEventListener("click", () => {
-		// var tempurl = "https://1drv.ms/b/s!AlaKRn08I0M_g4R_5zWK_EhmIeUQAA?e=fnMyCB";
-		var tempurl = `${MYURL}data/CV - Yojhan Rodriguez.pdf`;
-
-		window.open(tempurl, "_blank ");
-	});
 
 	document.querySelector('#link-git').addEventListener("click", () => {
 		var tempurl = "https://github.com/ylrodriguez";

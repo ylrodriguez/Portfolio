@@ -5,7 +5,7 @@ https://coolors.co/0b132b-1c2541-3a506b-5bc0be-ffffff
 
 :root {
   --page-bg: #f6f5ff;
-  --main-bg: #061029;
+  --main-bg: #02090A;
   --second-bg: #020917;
   --highlight: #5bc0be;
   --tab-height: 42px;
@@ -35,11 +35,14 @@ https://coolors.co/0b132b-1c2541-3a506b-5bc0be-ffffff
 
 @keyframes slideDown {
   0% {
-    height: 0;
+    opacity: 0;
+    height: 40px;
     overflow: hidden;
   }
 
+
   100% {
+    opacity: 1;
     height: 60px;
     overflow: visible;
   }
@@ -194,22 +197,27 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
-  color: #FFFFFF;
+  color: #D3D3D3;
   font-family: 'Montserrat', sans-serif;
-  font-size: 16px
+  font-size: 16px;
+  background-color: var(--main-bg);
 }
 
 h1 {
-  color: #333;
+  color: #D3D3D3;
+}
+
+p {
+  margin: 0;
 }
 
 .hide {
-  display: none;
+  display: none !important
 }
 
 .overlay {
   position: fixed;
-  background: #78838a;
+  background: rgba(0, 0, 0, 0.8);
   top: 0;
   left: 0;
   width: 100%;
@@ -218,6 +226,7 @@ h1 {
   visibility: hidden;
   overflow: hidden;
   transition: opacity .35s, visibility .35s, height .35s;
+  z-index: 2;
 }
 
 .overlay.open {
@@ -231,11 +240,11 @@ section {
 }
 
 section:nth-of-type(2n + 2) {
-  background-color: whitesmoke;
+  background-color: var(--main-bg);
 }
 
 #contact {
-  background-color: var(--main-bg);
+  background-color: var(--second-bg);
 }
 
 #contact .last {
@@ -252,7 +261,7 @@ section:nth-of-type(2n + 2) {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: #D3D3D3;
 }
 
 h1 {
@@ -285,7 +294,7 @@ h1 {
 }
 
 .short-desc {
-  color: #333333;
+  color: #D3D3D3;
   margin: 0 0 1rem 0;
   font-family: monospace;
   font-size: 13px;
@@ -318,19 +327,31 @@ h1 {
   padding: 0 1.5rem;
 }
 
+.home-container .home-container__mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
 .home-container .description__main {
   font-size: 14px;
   margin: 0;
+  z-index: 1;
 }
 
 .home-container .description__sub {
   font-size: 32px;
   font-weight: bold;
   margin: 1.5rem 0;
+  z-index: 1;
 }
 
 .home-container .description__sub-position {
   animation: blink 1s step-start infinite;
+  z-index: 1;
 }
 
 .home-container img.hero {
@@ -387,11 +408,12 @@ h1 {
 nav {
   bottom: 0;
   left: 0;
-  background-color: var(--second-bg);
+  background-color: var(--main-bg);
   height: 60px;
   width: 100%;
   position: absolute;
   z-index: 99;
+  font-size: 13px;
 }
 
 .clickable {
@@ -399,9 +421,10 @@ nav {
 }
 
 .lang-div {
-  margin-right: 5vw;
+  margin-right: 20px;
   position: absolute;
   right: 0;
+  font-size: 13px;
 }
 
 .gapnav {
@@ -416,13 +439,13 @@ nav {
   text-align: left;
   position: absolute;
   top: 60px;
-  background: #0d151a;
+  background: var(--main-bg);
   transition: max-height 0.5s ease-in-out;
   max-height: 0;
 }
 
 nav .wrap-link>div {
-  margin: 10px 20px;
+  margin: 10px 12px;
   text-transform: uppercase;
 }
 
@@ -463,7 +486,7 @@ span.active {
 }
 
 span.clickable {
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 .visible {
@@ -475,7 +498,7 @@ span.clickable {
   position: relative;
   opacity: 0;
   font-size: 2.3rem;
-  color: #333;
+  color: #D3D3D3;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -485,8 +508,8 @@ span.clickable {
   opacity: 0;
   width: 80px;
   height: 4px;
-  background: #333;
-  margin-bottom: 15px;
+  background: #D3D3D3;
+  margin-bottom: 2.5rem;
 }
 
 .slide-to-left {
@@ -539,7 +562,7 @@ span.clickable {
 }
 
 .element {
-  color: #333;
+  color: #D3D3D3;
   padding: 0 5px;
   margin: 10px 0;
   display: flex;
@@ -656,7 +679,7 @@ span.clickable {
   position: absolute;
   font-size: 1.6rem;
   z-index: 1;
-  color: #FFF;
+  color: #D3D3D3;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -715,7 +738,7 @@ span.clickable {
   width: 95vw;
   height: 240px;
   max-width: 100%;
-  background-color: #f5f5f5;
+  background-color: #D3D3D3;
   overflow: hidden;
   border-radius: 3px;
   position: relative;
@@ -767,7 +790,7 @@ span.clickable {
   text-align: center;
   opacity: 0;
   transition: all 0.3s ease-in-out;
-  color: #333;
+  color: #D3D3D3;
 }
 
 .project-item.active {
@@ -801,7 +824,7 @@ span.clickable {
   visibility: hidden;
   width: 120px;
   background-color: #555;
-  color: #fff;
+  color: #D3D3D3;
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
@@ -912,7 +935,7 @@ span.clickable {
 
 .experience-list {
   max-width: 800px;
-  color: #333;
+  color: #D3D3D3;
   margin-left: 20px;
 }
 
@@ -951,6 +974,7 @@ span.clickable {
   border-left: 0px;
   border-bottom: 3px solid #d9d9d9;
   font-family: 'Montserrat', sans-serif;
+  color: #D3D3D3;
 }
 
 .tablist button:hover,
@@ -960,12 +984,12 @@ span.clickable {
 }
 
 .tablist button:hover {
-  background-color: var(--page-bg);
+  background-color: var(--second-bg);
 }
 
 .tablist button.selected {
   font-weight: bold;
-  background-color: var(--page-bg);
+  background-color: var(--main-bg);
   color: var(--highlight);
   border-bottom: 3px solid var(--highlight);
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0.1s;
@@ -1116,6 +1140,18 @@ span.clickable {
     max-height: initial;
   }
 
+  nav.fixed {
+    top: 6px;
+    left: 50%;
+    max-width: 800px;
+    width: calc(100% - 12px);
+    border: 1px solid #797979;
+    margin: 0 auto;
+    transform: translate(-50%, 0);
+    border-radius: 15px;
+    padding-left: 8px;
+  }
+
   nav .wrap-link>div {
     display: inline;
   }
@@ -1162,7 +1198,7 @@ span.clickable {
 
   .tablist button {
     border-bottom: none;
-    border-left: 3px solid #d9d9d9;
+    border-left: 3px solid #232323;
     justify-content: flex-start;
     padding-left: 1rem;
   }
