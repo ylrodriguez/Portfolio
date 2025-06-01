@@ -305,13 +305,8 @@ h1 {
 }
 
 .home-container {
-  background-image: linear-gradient(rgb(6, 16, 41, 0.75),
-      rgba(6, 16, 41, 0.65)),
-    url("../img/backgroundMobile.jpg");
-  background-size: auto 100vh;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
+  background-image: url("../img/dot.svg");
+  background-color: #000;
   height: calc(95vh + 60px);
   box-sizing: border-box;
 
@@ -1085,11 +1080,7 @@ span.clickable {
   }
 
   .home-container {
-    background-position: center;
-    background-size: cover;
-    background-image: linear-gradient(rgb(6, 16, 41, 0.75),
-        rgba(6, 16, 41, 0.65)),
-      url("../img/backgroundDesk.jpg");
+    background-image: url("../img/dot.svg");
     height: calc(100vh + 60px);
   }
 
