@@ -1,5 +1,7 @@
 {
-	"short-description": "Hello, I'm<br><span class='highlight'>Yojhan Rodriguez</span>.<br>I'm a web developer.",
+	"short-description": "Hello, I'm Yojhan, a passionate Front-end Engineer.",
+	"short-description-main": "Angular and React/Next.js",
+	"short-description-secondary": "developer",
 	"see-more": "See more",
 	"home": "Home",
 	"about": "About me",

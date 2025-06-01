@@ -40,6 +40,7 @@ export default function addEventListeners() {
 	//Listener Language Settings
 	document.getElementById("span-en").addEventListener("click", () => {
 		state.currentLanguage = "en";
+		state.translations = { ...state.englishJson };
 		document.getElementById("span-en").classList.add("active");
 		document.getElementById("span-es").classList.remove("active");
 		lang(state.englishJson);
@@ -47,6 +48,7 @@ export default function addEventListeners() {
 	})
 	document.getElementById("span-es").addEventListener("click", () => {
 		state.currentLanguage = "es";
+		state.translations = { ...state.spanishJson };
 		document.getElementById("span-es").classList.add("active");
 		document.getElementById("span-en").classList.remove("active");
 		lang(state.spanishJson);
@@ -83,7 +85,7 @@ export default function addEventListeners() {
 		/** @type {HTMLElement} */
 		var emailWrapper = document.querySelector('.email-wrapper');
 
-		textoTooltip.innerHTML = state.currentLanguage === "es" ? state.spanishJson["tooltip-copy"] : state.englishJson["tooltip-copy"];
+		textoTooltip.innerHTML = state.translations["tooltip-copy"];
 		textoTooltip.classList.remove("flip-element");
 		emailWrapper.classList.remove("minimize-and-expand");
 		emailWrapper.style = "opacity: 1";
@@ -103,7 +105,7 @@ export default function addEventListeners() {
 		emailWrapper.removeChild(textArea);
 
 
-		textoTooltip.innerHTML = state.currentLanguage === "es" ? state.spanishJson["tooltip-copied"] : state.englishJson["tooltip-copied"];
+		textoTooltip.innerHTML = state.translations["tooltip-copied"]
 		emailWrapper.classList.remove("slide-to-bottom");
 		textoTooltip.classList.add("flip-element");
 		emailWrapper.classList.add("minimize-and-expand");

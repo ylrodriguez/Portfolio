@@ -12,6 +12,7 @@ export default function getLanguageJSON() {
 		.then(([enJson, esJson]) => {
 			state.englishJson = enJson;
 			state.spanishJson = esJson;
+			state.translations = state.currentLanguage === "en" ? { ...enJson } : { ...esJson };
 		})
 		.catch((err) => {
 			console.log("Error retrieving language JSON files:", err);

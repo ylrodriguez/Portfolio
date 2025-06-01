@@ -10,11 +10,13 @@ let experienceListAnimated = false;
 let aboutMeCvButtonAnimated = false;
 let contactTitleAnimated = false;
 let contactSocialNetworksAnimated = false;
+let shortDescriptionBlockAnimation = false;
 
 let skills = [];
 let projects = [];
 let experience = [];
 let currentLanguage = "en";
+let translations = {};
 let englishJson = {}
 let spanishJson = {}
 
@@ -35,5 +37,6 @@ export default {
 	experience,
 	currentLanguage,
 	englishJson,
-	spanishJson
+	spanishJson,
+	translations
 }

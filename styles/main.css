@@ -27,6 +27,12 @@ https://coolors.co/0b132b-1c2541-3a506b-5bc0be-ffffff
   background: var(--page-bg);
 }
 
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 @keyframes slideDown {
   0% {
     height: 0;
@@ -306,15 +312,25 @@ h1 {
 
 .home-container {
   background-image: url("../img/dot.svg");
-  background-color: #000;
+  background-color: var(--main-bg);
   height: calc(95vh + 60px);
   box-sizing: border-box;
-
+  padding: 0 1.5rem;
 }
 
-.home-container .text {
-  font-size: 1.5rem;
-  margin-bottom: 25px;
+.home-container .description__main {
+  font-size: 14px;
+  margin: 0;
+}
+
+.home-container .description__sub {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 1.5rem 0;
+}
+
+.home-container .description__sub-position {
+  animation: blink 1s step-start infinite;
 }
 
 .home-container img.hero {
@@ -341,6 +357,7 @@ h1 {
   transition: all 1s;
   position: relative;
   user-select: none;
+  border-radius: 4px;
 }
 
 #cv {
@@ -1080,12 +1097,15 @@ span.clickable {
   }
 
   .home-container {
-    background-image: url("../img/dot.svg");
     height: calc(100vh + 60px);
   }
 
-  .home-container .text {
-    font-size: 2.2rem;
+  .home-container .description__main {
+    font-size: 16px;
+  }
+
+  .home-container .description__sub {
+    font-size: 48px;
   }
 
   .wrap-link {

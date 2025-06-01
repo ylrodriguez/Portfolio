@@ -1,5 +1,7 @@
 {
-	"short-description": "Hola, me llamo<br><span class='highlight'>Yojhan Rodríguez</span>.<br>Soy desarrollador web.",
+	"short-description": "Hola, soy Yojhan, un entusiasta ingeniero Front-end.",
+	"short-description-main": "Desarollador",
+	"short-description-secondary": "de Angular y React/Next.js",
 	"see-more": "Ver más",
 	"home": "Home",
 	"about": "Sobre mi",

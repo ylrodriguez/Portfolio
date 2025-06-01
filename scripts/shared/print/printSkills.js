@@ -17,11 +17,7 @@ export default function printSkills() {
 		if ('lg-key' in skillItem) {
 			progressTag.setAttribute("lg-key", skillItem["lg-key"]);
 
-			progressTag.innerHTML = state.currentLanguage === "es"
-				// @ts-ignore
-				? state.spanishJson[skillItem["lg-key"]]
-				// @ts-ignore
-				: state.englishJson[skillItem["lg-key"]];
+			progressTag.innerHTML = state.translations[skillItem["lg-key"]]
 
 		} else {
 			progressTag.innerHTML = skillItem.skillName;

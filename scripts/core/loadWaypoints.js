@@ -1,12 +1,32 @@
 import { animateAboutMeDiamondList, animateAboutMeElementHexagon, animateAboutMeProgressList, animateContactBeggining, animateProjectsList, animateTitleOfASection } from "./animations.js";
-import { BUTTONSEEMORE, CONTACTSSECTION, DIAMONDLIST, PROJECTSLIST, Waypoint } from "../constants/elements.js";
+import { BUTTONSEEMORE, CONTACTSSECTION, DIAMONDLIST, HOMESECTION, PROJECTSLIST, Waypoint } from "../constants/elements.js";
 import state from "../constants/state.js";
+import { animateShortDescription } from "./utils/index.js";
 
 export default function loadWaypoints() {
 
 	/**
 	 * Animations
 	 */
+
+	// ---> Home Section
+	new Waypoint({
+		element: document.querySelector('.description__sub'),
+		handler: async function (direction) {
+			if (direction === "up" && !state.shortDescriptionBlockAnimation) {
+				await animateShortDescription();
+			}
+		},
+	});
+
+	new Waypoint({
+		element: HOMESECTION,
+		handler: async function (direction) {
+			if (direction === "down" && !state.shortDescriptionBlockAnimation) {
+				await animateShortDescription();
+			}
+		},
+	});
 
 	// ---> About Me Section
 	new Waypoint({

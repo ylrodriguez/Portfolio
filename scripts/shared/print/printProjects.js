@@ -26,9 +26,7 @@ export default function printProjects() {
 
 		button.setAttribute("lg-key", "see-more");
 		//Configure inner html and listeners
-		button.innerHTML = state.currentLanguage === "es"
-			? state.spanishJson["see-more"]
-			: state.englishJson["see-more"];
+		button.innerHTML = state.translations["see-more"]
 		textBold.innerHTML = project.name;
 		textHighlight.innerHTML = project.tools;
 		button.addEventListener("click", () => {
